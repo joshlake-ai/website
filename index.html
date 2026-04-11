@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Josh Lake // Serial Entrepreneur, Builder, Optimist</title>
-  <meta name="description" content="Josh Lake is a serial entrepreneur building at the intersection of energy, technology, AI, and the built environment. Co-founder of Elephant Energy. Based in Boulder, Colorado.">
+  <meta name="description" content="Josh Lake is a serial entrepreneur and founder of Infinite Timber and Electrify Everything Now, building at the intersection of energy, AI, and the built environment. Co-founder of Elephant Energy. Based in Boulder, Colorado.">
   <meta property="og:title" content="Josh Lake // Serial Entrepreneur">
   <meta property="og:description" content="Building at the intersection of energy, technology, AI, and the built environment.">
   <meta property="og:type" content="website">
@@ -233,8 +233,11 @@
       .nav-link { font-size: 10px; letter-spacing: 1.5px; }
       .fav-grid { grid-template-columns: 1fr; }
     }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; font-size: 24px; color: var(--ink); line-height: 1; }
     @media (max-width: 600px) {
-      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(247,245,240,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid rgba(26,26,26,0.08); }
+      .nav-links.open { display: flex; }
       .hero-title { font-size: 32px !important; }
       .story-heading,.ventures-heading,.worldview-heading { font-size: 28px; }
       div[style*="grid-template-columns:repeat(5"] { grid-template-columns: repeat(3,1fr) !important; }
@@ -324,6 +327,7 @@
   <nav class="nav" id="mainNav">
     <div class="nav-inner">
       <a class="nav-logo" href="#home">JL</a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
       <div class="nav-links">
         <a class="nav-link active" href="#home" data-section="home">Home</a>
         <a class="nav-link" href="#story" data-section="story">Story</a>
@@ -343,7 +347,7 @@
       <div class="fade-up s1"><div class="section-label">Boulder, Colorado</div></div>
       <h1 class="hero-title fade-up s2">Serial entrepreneur building at the intersection of <em>energy</em>, <em>AI</em>, and the <em>built environment</em>.</h1>
       <div class="hero-sub fade-up s3">
-        <p>I'm Josh Lake: builder, technologist, and lifelong optimist. From concentrated solar and shared EVs to autonomous delivery robots and home electrification, I've spent nearly two decades starting companies at the frontier of climate technology. Now I'm building with AI.</p>
+        <p>I'm Josh Lake: builder, technologist, and lifelong optimist. I'm currently building <a href="https://franklintimberco.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim)">Infinite Timber</a> (AI-powered timber brokerage) and <a href="https://electrifyeverythingnow.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim)">Electrify Everything Now</a> (free electrification calculators). Previously co-founded Elephant Energy, and spent nearly two decades starting companies at the frontier of climate technology.</p>
       </div>
       <div class="hero-tags fade-up s4">
         <span class="hero-tag">Co-Founder, Elephant Energy</span>
@@ -451,6 +455,10 @@
             <div class="een-tool"><span class="een-tool-status soon">Coming Soon</span>Appliance Death Clock</div>
             <div class="een-tool"><span class="een-tool-status soon">Coming Soon</span>Heat Pump vs. Gas Costs</div>
             <div class="een-tool"><span class="een-tool-status soon">Coming Soon</span>Rate Plan Optimizer</div>
+          </div>
+          <div style="margin-top:24px;display:flex;gap:8px;max-width:400px;">
+            <input type="email" id="een-email" placeholder="Your email" style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:8px;font-family:var(--sans);font-size:13px;outline:none;">
+            <a href="https://electrifyeverythingnow.com" target="_blank" rel="noopener" style="padding:10px 20px;background:#0D9448;color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background 0.3s;cursor:pointer;">Get Notified</a>
           </div>
           <div class="een-tagline">Closing the information gap for home electrification</div>
         </div>
@@ -591,6 +599,15 @@
     </div>
   </section>
 
+  <!-- WRITING -->
+  <section class="ventures" id="writing" style="padding-top:80px;padding-bottom:80px;">
+    <div class="ventures-inner">
+      <div class="section-label">Writing</div>
+      <h2 class="story-heading">Thoughts on energy, AI, and building companies.</h2>
+      <p style="font-family:var(--sans);font-size:15px;line-height:1.8;color:var(--gray-soft);font-weight:300;max-width:700px;">Coming soon. In the meantime, find me on <a href="https://linkedin.com/in/lakejosh" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim)">LinkedIn</a> and <a href="https://x.com/jlake1" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim)">X</a>.</p>
+    </div>
+  </section>
+
   <!-- TOP BOOKS -->
   <section class="topbooks" id="books">
     <div class="topbooks-inner">
@@ -668,6 +685,10 @@
     </div>
   </footer>
 
+  <!-- Cloudflare Web Analytics (free, no cookies, privacy-respecting) -->
+  <!-- To activate: go to Cloudflare dashboard > Web Analytics > Add Site > joshlake.ai, then replace TOKEN below -->
+  <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN_HERE"}'></script> -->
+
   <script>
     const nav=document.getElementById('mainNav');
     window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
@@ -675,6 +696,7 @@
     const navLinks=document.querySelectorAll('.nav-link');
     const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(l=>{l.classList.toggle('active',l.dataset.section===id)})}})},{threshold:0.25});
     sections.forEach(s=>obs.observe(s));
+    navLinks.forEach(l=>l.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
     const fadeEls=document.querySelectorAll('.v-card,.belief,.explore-card,.een-tool');
     const fadeObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';fadeObs.unobserve(e.target)}})},{threshold:0.1});
     fadeEls.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.6s ease, transform 0.6s ease';fadeObs.observe(el)});
