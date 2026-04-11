@@ -168,6 +168,23 @@
     .book-card .book-author { font-family: var(--sans); font-size: 13px; color: var(--gray-mid); margin-bottom: 16px; }
     .book-card .book-why { font-family: var(--sans); font-size: 13px; line-height: 1.7; color: var(--gray-soft); font-weight: 300; }
 
+    /* -- EEN SHOWCASE -- */
+    .een-showcase { margin-top: 64px; padding: 40px; background: linear-gradient(135deg, #0a2e1a 0%, #0D9448 50%, #0a2e1a 100%); border-radius: 2px; position: relative; overflow: hidden; }
+    .een-showcase::before { content: ''; position: absolute; top: -50%; right: -20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,197,24,0.15) 0%, transparent 70%); }
+    .een-showcase-inner { position: relative; z-index: 1; }
+    .een-badge { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #F5C518; background: rgba(245,197,24,0.12); padding: 4px 12px; margin-bottom: 20px; }
+    .een-title { font-family: var(--serif); font-size: 28px; font-weight: 500; color: #fff; margin-bottom: 8px; }
+    .een-title a { color: #fff; text-decoration: none; border-bottom: 2px solid #F5C518; }
+    .een-title a:hover { border-bottom-color: #fff; }
+    .een-subtitle { font-family: var(--sans); font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 24px; }
+    .een-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .een-tool { padding: 14px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 300; transition: all 0.3s; }
+    .een-tool:hover { background: rgba(255,255,255,0.12); border-color: #F5C518; }
+    .een-tool-status { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 4px; }
+    .een-tool-status.live { color: #F5C518; }
+    .een-tool-status.soon { color: rgba(255,255,255,0.35); }
+    .een-tagline { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 20px; }
+
     /* -- AI PRINCIPLES -- */
     .ai-principles { padding: 160px 48px; background: #fff; color: var(--ink); }
     .ai-principles-inner { max-width: 1200px; margin: 0 auto; }
@@ -194,7 +211,8 @@
     @media (max-width: 900px) {
       .hero { padding: 0 24px; }
       .hero-title { font-size: 42px !important; }
-      .story,.ventures,.worldview,.connect,.topbooks,.ai-principles { padding: 100px 24px; }
+      .story,.worldview,.connect,.topbooks,.ai-principles { padding: 100px 24px; }
+      .een-tools { grid-template-columns: 1fr 1fr; }
       .story-grid,.connect-grid,.reading-grid { grid-template-columns: 1fr; gap: 40px; }
       .ventures-grid { grid-template-columns: 1fr; }
       .topbooks-grid { grid-template-columns: 1fr; }
@@ -223,7 +241,6 @@
       <div class="nav-links">
         <a class="nav-link active" href="#home" data-section="home">Home</a>
         <a class="nav-link" href="#story" data-section="story">Story</a>
-        <a class="nav-link" href="#ventures" data-section="ventures">Ventures</a>
         <a class="nav-link" href="#worldview" data-section="worldview">Worldview</a>
         <a class="nav-link" href="#books" data-section="books">Books</a>
         <a class="nav-link" href="#connect" data-section="connect">Connect</a>
@@ -336,34 +353,49 @@
           <div class="tl-desc">J&J Excellence in Biomedical Engineering Award. $1K Warmup Competition winner. Three-time Soldier Design Competition finalist. Research at ISN and Sandia National Laboratories. Co-founded Hemetrics and Sensornet, both with functional hardware prototypes and patents filed.</div>
         </div></div>
       </div>
-    </div>
-  </section>
 
-  <!-- VENTURES -->
-  <section class="ventures" id="ventures">
-    <div class="ventures-inner">
-      <div class="section-label">Companies I've Built</div>
-      <h2 class="ventures-heading">Companies, explorations, and the ideas I couldn't let go of.</h2>
-      <div class="ventures-grid">
-        <div class="v-card">
-          <div class="v-card-header"><span class="v-cat">AI & Timber</span><span class="v-period">2026-Present</span></div>
-          <h3 class="v-name"><a href="https://franklintimberco.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Infinite Timber</a></h3>
-          <p class="v-desc">AI-powered timber research and brokerage platform. Building tools like Prospector, Sky, Owl, and Scout to bring intelligence and transparency to one of the world's oldest and most opaque industries.</p>
+      <!-- EEN SHOWCASE -->
+      <div class="een-showcase">
+        <div class="een-showcase-inner">
+          <div class="een-badge">Now Building</div>
+          <h3 class="een-title"><a href="https://electrifyeverythingnow.com" target="_blank" rel="noopener">Electrify Everything Now</a></h3>
+          <p class="een-subtitle">Free calculators that show you the real costs and savings of going electric. No sales pitch. Just math.</p>
+          <div class="een-tools">
+            <div class="een-tool"><span class="een-tool-status live">Live</span>Plug-In Solar Calculator</div>
+            <div class="een-tool"><span class="een-tool-status soon">Coming Soon</span>Rebate & Incentive Stacker</div>
+            <div class="een-tool"><span class="een-tool-status soon">Coming Soon</span>Electrification Sequencer</div>
+            <div class="een-tool"><span class="een-tool-status soon">Coming Soon</span>Appliance Death Clock</div>
+            <div class="een-tool"><span class="een-tool-status soon">Coming Soon</span>Heat Pump vs. Gas Costs</div>
+            <div class="een-tool"><span class="een-tool-status soon">Coming Soon</span>Rate Plan Optimizer</div>
+          </div>
+          <div class="een-tagline">Closing the information gap for home electrification</div>
         </div>
-        <div class="v-card">
-          <div class="v-card-header"><span class="v-cat">Home Electrification</span><span class="v-period">2021-2026</span></div>
-          <h3 class="v-name">Elephant Energy</h3>
-          <p class="v-desc">Co-founded and served as CTO. Built the platform making it easy for homeowners to ditch fossil fuel appliances for heat pumps, induction stoves, and EV chargers. Three states. Series A from <a href="https://buildingventures.com" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(26,26,26,0.15)">Building Ventures</a> and <a href="https://www.arborviewcapital.com" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(26,26,26,0.15)">Arborview Capital</a>.</p>
-        </div>
-        <div class="v-card">
-          <div class="v-card-header"><span class="v-cat">Electric Vehicles</span><span class="v-period">2013-2017</span></div>
-          <h3 class="v-name">Evercar / Vision Fleet</h3>
-          <p class="v-desc">COO & Board Member. Built operations for one of the first shared EV fleets for rideshare drivers. Pioneered EV-as-a-service in LA, SF, and Indianapolis. Backed by Vision Ridge Partners.</p>
-        </div>
-        <div class="v-card">
-          <div class="v-card-header"><span class="v-cat">Solar Development</span><span class="v-period">2009-2010</span></div>
-          <h3 class="v-name">532 Solar</h3>
-          <p class="v-desc">Co-founded a solar project development company. My first step into clean energy, straight from strategy consulting. Named for the wavelength of green light (532nm).</p>
+      </div>
+
+      <!-- VENTURES -->
+      <div style="margin-top:80px;">
+        <div class="section-label">Companies I've Built</div>
+        <div class="ventures-grid">
+          <div class="v-card">
+            <div class="v-card-header"><span class="v-cat">AI & Timber</span><span class="v-period">2026-Present</span></div>
+            <h3 class="v-name"><a href="https://franklintimberco.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Infinite Timber</a></h3>
+            <p class="v-desc">AI-powered timber research and brokerage platform. Building tools like Prospector, Sky, Owl, and Scout to bring intelligence and transparency to one of the world's oldest and most opaque industries.</p>
+          </div>
+          <div class="v-card">
+            <div class="v-card-header"><span class="v-cat">Home Electrification</span><span class="v-period">2021-2026</span></div>
+            <h3 class="v-name">Elephant Energy</h3>
+            <p class="v-desc">Co-founded and served as CTO. Built the platform making it easy for homeowners to ditch fossil fuel appliances for heat pumps, induction stoves, and EV chargers. Three states. Series A from <a href="https://buildingventures.com" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(26,26,26,0.15)">Building Ventures</a> and <a href="https://www.arborviewcapital.com" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(26,26,26,0.15)">Arborview Capital</a>.</p>
+          </div>
+          <div class="v-card">
+            <div class="v-card-header"><span class="v-cat">Electric Vehicles</span><span class="v-period">2013-2017</span></div>
+            <h3 class="v-name">Evercar / Vision Fleet</h3>
+            <p class="v-desc">COO & Board Member. Built operations for one of the first shared EV fleets for rideshare drivers. Pioneered EV-as-a-service in LA, SF, and Indianapolis. Backed by Vision Ridge Partners.</p>
+          </div>
+          <div class="v-card">
+            <div class="v-card-header"><span class="v-cat">Solar Development</span><span class="v-period">2009-2010</span></div>
+            <h3 class="v-name">532 Solar</h3>
+            <p class="v-desc">Co-founded a solar project development company. My first step into clean energy, straight from strategy consulting. Named for the wavelength of green light (532nm).</p>
+          </div>
         </div>
       </div>
 
@@ -383,13 +415,6 @@
         <div class="explore-grid">
           <div class="explore-card"><div class="explore-card-cat">Logistics</div><div class="explore-card-name">Hub Logistics</div><div class="explore-card-desc">Investigated hub-and-spoke logistics models. Explored viability before moving on.</div></div>
           <div class="explore-card"><div class="explore-card-cat">Energy</div><div class="explore-card-name">Newtility</div><div class="explore-card-desc">New utility concept. Explored alternative models for residential energy services. The thinking here led directly to Elephant Energy.</div></div>
-        </div>
-      </div>
-
-      <div class="also-section">
-        <div class="also-label">Also worked with</div>
-        <div class="also-list">
-          <span>Amonix</span><span>Nuro</span><span>Embark Trucks</span><span>NJ Resources</span><span>Altman Vilandrie & Co</span><span>Sandia National Laboratories</span>
         </div>
       </div>
 
