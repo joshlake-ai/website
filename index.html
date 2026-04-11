@@ -9,18 +9,19 @@
   <meta property="og:description" content="Building at the intersection of energy, technology, AI, and the built environment.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://joshlake.ai/">
-  <meta property="og:image" content="https://joshlake.ai/images/headshot.jpg">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://joshlake.ai/images/og-image.jpg">
   <meta name="twitter:site" content="@jlake1">
   <meta name="twitter:creator" content="@jlake1">
   <meta name="twitter:title" content="Josh Lake // Serial Entrepreneur">
   <meta name="twitter:description" content="Building at the intersection of energy, technology, AI, and the built environment.">
-  <meta name="twitter:image" content="https://joshlake.ai/images/headshot.jpg">
+  <meta name="twitter:image" content="https://joshlake.ai/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="author" content="Josh Lake">
   <link rel="canonical" href="https://joshlake.ai/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQEl5fsA.woff2" as="font" type="font/woff2" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -233,6 +234,24 @@
       .nav-link { font-size: 10px; letter-spacing: 1.5px; }
       .fav-grid { grid-template-columns: 1fr; }
     }
+    .theme-toggle { background: none; border: 1px solid rgba(26,26,26,0.12); cursor: pointer; padding: 6px 10px; font-size: 16px; border-radius: 6px; transition: all 0.3s; line-height: 1; }
+    .theme-toggle:hover { border-color: var(--gold); }
+    html.dark { --cream: #1a1a1a; --ink: #e8e4dc; --gold: #c4982a; --gold-faint: rgba(196,152,42,0.08); --gold-dim: rgba(196,152,42,0.2); --gray-mid: #999; --gray-soft: #aaa; }
+    html.dark body { background: #1a1a1a; color: #e8e4dc; }
+    html.dark .story { background: #222; }
+    html.dark .ai-principles { background: #222; }
+    html.dark .nav.scrolled { background: rgba(26,26,26,0.95); border-bottom-color: rgba(232,228,220,0.06); }
+    html.dark .v-card { border-color: rgba(232,228,220,0.08); }
+    html.dark .v-card:hover { background: rgba(196,152,42,0.05); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    html.dark .book-card { border-color: rgba(232,228,220,0.06); }
+    html.dark .book-card:hover { background: rgba(196,152,42,0.06); }
+    html.dark .explore-card { border-color: rgba(232,228,220,0.06); }
+    html.dark .contact-value { color: #e8e4dc; border-bottom-color: rgba(232,228,220,0.2); }
+    html.dark .hero-tag { border-color: rgba(232,228,220,0.1); color: #999; }
+    html.dark .een-showcase { background: linear-gradient(135deg, rgba(13,148,72,0.08) 0%, #222 60%); border-color: rgba(13,148,72,0.2); }
+    html.dark .een-tool { background: #2a2a2a; border-color: rgba(232,228,220,0.08); color: #ccc; }
+    html.dark .focus-box { background: rgba(196,152,42,0.06); border-color: rgba(196,152,42,0.15); }
+
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; font-size: 24px; color: var(--ink); line-height: 1; }
     @media (max-width: 600px) {
       .nav-toggle { display: block; }
@@ -327,6 +346,7 @@
   <nav class="nav" id="mainNav">
     <div class="nav-inner">
       <a class="nav-logo" href="#home">JL</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="document.documentElement.classList.toggle('dark');localStorage.setItem('theme',document.documentElement.classList.contains('dark')?'dark':'light');this.textContent=document.documentElement.classList.contains('dark')?'☀️':'🌙'">🌙</button>
       <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
       <div class="nav-links">
         <a class="nav-link active" href="#home" data-section="home">Home</a>
@@ -604,7 +624,13 @@
     <div class="ventures-inner">
       <div class="section-label">Writing</div>
       <h2 class="story-heading">Thoughts on energy, AI, and building companies.</h2>
-      <p style="font-family:var(--sans);font-size:15px;line-height:1.8;color:var(--gray-soft);font-weight:300;max-width:700px;">Coming soon. In the meantime, find me on <a href="https://linkedin.com/in/lakejosh" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim)">LinkedIn</a> and <a href="https://x.com/jlake1" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim)">X</a>.</p>
+      <div style="margin-top:32px;">
+        <a href="/writing/ai-at-a-startup.html" style="display:block;padding:32px;border:1px solid rgba(26,26,26,0.08);text-decoration:none;color:inherit;transition:all 0.3s;">
+          <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">April 2026</div>
+          <div style="font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:8px;">What I Learned Implementing AI at a 40-Person Startup</div>
+          <div style="font-family:var(--sans);font-size:14px;color:var(--gray-soft);font-weight:300;">Most companies get AI adoption wrong. They buy tools, write policies nobody reads, and wonder why nothing sticks. Here's what actually worked.</div>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -663,8 +689,10 @@
             <div class="contact-row"><span class="contact-label">Location</span><span class="contact-plain">Boulder, Colorado</span></div>
           </div>
           <div class="focus-box">
-            <div class="focus-label">Current Focus</div>
-            <p class="focus-text">Building <a href="https://franklintimberco.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(139,105,20,0.3)">Infinite Timber</a>, an AI-powered timber research and brokerage platform. Also exploring AI-agent opportunities in electrification via <a href="https://electrifyeverythingnow.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(139,105,20,0.3)">ElectrifyEverythingNow.com</a>. Open to advisory roles in climate tech, proptech, and AI.</p>
+            <div class="focus-label">Now</div>
+            <p class="focus-text" style="margin-bottom:12px">Building <a href="https://franklintimberco.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(139,105,20,0.3)">Infinite Timber</a> and <a href="https://electrifyeverythingnow.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(139,105,20,0.3)">Electrify Everything Now</a>. Open to advisory roles in climate tech, proptech, and AI.</p>
+            <p class="focus-text" style="margin-bottom:12px"><strong>Reading:</strong> The Nvidia Way (Tae Kim)</p>
+            <p class="focus-text"><strong>Last updated:</strong> April 2026</p>
           </div>
           <div class="photo-slot" style="margin-top:48px"><img src="images/josh-rachael.jpg" alt="Josh and Rachael Lake, circa 2007" loading="lazy"></div>
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin-top:8px;">Circa 2007</div>
@@ -686,6 +714,7 @@
   </footer>
 
   <script>
+    if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');document.querySelector('.theme-toggle').textContent='☀️'}
     const nav=document.getElementById('mainNav');
     window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)});
     const sections=document.querySelectorAll('section[id]');

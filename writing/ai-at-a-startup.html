@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What I Learned Implementing AI at a 40-Person Startup // Josh Lake</title>
+  <meta name="description" content="Most companies get AI adoption wrong. They buy tools, write policies nobody reads, and wonder why nothing changes. Here's what actually worked when I implemented AI across a 40-person climate tech startup.">
+  <meta property="og:title" content="What I Learned Implementing AI at a 40-Person Startup">
+  <meta property="og:description" content="Most companies get AI adoption wrong. Here's what actually worked.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://joshlake.ai/writing/ai-at-a-startup.html">
+  <meta property="og:image" content="https://joshlake.ai/images/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@jlake1">
+  <meta name="author" content="Josh Lake">
+  <link rel="canonical" href="https://joshlake.ai/writing/ai-at-a-startup.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f7f5f0;
+      --ink: #1a1a1a;
+      --gold: #8b6914;
+      --gold-faint: rgba(139,105,20,0.06);
+      --gold-dim: rgba(139,105,20,0.15);
+      --gray-mid: #888;
+      --gray-soft: #555;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --mono: 'Space Mono', 'Courier New', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.8; font-weight: 300; }
+    a { color: var(--gold); }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 48px; background: rgba(247,245,240,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26,26,26,0.06); }
+    .nav-inner { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: 1px; text-decoration: none; color: var(--ink); }
+    .nav-back { font-family: var(--sans); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--gray-mid); transition: color 0.3s; }
+    .nav-back:hover { color: var(--gold); }
+
+    article { max-width: 680px; margin: 0 auto; padding: 140px 24px 100px; }
+
+    .post-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .post-meta::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+
+    h1 { font-family: var(--serif); font-size: 48px; font-weight: 300; line-height: 1.15; margin-bottom: 24px; letter-spacing: -0.5px; }
+
+    .post-subtitle { font-size: 18px; color: var(--gray-soft); margin-bottom: 48px; line-height: 1.6; }
+
+    h2 { font-family: var(--serif); font-size: 28px; font-weight: 400; margin: 56px 0 20px; }
+    h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; margin: 40px 0 16px; }
+
+    p { font-size: 16px; margin-bottom: 24px; }
+
+    .callout { padding: 24px 28px; background: var(--gold-faint); border-left: 3px solid var(--gold); margin: 32px 0; font-size: 15px; }
+
+    ol, ul { margin-bottom: 24px; padding-left: 24px; }
+    li { margin-bottom: 8px; font-size: 16px; }
+
+    strong { font-weight: 500; }
+
+    .post-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(26,26,26,0.08); }
+    .post-footer p { font-size: 14px; color: var(--gray-mid); }
+    .post-footer a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 32px; }
+      article { padding: 100px 20px 60px; }
+      .nav { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">JL</a>
+      <a class="nav-back" href="/#writing">All Writing</a>
+    </div>
+  </nav>
+
+  <article>
+    <div class="post-meta">April 2026</div>
+
+    <h1>What I Learned Implementing AI at a 40-Person Startup</h1>
+
+    <p class="post-subtitle">Most companies get AI adoption wrong. They buy tools, write policies nobody reads, and wonder why nothing sticks. I spent a year embedding AI into a climate tech startup's daily operations. Here's what actually worked.</p>
+
+    <p>I was the CTO of a home electrification company. We had field technicians, sales advisors, designers, ops people, and a small engineering team. Forty people across three states installing heat pumps, induction stoves, and EV chargers. Not a software company. A real company, with real trucks and real customers.</p>
+
+    <p>When I set out to make us an "AI-empowered" organization, I quickly learned that the hard part had nothing to do with technology. There are a thousand AI tools to choose from, and that abundance is paralyzing. Half the team was excited and racing ahead with random free tools. The other half was scared, quiet, and convinced this was the beginning of the end of their jobs.</p>
+
+    <p>The technology was easy. The change management was brutally hard. This is the playbook I wish I'd had on day one.</p>
+
+    <h2>1. Pick one LLM. Standardize ruthlessly.</h2>
+
+    <p>This is the decision most companies refuse to make, and it costs them everything.</p>
+
+    <p>When everyone uses different tools, you get chaos. One person uses ChatGPT, another uses Claude, a third uses some random free tool that trains on your data. Nobody builds shared prompts. Nobody shares what works. Institutional knowledge about how to use AI stays trapped in individual heads, which is the exact problem AI was supposed to solve.</p>
+
+    <p>We picked one primary LLM ecosystem and made it the standard. Everyone got a paid account through the company. We standardized the login, the security settings, the data policies. One platform, one set of credentials, one place to build.</p>
+
+    <div class="callout">
+      <strong>The principle:</strong> Standardize on one ecosystem, not one tool. Your primary LLM is the foundation. Embedded AI in your existing SaaS tools (CRM, email, project management) is the accelerant. Everything else requires approval.
+    </div>
+
+    <p>This doesn't mean you can't experiment. We had a process for that: post in a shared channel, get a yes or an alternative within 24 hours. Default to yes, with guardrails. But the default stack was non-negotiable.</p>
+
+    <h2>2. "AI-empowered" is not the same as "AI-automated."</h2>
+
+    <p>The framing matters more than you think.</p>
+
+    <p>When you tell a team of 40 people that you're "implementing AI," half of them hear "you're replacing me." That's a trust problem that no amount of tooling can fix.</p>
+
+    <p>We were deliberate about the language. We weren't building an AI-automated company. We were building an <strong>AI-empowered</strong> company. Every team member paired with intelligent tools that handle the monotonous work, surface insights, and support faster decisions. The humans stay accountable. The humans make the calls. The AI handles the grind.</p>
+
+    <p>This isn't just corporate messaging. It's an architectural decision. When you build for empowerment, you design tools that keep humans in the loop. When you build for automation, you design tools that remove them. Those are fundamentally different systems, and the first one is the only one that works when your business requires trust, judgment, and customer relationships.</p>
+
+    <h2>3. The guardrails are the product.</h2>
+
+    <p>Most AI policies read like legal documents written by people who've never used AI. Ours fit on one page, and the core of it was this:</p>
+
+    <p><strong>If you wouldn't email it to a stranger, don't paste it into an AI tool.</strong></p>
+
+    <p>That one line did more for our security posture than a 20-page policy would have. People understood it immediately. It was memorable, actionable, and didn't require a training session to internalize.</p>
+
+    <p>Beyond that, we kept it simple:</p>
+
+    <ul>
+      <li><strong>Allowed:</strong> Generalized scenarios, anonymized summaries, draft rewriting, structuring thoughts, research.</li>
+      <li><strong>Not allowed:</strong> Customer PII, financial data, API keys, proprietary system architecture.</li>
+      <li><strong>Ask first:</strong> Connecting new tools, uploading large datasets, automating customer-facing communications.</li>
+    </ul>
+
+    <p>The "ask first" category is the key insight. Most companies default to "no" on anything ambiguous. We defaulted to "yes, with a conversation." That one shift turned AI adoption from a compliance exercise into a culture of experimentation.</p>
+
+    <h2>4. Start with the AI that's already in your tools.</h2>
+
+    <p>Every company I talk to wants to build custom AI agents. Almost none of them have turned on the AI features already embedded in the software they're paying for.</p>
+
+    <p>Your CRM has AI. Your email has AI. Your project management tool has AI. Your call recording software has AI. Your workflow automation tool has AI. Most of these features are included in your existing subscription.</p>
+
+    <p>We got more leverage from turning on embedded AI features across our existing stack than from any custom tool we built. The reason is simple: embedded AI operates inside the workflow. There's no context switching. There's no "open a new tab and paste this in." It just works where people already work.</p>
+
+    <div class="callout">
+      <strong>The sequence that worked:</strong> First, activate embedded AI in existing tools. Second, train people on the standard LLM. Third, build custom agents for specific, well-defined problems. Most companies start at step three and skip one and two entirely.
+    </div>
+
+    <h2>5. Crawl, walk, run, sprint.</h2>
+
+    <p>We built a design assistant bot that helped our sales advisors make HVAC system recommendations. The roadmap for that one tool looked like this:</p>
+
+    <ol>
+      <li><strong>Crawl:</strong> Knowledge retrieval. Feed it our internal playbooks and design guidelines. It answers questions with links to existing documentation.</li>
+      <li><strong>Walk:</strong> Structured Q&A. Train it on real question-and-answer pairs from our internal channels. It starts giving recommendations in a consistent format with confidence scores.</li>
+      <li><strong>Run:</strong> Connected systems. It reads from our proposal tool and CRM, pulling real customer data into its recommendations.</li>
+      <li><strong>Sprint:</strong> Autonomous actions. It updates records, triggers workflows, and handles routine design decisions without human intervention.</li>
+    </ol>
+
+    <p>Most companies try to jump straight to sprint. They want the autonomous agent that does everything. The result is a brittle system that nobody trusts, built on data that hasn't been validated, making decisions that haven't been tested.</p>
+
+    <p>The crawl phase isn't glamorous, but it's where you learn what data you actually have, what's missing, and what format it needs to be in. Skip it and you'll pay for it later.</p>
+
+    <h2>6. Security is a feature, not a blocker.</h2>
+
+    <p>AI makes it trivially easy to leak data you didn't mean to share. Customer names pasted into a free chatbot. Internal documents uploaded to a tool that trains on user inputs. API keys dropped into a prompt.</p>
+
+    <p>We took PII and data security seriously not because lawyers told us to, but because our customers trusted us with their home addresses, electrical panels, and financial information. That trust was sacred.</p>
+
+    <p>The fix wasn't locking things down. It was making the secure path the easy path. Company-managed accounts with enterprise privacy protections. Approved tools connected through official channels. Clear rules about what data never leaves the building. When people have a fast, approved way to use AI, they don't reach for the sketchy free version.</p>
+
+    <h2>7. Celebrate builds, failures, and weirdness. In public.</h2>
+
+    <p>We ran regular sessions where anyone in the company could demo something they'd built or discovered with AI. A sales advisor who automated her follow-up emails. An ops manager who built a scheduling optimizer. A field tech who used AI to troubleshoot a tricky installation.</p>
+
+    <p>The key word is "anyone." Not just the engineering team. Not just the people who were "good at tech." Anyone.</p>
+
+    <p>We celebrated the failures too. The bot that hallucinated a product model that doesn't exist. The automation that sent the wrong email. The prompt that returned something hilariously wrong. Failures meant someone was trying. Not trying was the only real failure.</p>
+
+    <p>This has to be fun or it won't stick. AI adoption driven by mandates and compliance training dies on contact with reality. AI adoption driven by curiosity, play, and showing off to your teammates compounds. Nobody needed to be told to use AI. They wanted to because their coworker just demoed something awesome and they wanted to build something better.</p>
+
+    <div class="callout">
+      <strong>The culture shift:</strong> Never punish someone for experimenting within the guardrails. Never punish an AI output that went wrong if the person caught it and reported it. The only thing to punish is not trying, and hiding mistakes.
+    </div>
+
+    <h2>8. Learn together or don't bother.</h2>
+
+    <p>Individual AI adoption is a dead end. One person gets really good at prompting and builds amazing tools that nobody else understands, can maintain, or even knows exist. When that person leaves, all the knowledge walks out the door.</p>
+
+    <p>We made AI literacy a team sport. Shared prompt libraries. Internal channels where people posted what worked and what didn't. Office hours with the AI team where anyone could bring a problem and we'd build a solution together in real time.</p>
+
+    <p>The people who became our best AI users weren't the most technical. They were the most curious, and the most willing to share what they learned. Create the conditions for that and get out of the way.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>Implementing AI at a startup isn't a technology problem. It's a change management problem. The scared people need safety. The excited people need guardrails. Everyone needs to feel like they're learning together, not being left behind. The technology is the easy part.</p>
+
+    <p>Standardize your tools. Frame it as empowerment, not replacement. Write guardrails that humans can actually remember. Make the secure path the easy path. Start with the AI you're already paying for. Build incrementally. Celebrate everything in public. Learn together. Have fun.</p>
+
+    <p>Everything else is noise.</p>
+
+    <div class="post-footer">
+      <p><strong>Josh Lake</strong> is a serial entrepreneur building at the intersection of energy, AI, and the built environment. He's the founder of <a href="https://franklintimberco.com">Infinite Timber</a> and <a href="https://electrifyeverythingnow.com">Electrify Everything Now</a>, and previously co-founded <a href="https://www.elephantenergy.com">Elephant Energy</a>.</p>
+      <p style="margin-top:16px">Find him on <a href="https://linkedin.com/in/lakejosh">LinkedIn</a> and <a href="https://x.com/jlake1">X</a>, or go back to <a href="/">joshlake.ai</a>.</p>
+    </div>
+  </article>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What I Learned Implementing AI at a 40-Person Startup",
+    "author": {
+      "@type": "Person",
+      "name": "Josh Lake",
+      "url": "https://joshlake.ai"
+    },
+    "datePublished": "2026-04-11",
+    "description": "Most companies get AI adoption wrong. They buy tools, write policies nobody reads, and wonder why nothing changes. Here's what actually worked.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Josh Lake"
+    }
+  }
+  </script>
+</body>
+</html>
