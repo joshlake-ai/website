@@ -169,21 +169,22 @@
     .book-card .book-why { font-family: var(--sans); font-size: 13px; line-height: 1.7; color: var(--gray-soft); font-weight: 300; }
 
     /* -- EEN SHOWCASE -- */
-    .een-showcase { margin-top: 64px; padding: 40px; background: linear-gradient(135deg, #0a2e1a 0%, #0D9448 50%, #0a2e1a 100%); border-radius: 2px; position: relative; overflow: hidden; }
-    .een-showcase::before { content: ''; position: absolute; top: -50%; right: -20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,197,24,0.15) 0%, transparent 70%); }
+    .een-showcase { margin-top: 64px; padding: 40px; background: linear-gradient(135deg, rgba(13,148,72,0.03) 0%, #fff 60%); border: 1px solid rgba(13,148,72,0.15); border-radius: 12px; position: relative; overflow: hidden; }
     .een-showcase-inner { position: relative; z-index: 1; }
-    .een-badge { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #F5C518; background: rgba(245,197,24,0.12); padding: 4px 12px; margin-bottom: 20px; }
-    .een-title { font-family: var(--serif); font-size: 28px; font-weight: 500; color: #fff; margin-bottom: 8px; }
-    .een-title a { color: #fff; text-decoration: none; border-bottom: 2px solid #F5C518; }
-    .een-title a:hover { border-bottom-color: #fff; }
-    .een-subtitle { font-family: var(--sans); font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 24px; }
-    .een-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-    .een-tool { padding: 14px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); font-family: var(--sans); font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 300; transition: all 0.3s; }
-    .een-tool:hover { background: rgba(255,255,255,0.12); border-color: #F5C518; }
-    .een-tool-status { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 4px; }
-    .een-tool-status.live { color: #F5C518; }
-    .een-tool-status.soon { color: rgba(255,255,255,0.35); }
-    .een-tagline { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 20px; }
+    .een-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .een-icon { width: 44px; height: 44px; background: #E8F5E9; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .een-badge { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #0D9448; background: #E8F5E9; padding: 4px 12px; border-radius: 100px; }
+    .een-title { font-family: var(--serif); font-size: 28px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+    .een-title a { color: var(--ink); text-decoration: none; border-bottom: 2px solid #0D9448; transition: border-color 0.3s; }
+    .een-title a:hover { border-bottom-color: #F5C518; }
+    .een-subtitle { font-family: var(--sans); font-size: 14px; color: var(--gray-soft); font-weight: 300; margin-bottom: 28px; }
+    .een-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .een-tool { padding: 16px 18px; background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; font-family: var(--sans); font-size: 14px; color: var(--ink); font-weight: 400; transition: all 0.3s; }
+    .een-tool:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,0,0,0.06); border-color: #0D9448; }
+    .een-tool-status { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; display: inline-block; padding: 2px 8px; border-radius: 100px; margin-bottom: 6px; }
+    .een-tool-status.live { color: #0D9448; background: #E8F5E9; }
+    .een-tool-status.soon { color: #8D6E00; background: #FFF8E1; }
+    .een-tagline { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-mid); margin-top: 24px; }
 
     /* -- AI PRINCIPLES -- */
     .ai-principles { padding: 160px 48px; background: #fff; color: var(--ink); }
@@ -213,6 +214,7 @@
       .hero-title { font-size: 42px !important; }
       .story,.worldview,.connect,.topbooks,.ai-principles { padding: 100px 24px; }
       .een-tools { grid-template-columns: 1fr 1fr; }
+      .een-showcase { padding: 24px; }
       .story-grid,.connect-grid,.reading-grid { grid-template-columns: 1fr; gap: 40px; }
       .ventures-grid { grid-template-columns: 1fr; }
       .topbooks-grid { grid-template-columns: 1fr; }
@@ -357,7 +359,10 @@
       <!-- EEN SHOWCASE -->
       <div class="een-showcase">
         <div class="een-showcase-inner">
-          <div class="een-badge">Now Building</div>
+          <div class="een-header">
+            <div class="een-icon">&#x26A1;</div>
+            <div class="een-badge">Now Building</div>
+          </div>
           <h3 class="een-title"><a href="https://electrifyeverythingnow.com" target="_blank" rel="noopener">Electrify Everything Now</a></h3>
           <p class="een-subtitle">Free calculators that show you the real costs and savings of going electric. No sales pitch. Just math.</p>
           <div class="een-tools">
