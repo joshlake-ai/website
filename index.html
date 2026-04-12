@@ -483,8 +483,35 @@
           </div>
           <div style="margin-top:24px;display:flex;gap:8px;max-width:400px;">
             <input type="email" id="een-email" placeholder="Your email" style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:8px;font-family:var(--sans);font-size:13px;outline:none;">
-            <a href="https://electrifyeverythingnow.com" target="_blank" rel="noopener" style="padding:10px 20px;background:#0D9448;color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background 0.3s;cursor:pointer;">Get Notified</a>
+            <button type="button" id="een-notify-btn" onclick="eenSubscribe()" style="padding:10px 20px;background:#0D9448;color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:13px;font-weight:500;white-space:nowrap;transition:background 0.3s;cursor:pointer;">Get Notified</button>
           </div>
+          <script>
+          async function eenSubscribe() {
+            var email = document.getElementById('een-email').value;
+            if (!email) return;
+            var btn = document.getElementById('een-notify-btn');
+            btn.textContent = 'Saving...';
+            btn.disabled = true;
+            try {
+              var res = await fetch('https://electrifyeverythingnow.com/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+              });
+              if (res.ok) {
+                btn.textContent = "You're in!";
+                btn.style.background = '#065f28';
+                document.getElementById('een-email').value = '';
+              } else {
+                btn.textContent = 'Try again';
+                btn.disabled = false;
+              }
+            } catch (e) {
+              btn.textContent = 'Try again';
+              btn.disabled = false;
+            }
+          }
+          </script>
           <div class="een-tagline">Closing the information gap for home electrification</div>
         </div>
       </div>
