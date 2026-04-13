@@ -102,10 +102,16 @@
     .tl-desc { font-family: var(--sans); font-size: 14px; color: #777; line-height: 1.7; font-weight: 300; }
 
     .ventures { padding: 160px 48px; background: var(--cream); }
+    .emoji-ticker { display: flex; justify-content: center; gap: 28px; padding: 20px 48px; background: var(--cream); border-top: 1px solid rgba(26,26,26,0.04); border-bottom: 1px solid rgba(26,26,26,0.04); }
+    .emoji-ticker span { font-size: 24px; opacity: 0.7; transition: all 0.3s ease; cursor: default; }
+    .emoji-ticker span:hover { opacity: 1; transform: scale(1.3); }
+    html.dark .emoji-ticker { background: #1a1a1a; border-color: rgba(232,228,220,0.04); }
+
     .ventures-inner { max-width: 1200px; margin: 0 auto; }
     .ventures-heading { font-size: 42px; font-weight: 300; line-height: 1.2; margin-bottom: 64px; max-width: 700px; }
     .ventures-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .v-card { padding: 40px; border: 1px solid rgba(26,26,26,0.08); transition: all 0.4s ease; position: relative; overflow: hidden; background: transparent; }
+    .v-emoji { font-size: 36px; margin-bottom: 16px; display: block; }
     .v-card:hover { border-color: var(--gold); background: rgba(139,105,20,0.03); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.06); }
     .v-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold); transition: height 0.4s ease; }
     .v-card:hover::before { height: 100%; }
@@ -232,6 +238,8 @@
       .ai-principle { grid-template-columns: 40px 1fr; gap: 16px; }
       .tl-item { grid-template-columns: 1fr; gap: 8px; }
       .belief-inner { grid-template-columns: 40px 1fr; gap: 20px; }
+      .emoji-ticker { gap: 16px; padding: 16px 24px; flex-wrap: wrap; }
+      .emoji-ticker span { font-size: 20px; }
       .nav { padding: 0 24px; }
       .nav-links { gap: 16px; }
       .nav-link { font-size: 10px; letter-spacing: 1.5px; }
@@ -501,6 +509,11 @@
     </div>
   </section>
 
+  <!-- EMOJI TICKER -->
+  <div class="emoji-ticker" aria-hidden="true">
+    <span>☀️</span><span>🤖</span><span>⚡</span><span>🚗</span><span>🏠</span><span>🔋</span><span>🌡️</span><span>🪵</span><span>🧠</span><span>🔌</span><span>🍳</span><span>🏔️</span><span>🛻</span><span>🌎</span>
+  </div>
+
   <!-- STORY -->
   <section class="story" id="story">
     <div class="story-inner">
@@ -532,31 +545,37 @@
         <div class="section-label">Companies I've Built</div>
         <div class="ventures-grid">
           <div class="v-card">
+            <span class="v-emoji">🪵</span>
             <div class="v-card-header"><span class="v-cat">AI & Timber</span><span class="v-period">2026-Present</span></div>
             <h3 class="v-name"><a href="https://franklintimberco.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Infinite Timber</a></h3>
             <p class="v-desc">The U.S. timber market moves $30B+ annually on phone calls, paper maps, and gut instinct. Infinite Timber brings AI to the entire workflow — from land prospecting and timber cruising to market pricing and deal execution. Our tools (Prospector, Sky, Owl, Scout) give timber professionals the data advantage that every other commodity market already has.</p>
           </div>
           <div class="v-card">
+            <span class="v-emoji">🌡️</span>
             <div class="v-card-header"><span class="v-cat">Home Electrification</span><span class="v-period">2021-2026</span></div>
             <h3 class="v-name"><a href="https://www.elephantenergy.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Elephant Energy</a></h3>
             <p class="v-desc">Co-founded and served as CTO. Built the platform making it easy for homeowners to ditch fossil fuel appliances for heat pumps, induction stoves, and EV chargers. Three states. Series A from <a href="https://buildingventures.com" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(26,26,26,0.15)">Building Ventures</a> and <a href="https://www.arborviewcapital.com" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(26,26,26,0.15)">Arborview Capital</a>.</p>
           </div>
           <div class="v-card">
+            <span class="v-emoji">🤖</span>
             <div class="v-card-header"><span class="v-cat">Autonomous Delivery</span><span class="v-period">2017-2018</span></div>
             <h3 class="v-name"><a href="https://www.nuro.ai" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Nuro</a></h3>
             <p class="v-desc">Head of Operations. Early operations leader, building the foundation from founding team through early growth. Nuro went on to <a href="https://www.crunchbase.com/organization/nuro-2/company_financials" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(26,26,26,0.15)">raise over $2B</a> and partner with Uber and Kroger.</p>
           </div>
           <div class="v-card">
+            <span class="v-emoji">🚗</span>
             <div class="v-card-header"><span class="v-cat">Electric Vehicles</span><span class="v-period">2013-2017</span></div>
             <h3 class="v-name">Evercar / Vision Fleet</h3>
             <p class="v-desc">COO & Board Member. Built operations for one of the first shared EV fleets for rideshare drivers. Pioneered EV-as-a-service in LA, SF, and Indianapolis.</p>
           </div>
           <div class="v-card">
+            <span class="v-emoji">☀️</span>
             <div class="v-card-header"><span class="v-cat">Concentrated Solar</span><span class="v-period">2010-2013</span></div>
             <h3 class="v-name"><a href="https://en.wikipedia.org/wiki/Amonix" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Amonix</a></h3>
             <p class="v-desc">Sr. Program Manager. Managed utility-scale CPV deployments across the American Southwest. <a href="https://www.nrel.gov/pv/cell-efficiency.html" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid rgba(26,26,26,0.15)">World records for solar module efficiency (34.9%)</a> verified by NREL.</p>
           </div>
           <div class="v-card">
+            <span class="v-emoji">🔆</span>
             <div class="v-card-header"><span class="v-cat">Solar Development</span><span class="v-period">2009-2010</span></div>
             <h3 class="v-name">532 Solar</h3>
             <p class="v-desc">Co-founded a solar project development company. My first step into clean energy, right out of strategy consulting. Named for the wavelength of green light (532nm).</p>
@@ -674,32 +693,32 @@
       <div class="section-label" style="color:var(--gold)">What I Believe</div>
       <h2 class="worldview-heading">The future is electric, intelligent, and abundant.</h2>
 
-      <div class="belief"><div class="belief-inner"><span class="belief-num">01</span><div>
+      <div class="belief"><div class="belief-inner"><span class="belief-num">⚡</span><div>
         <h3 class="belief-title">Electrify Everything</h3>
         <p class="belief-text">Every fossil fuel appliance in every building will be replaced by an electric one. Heat pumps, induction stoves, EV chargers, smart panels. This is the largest market transformation since the internet. I built Elephant Energy on this conviction.</p>
       </div></div></div>
 
-      <div class="belief"><div class="belief-inner"><span class="belief-num">02</span><div>
+      <div class="belief"><div class="belief-inner"><span class="belief-num">🧠</span><div>
         <h3 class="belief-title">AI Changes Everything, Again</h3>
         <p class="belief-text">AI agents will create entirely new business models with near-zero marginal cost. Companies that understand this will build with 10 people what used to require 100. I'm building every new venture AI-first, not AI-added.</p>
       </div></div></div>
 
-      <div class="belief"><div class="belief-inner"><span class="belief-num">03</span><div>
+      <div class="belief"><div class="belief-inner"><span class="belief-num">📉</span><div>
         <h3 class="belief-title">Zero Marginal Cost Is Real</h3>
         <p class="belief-text">Solar, wind, batteries, and now AI are all riding exponential cost curves toward zero. The question is how fast we can rewire our institutions to match the physics.</p>
       </div></div></div>
 
-      <div class="belief"><div class="belief-inner"><span class="belief-num">04</span><div>
+      <div class="belief"><div class="belief-inner"><span class="belief-num">🏠</span><div>
         <h3 class="belief-title">The Built Environment Is the Battleground</h3>
         <p class="belief-text">Buildings account for 40% of US emissions. The energy transition isn't just about the grid. It's about every furnace, water heater, and gas stove in every home. A building-by-building revolution that needs both technology and trust.</p>
       </div></div></div>
 
-      <div class="belief"><div class="belief-inner"><span class="belief-num">05</span><div>
+      <div class="belief"><div class="belief-inner"><span class="belief-num">🏗️</span><div>
         <h3 class="belief-title">Build for the Long Game</h3>
         <p class="belief-text">Not quarterly returns. Not growth-at-all-costs. Real, durable value creation that compounds over decades. Commit fully, build carefully, endure.</p>
       </div></div></div>
 
-      <div class="belief"><div class="belief-inner"><span class="belief-num">06</span><div>
+      <div class="belief"><div class="belief-inner"><span class="belief-num">🚀</span><div>
         <h3 class="belief-title">Technology Should Create Leverage for People</h3>
         <p class="belief-text">The goal isn't replacing people. It's making every person 10x more effective. The best technology makes humans better at being human.</p>
       </div></div></div>
