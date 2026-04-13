@@ -10,3 +10,25 @@ images/P[0-9]*
 images/PC*
 images/Picture*
 images/Steve*
+.gstack/
+
+# Unused photos in repo root (raw uploads, not referenced by the site)
+24E25AE7-8DD8-4CEE-93EC-CD7B0D885B59.jpg
+DSCN1844.JPG
+IMG_0839.jpg
+IMG_0872.JPG
+IMG_20121212_134119.jpg
+IMG_2596.JPG
+IMG_5238.jpeg
+IMG_5379.JPG
+P8280167.JPG
+PC240821.JPG
+Picture 009.jpg
+Picture 014.jpg
+Steve 017.jpg
+amonix-alamosa.jpg
+amonix-nevada.jpg
+eagle-scout.jpg
+eagle_cake.jpg
+lakehouse-sign.jpg
+trojan-soccer.jpg
