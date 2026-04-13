@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robots Are the Missing Workforce for Electrification // Josh Lake</title>
+<meta name="description" content="The electrify everything movement has a labor problem. Robots will change parts of the equation — but probably not the parts you think.">
+<meta property="og:title" content="Robots Are the Missing Workforce for Electrification">
+<meta property="og:description" content="The electrify everything movement has a labor problem. Robots will change parts of the equation — but probably not the parts you think.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://joshlake.ai/writing/robots-electrification">
+<meta property="og:image" content="https://joshlake.ai/images/pareto-frontier.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@jlake1">
+<meta name="twitter:title" content="Robots Are the Missing Workforce for Electrification">
+<meta name="twitter:description" content="The electrify everything movement has a labor problem. Robots will change parts of the equation — but probably not the parts you think.">
+<meta name="twitter:image" content="https://joshlake.ai/images/pareto-frontier.png">
+<meta name="author" content="Josh Lake">
+<link rel="canonical" href="https://joshlake.ai/writing/robots-electrification">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --accent: #e85d26;
+    --accent-dark: #c44d1e;
+    --border: #e0ddd8;
+    --card-bg: #f3f2ee;
+    --link: #2563eb;
+    --green: #16a34a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.78; font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 16px 32px;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .nav a { text-decoration: none; color: var(--text); font-weight: 700; font-size: 15px; }
+  .nav .back { color: var(--text-secondary); font-weight: 500; font-size: 14px; }
+  .nav .back:hover { color: var(--accent); }
+  .article-container { max-width: 740px; margin: 0 auto; padding: 120px 24px 80px; }
+  .article-meta {
+    font-family: 'DM Sans', sans-serif; font-size: 14px;
+    color: var(--text-secondary); text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(32px, 5vw, 44px); font-weight: 700;
+    line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px;
+  }
+  .article-lede { font-size: 20px; line-height: 1.7; margin-bottom: 40px; }
+  h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 28px; font-weight: 700;
+    margin-top: 52px; margin-bottom: 18px; line-height: 1.25;
+  }
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px; font-weight: 700;
+    margin-top: 32px; margin-bottom: 10px;
+  }
+  p { margin-bottom: 20px; }
+  a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  strong { font-weight: 600; }
+  .hero-image {
+    margin: 0 -60px 40px; border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--border); background: #f0eeea;
+  }
+  .hero-image img { width: 100%; height: auto; display: block; }
+  .image-caption {
+    font-family: 'DM Sans', sans-serif; font-size: 13px;
+    color: var(--text-secondary); padding: 10px 16px;
+    line-height: 1.5; background: var(--card-bg);
+  }
+  .product-card {
+    display: flex; gap: 20px; margin: 24px 0; padding: 20px;
+    background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .product-card img {
+    width: 160px; height: 110px; object-fit: cover;
+    border-radius: 6px; flex-shrink: 0; background: #ddd;
+  }
+  .product-card .product-info { flex: 1; }
+  .product-card .product-label {
+    font-family: 'DM Sans', sans-serif; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--accent); margin-bottom: 4px; font-weight: 600;
+  }
+  .product-card h4 { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .product-card h4 a { text-decoration: none; color: var(--text); }
+  .product-card h4 a:hover { color: var(--accent); }
+  .product-card p { font-size: 15px; line-height: 1.6; margin-bottom: 0; color: var(--text-secondary); }
+  .callout {
+    margin: 32px 0; padding: 24px 28px;
+    background: #fef3e8; border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0; font-size: 17px; line-height: 1.7;
+  }
+  .prediction-box {
+    margin: 24px 0; padding: 24px 28px;
+    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+    border: 1px solid #bbf7d0; border-radius: 8px;
+  }
+  .prediction-box .prediction-label {
+    font-family: 'DM Sans', sans-serif; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--green); font-weight: 700; margin-bottom: 8px;
+  }
+  .prediction-box p { margin-bottom: 0; }
+  .stat-row { display: flex; gap: 16px; margin: 28px 0; flex-wrap: wrap; }
+  .stat-card {
+    flex: 1; min-width: 140px; padding: 18px;
+    background: var(--card-bg); border-radius: 8px;
+    border: 1px solid var(--border); text-align: center;
+  }
+  .stat-card .stat-number {
+    font-family: 'DM Sans', sans-serif; font-size: 30px;
+    font-weight: 700; color: var(--accent); line-height: 1.1;
+  }
+  .stat-card .stat-label {
+    font-family: 'DM Sans', sans-serif; font-size: 13px;
+    color: var(--text-secondary); margin-top: 6px; line-height: 1.4;
+  }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .two-col .col { padding: 20px; border-radius: 8px; border: 1px solid var(--border); }
+  .two-col .col h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+  .two-col .col p { font-size: 15px; line-height: 1.6; margin-bottom: 8px; }
+  .two-col .col p:last-child { margin-bottom: 0; }
+  .col-up { background: #fef2f2; }
+  .col-up h4 { color: #dc2626; }
+  .col-down { background: #f0fdf4; }
+  .col-down h4 { color: #16a34a; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 44px 0; }
+  .footer-links {
+    margin-top: 44px; padding: 24px;
+    background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+  }
+  .footer-links h3 { font-family: 'DM Sans', sans-serif; margin-top: 0; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .footer-links p { font-size: 15px; line-height: 1.6; margin-bottom: 8px; }
+  .disclosure {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.7;
+    margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  .author-block { margin-top: 20px; font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+  .version { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #999; margin-top: 20px; }
+  @media (max-width: 768px) {
+    .hero-image { margin: 0 -12px 32px; }
+    .product-card { flex-direction: column; }
+    .product-card img { width: 100%; height: 180px; }
+    .stat-row { flex-direction: column; }
+    .two-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="https://joshlake.ai/">JL</a>
+  <a href="https://joshlake.ai/#writing" class="back">All Writing</a>
+</nav>
+
+<article class="article-container">
+<div class="article-meta">April 2026</div>
+
+<h1>Robots Are the Missing Workforce for Electrification</h1>
+
+<p class="article-lede">The electrify everything movement has a labor problem. We know what to build. We know how to build it. We just don't have enough humans to do it fast enough. Robots will change parts of that equation. But probably not the parts you think.</p>
+
+<div class="hero-image">
+  <img src="/images/pareto-frontier.png" alt="The Physical AI Pareto Frontier showing environment complexity vs manipulation complexity for different robot types in 2026">
+  <div class="image-caption">The Physical AI Pareto Frontier: environment vs. manipulation complexity for robotics in 2026. The robots that matter most for electrification aren't the humanoids. They're inside the green zone. Source: <a href="https://siddharth.website" target="_blank">siddharth.website</a></div>
+</div>
+
+<p>I spent five years building an electrification company. We electrified thousands of homes across three states. And the single biggest constraint we faced wasn't technology, wasn't customer demand, wasn't regulatory. It was people. Finding enough skilled HVAC technicians, electricians, and installers to keep up with the work.</p>
+
+<p>The U.S. construction industry needs approximately 349,000 net new workers in 2026 and 456,000 in 2027, on top of normal hiring. The average HVAC tech is 55 years old. Demand for HVAC engineers is up 67% since 2022. Half of all construction employers report difficulty finding skilled applicants. Heat pumps outsold gas furnaces by 32% in 2024. The demand curve for electrification is exponential. The labor supply curve is flat to declining.</p>
+
+<div class="stat-row">
+  <div class="stat-card">
+    <div class="stat-number">349K</div>
+    <div class="stat-label">Net new construction workers needed in 2026</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">67%</div>
+    <div class="stat-label">Increase in HVAC engineer demand since 2022</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">55</div>
+    <div class="stat-label">Average age of an HVAC technician</div>
+  </div>
+</div>
+
+<p>Look at the Pareto frontier image above. It maps where robotics works today (green), what's emerging (orange), and what's still unsolved (red). The robots grabbing headlines are the humanoids in the top-right corner. The robots actually accelerating electrification are in the bottom-left: solar installation robots, warehouse AMRs, and industrial arms operating in structured environments with repeated tasks.</p>
+
+<h2>Solar robots are already here, and they're fast</h2>
+
+<p>The most visible intersection of robots and electrification is utility-scale solar. And it's not theoretical. It's shipping.</p>
+
+<div class="product-card">
+  <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=360&h=240&fit=crop" alt="Utility-scale solar farm">
+  <div class="product-info">
+    <div class="product-label">100 MW Milestone · April 2026</div>
+    <h4><a href="https://www.aes.com/about-us/innovation/maximo">Maximo (AES)</a></h4>
+    <p>First AI-powered robot to complete a 100 MW utility-scale solar installation. Installs at nearly double the rate of traditional crews. Backed by NVIDIA Inception and AWS.</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=360&h=240&fit=crop" alt="Solar panels on tracker system">
+  <div class="product-info">
+    <div class="product-label">Autonomous Factory · Shipping 2026</div>
+    <h4><a href="https://terabase.energy">Terafab V2 (Terabase Energy)</a></h4>
+    <p>Mobile "factory" deployed to solar construction sites. Pre-assembles panels onto torque tubes, then uses autonomous rovers for placement. A single line installs 20+ MW per week. Goal: a gigawatt in 10 weeks.</p>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=360&h=240&fit=crop" alt="Solar farm construction">
+  <div class="product-info">
+    <div class="product-label">250 MW Project · Australia</div>
+    <h4><a href="https://luminousrobotics.com">Lumi 4 (Luminous Robotics)</a></h4>
+    <p>Boston-based. Nearly 600,000 panels at the 250 MW Goorambat East Solar Farm, most robot-installed. 60 modules per hour, estimated 30% cost reduction.</p>
+  </div>
+</div>
+
+<p>Why does solar work for robots now? A solar farm is "structured outdoor" with "repeated task" manipulation. Flat ground, consistent components, repetitive placement. The U.S. needs to build roughly 100 GW of solar per year by 2030. At that scale, the labor constraint becomes a binding constraint and robots become the only viable path.</p>
+
+<div class="prediction-box">
+  <div class="prediction-label">Prediction #1</div>
+  <p><strong>By 2030, the majority of utility-scale solar in the U.S. will be installed with robotic assistance.</strong> The labor constraint is too severe and the technology is proven. Every major EPC will either develop or license robotic installation within five years.</p>
+</div>
+
+<h2>Your HVAC installer's job is safe</h2>
+
+<p>Now for the honest part. Residential HVAC, plumbing, and electrical is where the electrification rubber meets the road: the heat pump install, the panel upgrade, the water heater swap. And this is where robots are essentially useless for the foreseeable future.</p>
+
+<p>Installing a heat pump requires navigating a basement, running refrigerant lines through walls, connecting electrical circuits, mounting an outdoor unit on uneven ground, and commissioning a system with dozens of variables. That's "semi-structured" to "arbitrary spaces" on the environment axis and "varied manipulation" on the complexity axis. Orange-to-red territory on the Pareto frontier.</p>
+
+<p><strong>Nobody is sending a robot into your basement to install a Mitsubishi hyper-heating heat pump anytime soon.</strong> Every house is different. Every crawlspace is a unique horror show. Every line set run requires problem-solving that current robotics simply cannot do.</p>
+
+<p>The same goes for plumbing and electrical. Replacing a gas water heater with a heat pump water heater means dealing with condensate drainage, expansion tanks, mixing valves, and rerouting plumbing in spaces never designed for it. Residential electrical work requires reading existing wiring, making judgment calls about load capacity, and physically working in tight junction boxes. These are "arbitrary spaces, varied manipulation" problems.</p>
+
+<p>Tesla began production of its Optimus Gen 3 humanoid in January 2026. Musk projects a price of $20,000-$30,000. But on the Q4 2025 earnings call, he acknowledged the robots are not doing "useful work" yet. And robotics expert Rodney Brooks, co-founder of Roomba creator iRobot, has called humanoid general-purpose assistants "pure fantasy thinking."</p>
+
+<div class="callout">
+  <strong>Where robots indirectly impact residential work:</strong> Manufacturing (more consistent heat pump production), prefabrication (moving complexity from jobsite to factory), AI-powered site assessment (drones and computer vision for pre-install surveys), and supply chain logistics (warehouse AMRs). None of these replace the installer. They make the installer more productive.
+</div>
+
+<h2>Will heat pumps get cheaper? It's complicated.</h2>
+
+<p>Here's where I need to resist the temptation to make a clean prediction, because the forces acting on heat pump pricing are pushing in opposite directions simultaneously.</p>
+
+<div class="two-col">
+  <div class="col col-up">
+    <h4>&#x2191; Forces pushing prices up</h4>
+    <p><strong>Refrigerant transition.</strong> The shift from R-410A to R-454B and R-32 is the single biggest cost driver. R-454B is mildly flammable (A2L), requiring redesigned safety components, leak detection sensors, and new manufacturing. Honeywell announced a 42% surcharge on R-454B, on top of earlier 15% and 8% hikes. Equipment manufacturing costs are up 15-20% from A2L safety requirements alone.</p>
+    <p><strong>Tariffs.</strong> Adding cost at every layer: raw materials, components, and finished equipment. R-454B supply can't be met domestically, so imports face additional tariff exposure.</p>
+    <p><strong>Labor costs.</strong> 110,000+ unfilled technician positions. 5:2 retirement-to-replacement ratio. Wages rising 5-10% annually. A2L certification adds new training requirements.</p>
+    <p><strong>Component competition.</strong> Heat pump manufacturers compete with Tesla, NVIDIA, and Apple for chips, sensors, and power electronics.</p>
+    <p><strong>Rising efficiency floors.</strong> DOE SEER2 standards raised the minimum in 2023. The floor will rise again. Each step adds capability and cost.</p>
+  </div>
+  <div class="col col-down">
+    <h4>&#x2193; Forces pushing prices down</h4>
+    <p><strong>New entrants.</strong> <a href="https://www.quilt.com">Quilt</a> makes the most efficient ductless mini-split on the market, with OTA software updates that unlocked 20% additional capacity for free. <a href="https://gradientcomfort.com">Gradient</a> makes a 120V window heat pump that installs in under an hour with no electrician, no permits, no panel upgrade. 30,000 units going into NYC public housing.</p>
+    <p><strong>Software-defined hardware.</strong> Quilt's approach (more sensors, continuous learning, OTA updates) means performance improves after purchase. That changes the value equation even if sticker price stays flat.</p>
+    <p><strong>Manufacturing scale.</strong> Global installed heat pumps projected to grow from 180 million (2020) to 600 million by 2030. Scale drives unit economics down.</p>
+    <p><strong>Simplified form factors.</strong> Gradient's installed cost is predicted to be 69% lower than mini-splits and 85% lower than VRFs. Different product, but it opens the market to buildings previously considered "un-electrifiable."</p>
+    <p><strong>Incentive stacking.</strong> Federal, state, utility, and local incentives can still cover 30-60% of project costs in many markets.</p>
+  </div>
+</div>
+
+<p>My honest read: <strong>the sticker price of a traditional ducted or ductless heat pump will continue rising 5-10% annually for at least two to three more years.</strong> The refrigerant transition, tariffs, and labor costs are too strong. Lennox took 7-10% in early 2026 alone. A system that cost $7,000 in 2024 is running $10,000-$12,000 now.</p>
+
+<p>But sticker price isn't the whole story.</p>
+
+<p>Quilt's 3-zone system, built by veterans from Google, Apple, Nest, and Tesla, is the most efficient three-zone ductless system available (SEER2 of 25.3), maintaining 100% capacity down to -5°F. They have 65+ installation partners across 17 states and 6 Canadian provinces. They recently shipped an OTA update that unlocked 20% additional heating capacity to every unit in the field, for free. No service visit. That's not a heat pump. That's a platform.</p>
+
+<p>Gradient's window units are deployed across 200+ residences in Boston, Detroit, and D.C. Their Nexus software turns distributed units into a building-wide coordinated system. One building cut energy consumption 25% overnight by setting temperature guardrails. They install in hours without electrical upgrades, targeting the millions of pre-1947 buildings that no traditional HVAC contractor would touch.</p>
+
+<div class="prediction-box">
+  <div class="prediction-label">Prediction #2</div>
+  <p><strong>Equipment sticker prices will keep climbing, but the effective cost of electrification will fall.</strong> New form factors (Gradient, Quilt, Midea's compact indoor unit), simplified installation, software-defined performance, and creative incentive stacking will bring electrification within reach of buildings that were previously uneconomical. The price of a traditional Carrier or Lennox system won't save you. The market expanding around it will.</p>
+</div>
+
+<h2>Where robotics actually changes the math</h2>
+
+<p>If robots aren't installing heat pumps and equipment isn't getting cheaper, where does robotics matter for electrify everything?</p>
+
+<p><strong>Solar cost and speed.</strong> Robotic installation drives down grid electricity costs, which sets the economic baseline that electrification competes against. Cheaper grid electricity makes heat pumps more cost-effective vs. gas, EV charging cheaper, and battery storage more attractive.</p>
+
+<p><strong>EV manufacturing.</strong> EVs are already the most robot-intensive products on the planet. As robotic manufacturing improves, EV costs come down. The battery, motor, and power electronics R&amp;D flowing between EV and robotics programs feeds both directions.</p>
+
+<p><strong>Prefabrication.</strong> This is the bridge that matters most for residential electrification. Move complexity from the unstructured jobsite (where robots can't help) to the structured factory (where they can). Pre-built line sets, pre-wired assemblies, pre-configured controls.</p>
+
+<div class="prediction-box">
+  <div class="prediction-label">Prediction #3</div>
+  <p><strong>The residential HVAC labor shortage will be partially offset not by robots in homes, but by prefabrication in factories and simplified product designs that require less skilled labor to install.</strong> The Gradient model (plug it in, done) and the Quilt model (fewer outdoor units, smarter software) point toward a future where the skill barrier for installation drops. Robots help in the factory. Simpler products help on the jobsite.</p>
+</div>
+
+<h2>What I'd tell a friend</h2>
+
+<p>Don't wait for robots to make your install cheaper. That's not happening this decade for residential work. The labor shortage making it hard to get an installer on the phone? It's getting worse before anything makes it better. Book early.</p>
+
+<p>Watch the new entrants. Quilt and Gradient are building heat pumps the way Tesla built cars: hardware that gets better through software. If your building is hard to reach with traditional HVAC, look at Gradient's window units. If you want the most efficient ductless system on the market, look at Quilt.</p>
+
+<p>Don't assume prices will drop if you wait. Refrigerant transition, tariffs, and labor are all pushing equipment prices higher. Incentive programs change constantly. The best deal might be today, not next year.</p>
+
+<p>The future is electric. Robots will accelerate the supply side: solar, manufacturing, grid. Humans will handle the last mile, your basement, your panel, your line set, for a long time. The bottleneck was never the technology. It's the people. We need more of them, and we need to make the work they do as simple as possible.</p>
+
+<hr>
+
+<div class="footer-links">
+  <h3>Free Tools</h3>
+  <p><a href="https://electrifyeverythingnow.com/deathclock">Appliance Death Clock</a> &mdash; See when your furnace, AC, and water heater are likely to fail so you can plan the electric upgrade.</p>
+  <p><a href="https://electrifyeverythingnow.com/solar">Plug-In Solar Calculator</a> &mdash; Estimate savings from balcony or plug-in solar panels for your state.</p>
+  <h3 style="margin-top: 16px;">Related Reading</h3>
+  <p><a href="https://joshlake.ai/writing/panel-upgrade-myth">You Probably Don't Need a Panel Upgrade</a> &mdash; The most expensive lie in home electrification, and the creative tools proving it wrong.</p>
+  <p><a href="https://joshlake.ai/writing/electrification-sequencing">The Electrification Sequencing Problem</a> &mdash; What should you electrify first? A decision framework for homeowners.</p>
+</div>
+
+<div class="disclosure">
+  <p><strong>Disclosure:</strong> Josh Lake is the co-founder and former CTO of <a href="https://www.elephantenergy.com">Elephant Energy</a>, a home electrification company, and the founder of <a href="https://electrifyeverythingnow.com">Electrify Everything Now</a>. He has a professional and financial interest in the electrification industry. This article reflects his honest assessment based on five years of operational experience. He has no financial relationship with any of the companies or products mentioned.</p>
+</div>
+
+<div class="author-block">
+  <p><strong>Josh Lake</strong> is the co-founder and former CTO of <a href="https://www.elephantenergy.com">Elephant Energy</a>, where he spent five years building the platform and team that electrified thousands of homes. He now builds <a href="https://franklintimberco.com">Infinite Timber</a> and <a href="https://electrifyeverythingnow.com">Electrify Everything Now</a>, free tools to help homeowners navigate the path to electrification.</p>
+  <p>Find him on <a href="https://linkedin.com/in/lakejosh">LinkedIn</a> and <a href="https://x.com/jlake1">X</a>, or go back to <a href="https://joshlake.ai">joshlake.ai</a>.</p>
+</div>
+
+<div class="version">v1.0 // April 13, 2026</div>
+
+</article>
+</body>
+</html>
