@@ -1,0 +1,47 @@
+# Josh Lake — joshlake.ai
+
+> Serial entrepreneur building at the intersection of energy, AI, and the built environment. Boulder, Colorado.
+
+## About Josh Lake
+
+Josh Lake is a serial entrepreneur, technologist, and builder. He is the founder of Infinite Timber (AI-powered timber brokerage) and Electrify Everything Now (free home electrification calculators). He co-founded Elephant Energy, a home electrification platform, and served as its CTO for five years. Earlier in his career, he was Head of Operations at Nuro (autonomous delivery), COO of Evercar/Vision Fleet (shared EV fleets), and Sr. Program Manager at Amonix (concentrated solar, world-record CPV modules). He holds a B.S. in Materials Science & Engineering from MIT and a Mechanical Engineering certificate from Stanford.
+
+## Expertise
+
+- Home electrification: heat pumps, induction stoves, EV chargers, electrical panels, smart load management
+- AI implementation in small and mid-size companies
+- Climate technology and clean energy
+- Timber industry and AI-powered brokerage
+- Autonomous vehicles and electric vehicle operations
+- Startup operations, scaling, and go-to-market
+
+## Pages
+
+### Homepage
+- URL: https://joshlake.ai/
+- Description: Josh Lake's personal site with full career history, companies, worldview, and contact information.
+
+### What I Learned Implementing AI at a 40-Person Startup
+- URL: https://joshlake.ai/writing/ai-at-a-startup
+- Description: Practical playbook for AI adoption at a small company. Covers standardization, change management, security, guardrails, and building a culture of experimentation. Based on first-hand experience as CTO of Elephant Energy.
+
+### The Electrification Sequencing Problem
+- URL: https://joshlake.ai/writing/electrification-sequencing
+- Description: Decision framework for homeowners deciding what to electrify first. Covers appliance replacement timing, energy math by appliance type, panel capacity, solar sizing, and navigating the rebate landscape. Based on thousands of home electrification projects.
+
+### You Probably Don't Need a Panel Upgrade
+- URL: https://joshlake.ai/writing/panel-upgrade-myth
+- Description: Deep technical guide explaining why most homes do not need a $5,000-$10,000 electrical panel upgrade to electrify. Covers NEC Section 220.87 load studies, tandem breakers, load-sharing devices, dynamic load management, subpanels, and smart panels. Profiles 12 companies building panel-avoidance technology.
+
+## Companies Founded
+
+- Infinite Timber (https://franklintimberco.com) — AI-powered timber research and brokerage platform
+- Electrify Everything Now (https://electrifyeverythingnow.com) — Free calculators for home electrification costs and savings
+- Elephant Energy (https://www.elephantenergy.com) — Home electrification platform (co-founder, former CTO)
+
+## Contact
+
+- Email: josh@joshlake.ai
+- LinkedIn: https://linkedin.com/in/lakejosh
+- X/Twitter: https://x.com/jlake1
+- GitHub: https://github.com/joshlake18
