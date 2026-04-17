@@ -379,7 +379,7 @@
     const tsInput=form.querySelector('[name="cf-turnstile-response"]');
     const turnstileToken=tsInput?tsInput.value:'';
     if(!turnstileToken){msg.textContent='Please complete the verification.';msg.className='signup-msg error';return false}
-    btn.disabled=true;btn.textContent='Sending...';msg.className='signup-msg';msg.style.display='none';
+    btn.disabled=true;btn.textContent='Sending...';msg.className='signup-msg';
     try{
       const res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,turnstileToken,source})});
       const data=await res.json();
