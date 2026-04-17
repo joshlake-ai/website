@@ -20,6 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
   :root {
     --bg: #FAFAF7;
@@ -159,12 +160,27 @@
   }
   .author-block { margin-top: 20px; font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
   .version { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #999; margin-top: 20px; }
+  .signup-box { margin-top: 44px; padding: 24px; background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border); }
+  .signup-label { font-family: 'DM Sans', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+  .signup-text { font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 16px; }
+  .signup-form { display: flex; gap: 12px; align-items: flex-start; }
+  .signup-input { flex: 1; font-family: 'DM Sans', sans-serif; font-size: 15px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 6px; background: #fff; color: var(--text); outline: none; transition: border-color 0.3s; }
+  .signup-input:focus { border-color: var(--accent); }
+  .signup-input::placeholder { color: #999; }
+  .signup-btn { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 12px 24px; background: var(--accent); color: #fff; border: none; border-radius: 6px; cursor: pointer; transition: background 0.3s; white-space: nowrap; }
+  .signup-btn:hover { background: var(--accent-dark); }
+  .signup-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .signup-msg { font-family: 'DM Sans', sans-serif; font-size: 14px; margin-top: 12px; display: none; }
+  .signup-msg.success { color: var(--green); display: block; }
+  .signup-msg.error { color: #dc2626; display: block; }
   @media (max-width: 768px) {
     .hero-image { margin: 0 -12px 32px; }
     .product-card { flex-direction: column; }
     .product-card img { width: 100%; height: 180px; }
     .stat-row { flex-direction: column; }
     .two-col { grid-template-columns: 1fr; }
+    .signup-form { flex-direction: column; }
+    .signup-btn { width: 100%; }
   }
 </style>
 </head>
@@ -333,6 +349,17 @@
   <p><a href="https://joshlake.ai/writing/electrification-sequencing">The Electrification Sequencing Problem</a> &mdash; What should you electrify first? A decision framework for homeowners.</p>
 </div>
 
+<div class="signup-box">
+  <div class="signup-label">Enjoy this kind of writing?</div>
+  <p class="signup-text">I write about energy, AI, and building companies. Subscribe for occasional updates.</p>
+  <form class="signup-form" data-source="writing/robots-electrification" onsubmit="return handleSignup(event)">
+    <input type="email" class="signup-input" placeholder="you@example.com" required aria-label="Email address">
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAAC_Cyx-FA4dfM_bL" data-theme="light" data-size="compact"></div>
+    <button type="submit" class="signup-btn">Subscribe</button>
+  </form>
+  <div class="signup-msg" aria-live="polite"></div>
+</div>
+
 <div class="disclosure">
   <p><strong>Disclosure:</strong> Josh Lake is the co-founder and former CTO of <a href="https://www.elephantenergy.com">Elephant Energy</a>, a home electrification company, and the founder of <a href="https://electrifyeverythingnow.com">Electrify Everything Now</a>. He has a professional and financial interest in the electrification industry. This article reflects his honest assessment based on five years of operational experience. He has no financial relationship with any of the companies or products mentioned.</p>
 </div>
@@ -345,5 +372,22 @@
 <div class="version">v1.0 // April 13, 2026</div>
 
 </article>
+<script>
+  async function handleSignup(e){
+    e.preventDefault();
+    const form=e.target,btn=form.querySelector('.signup-btn'),msg=form.parentElement.querySelector('.signup-msg'),email=form.querySelector('.signup-input').value.trim(),source=form.dataset.source||'unknown';
+    const tsInput=form.querySelector('[name="cf-turnstile-response"]');
+    const turnstileToken=tsInput?tsInput.value:'';
+    if(!turnstileToken){msg.textContent='Please complete the verification.';msg.className='signup-msg error';return false}
+    btn.disabled=true;btn.textContent='Sending...';msg.className='signup-msg';msg.style.display='none';
+    try{
+      const res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,turnstileToken,source})});
+      const data=await res.json();
+      if(data.success){msg.textContent="You're in. Welcome aboard.";msg.className='signup-msg success';form.querySelector('.signup-input').value='';if(window.turnstile)turnstile.reset(form.querySelector('.cf-turnstile'))}
+      else{msg.textContent=data.error||'Something went wrong. Try again.';msg.className='signup-msg error'}
+    }catch(err){msg.textContent='Network error. Please try again.';msg.className='signup-msg error'}
+    btn.disabled=false;btn.textContent='Subscribe';return false
+  }
+</script>
 </body>
 </html>

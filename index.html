@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Font preload removed: Google Fonts CDN URL was stale (404). Font loads via stylesheet below. -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root {
       --cream: #f7f5f0;
@@ -274,7 +275,26 @@
       .topbooks-grid { grid-template-columns: 1fr !important; }
       .photo-gallery { grid-template-columns: 1fr 1fr; }
       .photo-gallery img { height: 140px; }
+      .signup-form { flex-direction: column; }
+      .signup-btn { width: 100%; }
     }
+
+    .signup-box { margin-top: 48px; padding: 32px; background: var(--gold-faint); border: 1px solid rgba(139,105,20,0.12); }
+    .signup-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .signup-text { font-family: var(--sans); font-size: 14px; line-height: 1.8; color: var(--gray-soft); font-weight: 300; margin-bottom: 20px; }
+    .signup-form { display: flex; gap: 12px; align-items: flex-start; }
+    .signup-input { flex: 1; font-family: var(--sans); font-size: 14px; padding: 12px 16px; border: 1px solid rgba(26,26,26,0.15); background: #fff; color: var(--ink); outline: none; transition: border-color 0.3s; }
+    .signup-input:focus { border-color: var(--gold); }
+    .signup-input::placeholder { color: var(--gray-mid); }
+    .signup-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 12px 24px; background: var(--gold); color: #fff; border: none; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+    .signup-btn:hover { background: #7a5c10; }
+    .signup-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .signup-msg { font-family: var(--sans); font-size: 13px; margin-top: 12px; display: none; }
+    .signup-msg.success { color: #0D9448; display: block; }
+    .signup-msg.error { color: #c82828; display: block; }
+    html.dark .signup-box { background: rgba(196,152,42,0.06); border-color: rgba(196,152,42,0.15); }
+    html.dark .signup-input { background: #2a2a2a; border-color: rgba(232,228,220,0.12); color: #e8e4dc; }
+    html.dark .signup-input::placeholder { color: #777; }
   </style>
   <script type="application/ld+json">
   {
@@ -916,6 +936,16 @@
             <p class="focus-text" style="margin-bottom:12px"><strong>Reading:</strong> The Nvidia Way (Tae Kim)</p>
             <p class="focus-text"><strong>Last updated:</strong> April 2026</p>
           </div>
+          <div class="signup-box">
+            <div class="signup-label">Stay in the loop</div>
+            <p class="signup-text">Occasional essays on energy, AI, and building companies. No spam. Unsubscribe anytime.</p>
+            <form class="signup-form" data-source="homepage" onsubmit="return handleSignup(event)">
+              <input type="email" class="signup-input" placeholder="you@example.com" required aria-label="Email address">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAC_Cyx-FA4dfM_bL" data-theme="auto" data-size="compact"></div>
+              <button type="submit" class="signup-btn">Subscribe</button>
+            </form>
+            <div class="signup-msg" aria-live="polite"></div>
+          </div>
           <div class="photo-slot" style="margin-top:48px"><img src="images/josh-rachael.jpg" alt="Josh and Rachael Lake, circa 2007" loading="lazy"></div>
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin-top:8px;">Circa 2007</div>
         </div>
@@ -947,6 +977,22 @@
     const fadeEls=document.querySelectorAll('.v-card,.belief,.explore-card,.een-tool');
     const fadeObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';fadeObs.unobserve(e.target)}})},{threshold:0.1});
     fadeEls.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.6s ease, transform 0.6s ease';fadeObs.observe(el)});
+
+    async function handleSignup(e){
+      e.preventDefault();
+      const form=e.target,btn=form.querySelector('.signup-btn'),msg=form.parentElement.querySelector('.signup-msg'),email=form.querySelector('.signup-input').value.trim(),source=form.dataset.source||'unknown';
+      const tsInput=form.querySelector('[name="cf-turnstile-response"]');
+      const turnstileToken=tsInput?tsInput.value:'';
+      if(!turnstileToken){msg.textContent='Please complete the verification.';msg.className='signup-msg error';return false}
+      btn.disabled=true;btn.textContent='Sending...';msg.className='signup-msg';msg.style.display='none';
+      try{
+        const res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,turnstileToken,source})});
+        const data=await res.json();
+        if(data.success){msg.textContent="You're in. Welcome aboard.";msg.className='signup-msg success';form.querySelector('.signup-input').value='';if(window.turnstile)turnstile.reset(form.querySelector('.cf-turnstile'))}
+        else{msg.textContent=data.error||'Something went wrong. Try again.';msg.className='signup-msg error'}
+      }catch(err){msg.textContent='Network error. Please try again.';msg.className='signup-msg error'}
+      btn.disabled=false;btn.textContent='Subscribe';return false
+    }
   </script>
 </body>
 </html>
