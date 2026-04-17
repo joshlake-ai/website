@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root {
       --cream: #f7f5f0;
@@ -85,6 +86,20 @@
     .post-footer p { font-size: 14px; color: var(--gray-mid); }
     .post-footer a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
 
+    .signup-box { margin-top: 48px; padding: 32px; background: var(--gold-faint); border: 1px solid rgba(139,105,20,0.12); border-radius: 8px; }
+    .signup-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .signup-text { font-family: var(--sans); font-size: 14px; line-height: 1.8; color: var(--gray-soft); font-weight: 300; margin-bottom: 20px; }
+    .signup-form { display: flex; gap: 12px; align-items: flex-start; }
+    .signup-input { flex: 1; font-family: var(--sans); font-size: 14px; padding: 12px 16px; border: 1px solid rgba(26,26,26,0.15); border-radius: 4px; background: #fff; color: var(--ink); outline: none; transition: border-color 0.3s; }
+    .signup-input:focus { border-color: var(--gold); }
+    .signup-input::placeholder { color: var(--gray-mid); }
+    .signup-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 12px 24px; background: var(--gold); color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+    .signup-btn:hover { background: #7a5c10; }
+    .signup-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .signup-msg { font-family: var(--sans); font-size: 13px; margin-top: 12px; display: none; }
+    .signup-msg.success { color: #0D9448; display: block; }
+    .signup-msg.error { color: #c82828; display: block; }
+
     @media (max-width: 600px) {
       h1 { font-size: 32px; }
       article { padding: 100px 20px 60px; }
@@ -92,6 +107,8 @@
       .company-grid { grid-template-columns: 1fr; }
       table { font-size: 12px; }
       th, td { padding: 8px 10px; }
+      .signup-form { flex-direction: column; }
+      .signup-btn { width: 100%; }
     }
   </style>
 </head>
@@ -352,6 +369,17 @@
       <strong style="color:var(--gray-soft);">Disclosure:</strong> Josh Lake is the co-founder and former CTO of <a href="https://www.elephantenergy.com" style="color:var(--gray-soft);">Elephant Energy</a>, a home electrification company, and the founder of <a href="https://electrifyeverythingnow.com" style="color:var(--gray-soft);">Electrify Everything Now</a>, which offers free electrification calculators. He has a professional and financial interest in the electrification industry. This article reflects his honest assessment based on five years of operational experience. He has no financial relationship with any of the third-party companies or products profiled in this article.
     </div>
 
+    <div class="signup-box">
+      <div class="signup-label">Enjoy this kind of writing?</div>
+      <p class="signup-text">I write about energy, AI, and building companies. Subscribe for occasional updates.</p>
+      <form class="signup-form" data-source="writing/panel-upgrade-myth" onsubmit="return handleSignup(event)">
+        <input type="email" class="signup-input" placeholder="you@example.com" required aria-label="Email address">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAABfMKCMmMVVjbFe1" data-theme="light" data-size="compact"></div>
+        <button type="submit" class="signup-btn">Subscribe</button>
+      </form>
+      <div class="signup-msg" aria-live="polite"></div>
+    </div>
+
     <div class="post-footer">
       <p><strong>Josh Lake</strong> is the co-founder and former CTO of <a href="https://www.elephantenergy.com">Elephant Energy</a>, where he spent five years leading the technology and operations that electrified thousands of homes. He now builds <a href="https://franklintimberco.com">Infinite Timber</a> and <a href="https://electrifyeverythingnow.com">Electrify Everything Now</a>, free tools to help homeowners navigate the path to electrification.</p>
       <p style="margin-top:16px">Find him on <a href="https://linkedin.com/in/lakejosh">LinkedIn</a> and <a href="https://x.com/jlake1">X</a>, or go back to <a href="/">joshlake.ai</a>.</p>
@@ -399,6 +427,23 @@
       }
     }
   }
+  </script>
+  <script>
+    async function handleSignup(e){
+      e.preventDefault();
+      const form=e.target,btn=form.querySelector('.signup-btn'),msg=form.parentElement.querySelector('.signup-msg'),email=form.querySelector('.signup-input').value.trim(),source=form.dataset.source||'unknown';
+      const tsInput=form.querySelector('[name="cf-turnstile-response"]');
+      const turnstileToken=tsInput?tsInput.value:'';
+      if(!turnstileToken){msg.textContent='Please complete the verification.';msg.className='signup-msg error';return false}
+      btn.disabled=true;btn.textContent='Sending...';msg.className='signup-msg';msg.style.display='none';
+      try{
+        const res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,turnstileToken,source})});
+        const data=await res.json();
+        if(data.success){msg.textContent="You're in. Welcome aboard.";msg.className='signup-msg success';form.querySelector('.signup-input').value='';if(window.turnstile)turnstile.reset(form.querySelector('.cf-turnstile'))}
+        else{msg.textContent=data.error||'Something went wrong. Try again.';msg.className='signup-msg error'}
+      }catch(err){msg.textContent='Network error. Please try again.';msg.className='signup-msg error'}
+      btn.disabled=false;btn.textContent='Subscribe';return false
+    }
   </script>
 </body>
 </html>
