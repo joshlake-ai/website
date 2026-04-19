@@ -136,25 +136,25 @@
     .also-list { display: flex; gap: 32px; flex-wrap: wrap; }
     .also-list span { font-family: var(--sans); font-size: 14px; color: #999; }
 
-    .worldview { padding: 160px 48px; background: var(--ink); color: var(--gray-light); }
+    .worldview { padding: 160px 48px; background: #fff; color: var(--ink); }
     .worldview-inner { max-width: 1200px; margin: 0 auto; }
     .worldview-heading { font-size: 42px; font-weight: 300; line-height: 1.2; margin-bottom: 80px; max-width: 800px; }
-    .belief { padding: 48px 0; border-bottom: 1px solid rgba(232,228,220,0.06); }
+    .belief { padding: 48px 0; border-bottom: 1px solid rgba(26,26,26,0.08); }
     .belief:last-of-type { border-bottom: none; }
     .belief-inner { display: grid; grid-template-columns: 80px 1fr; gap: 40px; }
-    .belief-num { font-family: var(--mono); font-size: 32px; color: rgba(139,105,20,0.4); font-weight: 700; }
+    .belief-num { font-family: var(--mono); font-size: 32px; color: var(--gold); font-weight: 700; }
     .belief-title { font-size: 26px; font-weight: 400; margin-bottom: 16px; }
-    .belief-text { font-family: var(--sans); font-size: 15px; line-height: 1.9; color: rgba(232,228,220,0.6); font-weight: 300; max-width: 640px; }
+    .belief-text { font-family: var(--sans); font-size: 15px; line-height: 1.9; color: var(--gray-soft); font-weight: 300; max-width: 640px; }
 
-    .reading { margin-top: 80px; padding-top: 60px; border-top: 1px solid rgba(232,228,220,0.08); }
-    .reading-label { font-family: var(--mono); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(139,105,20,0.6); margin-bottom: 32px; }
+    .reading { margin-top: 80px; padding-top: 60px; border-top: 1px solid rgba(26,26,26,0.08); }
+    .reading-label { font-family: var(--mono); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
     .reading-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-    .reading-col h4 { font-family: var(--sans); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: rgba(232,228,220,0.4); margin-bottom: 16px; font-weight: 500; }
+    .reading-col h4 { font-family: var(--sans); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 16px; font-weight: 500; }
     .reading-col ul { list-style: none; }
-    .reading-col li { font-family: var(--sans); font-size: 13px; color: rgba(232,228,220,0.45); padding: 6px 0; border-bottom: 1px solid rgba(232,228,220,0.04); }
-    .reading-col li span { color: rgba(232,228,220,0.25); }
-    .podcast-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 13px; color: var(--gold); text-decoration: none; margin-top: 24px; padding: 10px 20px; border: 1px solid rgba(139,105,20,0.3); transition: all 0.3s; }
-    .podcast-link:hover { background: rgba(139,105,20,0.1); border-color: var(--gold); }
+    .reading-col li { font-family: var(--sans); font-size: 13px; color: var(--gray-soft); padding: 6px 0; border-bottom: 1px solid rgba(26,26,26,0.04); }
+    .reading-col li span { color: var(--gray-mid); }
+    .podcast-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 13px; color: var(--gold); text-decoration: none; margin-top: 24px; padding: 10px 20px; border: 1px solid var(--gold-dim); transition: all 0.3s; }
+    .podcast-link:hover { background: var(--gold-faint); border-color: var(--gold); }
 
     .connect { padding: 160px 48px; background: var(--cream); }
     .connect-inner { max-width: 1200px; margin: 0 auto; }
@@ -263,6 +263,7 @@
     html.dark .een-showcase { background: linear-gradient(135deg, rgba(13,148,72,0.08) 0%, #222 60%); border-color: rgba(13,148,72,0.2); }
     html.dark .een-tool { background: #2a2a2a; border-color: rgba(232,228,220,0.08); color: #ccc; }
     html.dark .focus-box { background: rgba(196,152,42,0.06); border-color: rgba(196,152,42,0.15); }
+    html.dark .worldview { background: #222; }
 
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; font-size: 24px; color: var(--ink); line-height: 1; }
     @media (max-width: 600px) {
@@ -752,33 +753,37 @@
 
             <h4 style="margin-top:48px">Paid Newsletters</h4>
             <ul>
-              <li><a href="https://www.exponentialview.co/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Exponential View</a> <span>, Azeem Azhar</span></li>
-              <li><a href="https://www.construction-physics.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Construction Physics</a> <span>, Brian Potter</span></li>
-              <li><a href="https://saulgriffith.substack.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Energy & Stuff</a> <span>, Saul Griffith</span></li>
+              <li><a href="https://www.exponentialview.co/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Exponential View</a> <span>, Azeem Azhar</span></li>
+              <li><a href="https://www.construction-physics.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Construction Physics</a> <span>, Brian Potter</span></li>
+              <li><a href="https://saulgriffith.substack.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Energy & Stuff</a> <span>, Saul Griffith</span></li>
             </ul>
 
             <h4 style="margin-top:48px">Free Newsletters</h4>
             <ul>
-              <li><a href="https://www.ctvc.co/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">CTVC</a> <span>, climate tech VC</span></li>
-              <li><a href="https://rmi.org/insight/spark/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">RMI Spark</a></li>
-              <li><a href="https://www.superhuman.ai/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Superhuman AI</a> <span>, Zain Kahn</span></li>
-              <li><a href="https://www.ben-evans.com/newsletter" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Benedict Evans</a></li>
+              <li><a href="https://www.ctvc.co/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">CTVC</a> <span>, climate tech VC</span></li>
+              <li><a href="https://rmi.org/insight/spark/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">RMI Spark</a></li>
+              <li><a href="https://www.superhuman.ai/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Superhuman AI</a> <span>, Zain Kahn</span></li>
+              <li><a href="https://www.ben-evans.com/newsletter" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Benedict Evans</a></li>
+              <li><a href="https://robertbryce.substack.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Robert Bryce</a> <span>, energy & power</span></li>
+              <li><a href="https://www.distilled.earth/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Distilled</a> <span>, climate data</span></li>
+              <li><a href="https://thesequence.substack.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">TheSequence</a> <span>, ML/AI research</span></li>
+              <li><a href="https://globaldatacenterhub.substack.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Global Data Center Hub</a></li>
             </ul>
           </div>
           <div class="reading-col">
             <h4>Thinkers & Influences</h4>
             <ul>
-              <li><a href="https://en.wikipedia.org/wiki/Jeremy_Rifkin" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Jeremy Rifkin</a> <span>, zero marginal cost economics</span></li>
-              <li><a href="https://www.diamandis.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Peter Diamandis</a> <span>, abundance & moonshot thinking</span></li>
-              <li><a href="https://en.wikipedia.org/wiki/Vaclav_Smil" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Vaclav Smil</a> <span>, energy transitions</span></li>
-              <li><a href="https://saulgriffith.substack.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Saul Griffith</a> <span>, electrify everything</span></li>
-              <li><a href="https://tonyseba.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Tony Seba</a> <span>, technology disruption curves</span></li>
-              <li><a href="https://www.rewiringamerica.org" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(232,228,220,0.15)">Rewiring America</a> <span>, policy & deployment</span></li>
+              <li><a href="https://en.wikipedia.org/wiki/Jeremy_Rifkin" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Jeremy Rifkin</a> <span>, zero marginal cost economics</span></li>
+              <li><a href="https://www.diamandis.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Peter Diamandis</a> <span>, abundance & moonshot thinking</span></li>
+              <li><a href="https://en.wikipedia.org/wiki/Vaclav_Smil" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Vaclav Smil</a> <span>, energy transitions</span></li>
+              <li><a href="https://saulgriffith.substack.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Saul Griffith</a> <span>, electrify everything</span></li>
+              <li><a href="https://tonyseba.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Tony Seba</a> <span>, technology disruption curves</span></li>
+              <li><a href="https://www.rewiringamerica.org" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,26,26,0.15)">Rewiring America</a> <span>, policy & deployment</span></li>
             </ul>
 
             <div style="margin-top:48px">
-              <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(232,228,220,0.3);margin-bottom:12px">The Shelf</div>
-              <img src="images/bookshelf.jpg" alt="Josh Lake bookshelf, energy policy and startup books" loading="lazy" style="max-width:400px;border:1px solid rgba(232,228,220,0.08)">
+              <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:12px">The Shelf</div>
+              <img src="images/bookshelf.jpg" alt="Josh Lake bookshelf, energy policy and startup books" loading="lazy" style="max-width:400px;border:1px solid rgba(26,26,26,0.08)">
             </div>
           </div>
         </div>
@@ -863,6 +868,53 @@
         <div>
           <h3>Build in Public, Iterate Fast</h3>
           <p>Ship something real in hours, not months. AI makes it possible to build functional prototypes in a single sitting. The feedback loop between idea and working product has collapsed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY OS / LIFE STACK -->
+  <section class="worldview" id="stack" style="background:var(--cream);padding:120px 48px;">
+    <div class="worldview-inner">
+      <div class="section-label" style="color:var(--gold)">My OS</div>
+      <h2 class="story-heading">The tools and tech I use every day.</h2>
+      <p style="font-family:var(--sans);font-size:15px;line-height:1.8;color:var(--gray-soft);font-weight:300;max-width:700px;margin-bottom:64px;">I'm always refining the stack. These are the tools that survived.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+        <div>
+          <h4 style="font-family:var(--sans);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:20px;font-weight:500;">AI & Building</h4>
+          <div style="display:grid;gap:16px;">
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Claude Code</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Primary development environment. Multi-agent builds, MCP servers, full-stack shipping.</span></div>
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Anthropic API</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Backend AI. Agent orchestration, tool use, structured outputs.</span></div>
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Cursor</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">IDE for when I need a visual editor. Claude-powered autocomplete.</span></div>
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">ChatGPT</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Research, brainstorming, image generation. Deep Research for market analysis.</span></div>
+          </div>
+
+          <h4 style="font-family:var(--sans);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:20px;margin-top:48px;font-weight:500;">Infrastructure</h4>
+          <div style="display:grid;gap:16px;">
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Cloudflare</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Pages, Workers, DNS, Turnstile. Everything runs on the edge.</span></div>
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">GitHub</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Code, CI/CD, collaboration. Every project starts here.</span></div>
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Google Workspace</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Email, Sheets, Docs. Simple, reliable, everywhere.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-family:var(--sans);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:20px;font-weight:500;">Reading & Learning</h4>
+          <div style="display:grid;gap:16px;">
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Substack</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Primary reading app. Energy, AI, construction, data centers. 15+ active subscriptions.</span></div>
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Kindle</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Long-form reading. Energy policy, AI, startup war stories.</span></div>
+          </div>
+
+          <h4 style="font-family:var(--sans);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:20px;margin-top:48px;font-weight:500;">Hardware</h4>
+          <div style="display:grid;gap:16px;">
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">MacBook Pro</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Primary machine. Terminal + Claude Code is the whole workflow.</span></div>
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">iPad</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Reading, Substack, research on the go.</span></div>
+          </div>
+
+          <h4 style="font-family:var(--sans);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:20px;margin-top:48px;font-weight:500;">Home</h4>
+          <div style="display:grid;gap:16px;">
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Mitsubishi Hyper-Heat</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Cold-climate heat pump. Heats and cools the whole house. No gas.</span></div>
+            <div style="padding:20px;border:1px solid rgba(26,26,26,0.08);"><strong style="font-size:15px;">Induction Range</strong><br><span style="font-family:var(--sans);font-size:13px;color:var(--gray-soft);">Faster, cleaner, better than gas. Never going back.</span></div>
+          </div>
         </div>
       </div>
     </div>
