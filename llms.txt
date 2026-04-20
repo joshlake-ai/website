@@ -1,4 +1,4 @@
-# Josh Lake — joshlake.ai
+# Josh Lake, joshlake.ai
 
 > Serial entrepreneur building at the intersection of energy, AI, and the built environment. Colorado, USA.
 
@@ -35,9 +35,9 @@ Josh Lake is a serial entrepreneur, technologist, and builder. He is the founder
 
 ## Companies Founded
 
-- Infinite Timber (https://franklintimberco.com) — AI-powered timber research and brokerage platform
-- Electrify Everything Now (https://electrifyeverythingnow.com) — Free calculators for home electrification costs and savings
-- Elephant Energy (https://www.elephantenergy.com) — Home electrification platform (co-founder, former CTO)
+- Infinite Timber (https://franklintimberco.com), AI-powered timber research and brokerage platform
+- Electrify Everything Now (https://electrifyeverythingnow.com), free calculators for home electrification costs and savings
+- Elephant Energy (https://www.elephantenergy.com), home electrification platform (co-founder, former CTO)
 
 ## Contact
 
