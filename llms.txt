@@ -21,9 +21,9 @@ Josh Lake is a serial entrepreneur, technologist, and builder. He is the founder
 - URL: https://joshlake.ai/
 - Description: Josh Lake's personal site with full career history, companies, worldview, and contact information.
 
-### What I Learned Implementing AI at a 40-Person Startup
+### What I Learned Leading AI at Elephant
 - URL: https://joshlake.ai/writing/ai-at-a-startup
-- Description: Practical playbook for AI adoption at a small company. Covers standardization, change management, security, guardrails, and building a culture of experimentation. Based on first-hand experience as CTO of Elephant Energy.
+- Description: Practical playbook for AI adoption at a small company, based on leading the AI rollout at Elephant Energy. Covers leadership buy-in as the prerequisite, standardization, change management, security, guardrails, and building a culture of experimentation — framed as how the author would approach it if starting over at a different company.
 
 ### The Electrification Sequencing Problem
 - URL: https://joshlake.ai/writing/electrification-sequencing
