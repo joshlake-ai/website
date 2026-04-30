@@ -4,7 +4,7 @@
 
 ## About Josh Lake
 
-Josh Lake is a serial entrepreneur, technologist, and builder. He is the founder of Infinite Timber (AI-powered timber brokerage) and Electrify Everything Now (free home electrification calculators). He co-founded Elephant Energy, a home electrification platform, and served as its CTO for five years. Earlier in his career, he was Head of Operations at Nuro (autonomous delivery), COO of Evercar/Vision Fleet (shared EV fleets), and Sr. Program Manager at Amonix (concentrated solar, world-record CPV modules). He holds a B.S. in Materials Science & Engineering from MIT and a Mechanical Engineering certificate from Stanford.
+Josh Lake is a serial entrepreneur, technologist, and builder. He is the founder of Infinite Timber, starting with Franklin Timber Co. (AI-assisted timber assessment and landowner outreach) and Electrify Everything Now (free home electrification calculators). He co-founded Elephant Energy, a home electrification platform, and served as its CTO for five years. Earlier in his career, he was Head of Operations at Nuro (autonomous delivery), COO of Evercar/Vision Fleet (shared EV fleets), and Sr. Program Manager at Amonix (concentrated solar, world-record CPV modules). He holds a B.S. in Materials Science & Engineering from MIT and a Mechanical Engineering certificate from Stanford.
 
 ## Expertise
 
@@ -33,9 +33,21 @@ Josh Lake is a serial entrepreneur, technologist, and builder. He is the founder
 - URL: https://joshlake.ai/writing/panel-upgrade-myth
 - Description: Deep technical guide explaining why most homes do not need a $5,000-$10,000 electrical panel upgrade to electrify. Covers NEC Section 220.87 load studies, tandem breakers, load-sharing devices, dynamic load management, subpanels, and smart panels. Profiles 12 companies building panel-avoidance technology.
 
+### Robots Are the Missing Workforce for Electrification
+- URL: https://joshlake.ai/writing/robots-electrification
+- Description: The electrify everything movement has a labor problem. Robots will change parts of the equation, but probably not the parts you think.
+
+### Uses
+- URL: https://joshlake.ai/uses
+- Description: Gear, home, fitness, and reading tools Josh Lake uses day to day.
+
+### Reading List
+- URL: https://joshlake.ai/reading
+- Description: Full list of podcasts, newsletters, YouTube channels, thinkers, and orgs Josh Lake reads and follows.
+
 ## Companies Founded
 
-- Infinite Timber (https://franklintimberco.com), AI-powered timber research and brokerage platform
+- Infinite Timber / Franklin Timber Co. (https://franklintimberco.com), AI-assisted timber assessment and landowner outreach platform
 - Electrify Everything Now (https://electrifyeverythingnow.com), free calculators for home electrification costs and savings
 - Elephant Energy (https://www.elephantenergy.com), home electrification platform (co-founder, former CTO)
 
