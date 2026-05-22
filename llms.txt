@@ -33,10 +33,6 @@ Josh Lake is a serial entrepreneur, technologist, and builder. He is the founder
 - URL: https://joshlake.ai/writing/panel-upgrade-myth
 - Description: Deep technical guide explaining why most homes do not need a $5,000-$10,000 electrical panel upgrade to electrify. Covers NEC Section 220.87 load studies, tandem breakers, load-sharing devices, dynamic load management, subpanels, and smart panels. Profiles 12 companies building panel-avoidance technology.
 
-### Robots Are the Missing Workforce for Electrification
-- URL: https://joshlake.ai/writing/robots-electrification
-- Description: The electrify everything movement has a labor problem. Robots will change parts of the equation, but probably not the parts you think.
-
 ### Uses
 - URL: https://joshlake.ai/uses
 - Description: Gear, home, fitness, and reading tools Josh Lake uses day to day.
