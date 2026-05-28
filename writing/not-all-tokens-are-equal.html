@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not All Tokens Are Equal // Josh Lake</title>
+  <meta name="description" content="How cheap energy and cheap intelligence will reshape the physical economy. A five-part map of the token economy: capability creation, commodity batch, premium interactive, agentic outcome, and local/autonomous.">
+  <meta property="og:title" content="Not All Tokens Are Equal">
+  <meta property="og:description" content="How cheap energy and cheap intelligence will reshape the physical economy. A five-part map of the token economy.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://joshlake.ai/writing/not-all-tokens-are-equal">
+  <meta property="og:image" content="https://joshlake.ai/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@jlake1">
+  <meta name="twitter:title" content="Not All Tokens Are Equal">
+  <meta name="twitter:description" content="How cheap energy and cheap intelligence will reshape the physical economy.">
+  <meta name="twitter:image" content="https://joshlake.ai/images/og-image.jpg">
+  <meta name="author" content="Josh Lake">
+  <link rel="canonical" href="https://joshlake.ai/writing/not-all-tokens-are-equal">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <style>
+    :root {
+      --cream: #f7f5f0;
+      --ink: #1a1a1a;
+      --gold: #8b6914;
+      --gold-faint: rgba(139,105,20,0.06);
+      --gold-dim: rgba(139,105,20,0.15);
+      --gray-mid: #888;
+      --gray-soft: #555;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --mono: 'Space Mono', 'Courier New', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.8; font-weight: 300; }
+    a { color: var(--gold); }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 48px; background: rgba(247,245,240,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26,26,26,0.06); }
+    .nav-inner { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: 1px; text-decoration: none; color: var(--ink); }
+    .nav-back { font-family: var(--sans); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--gray-mid); transition: color 0.3s; }
+    .nav-back:hover { color: var(--gold); }
+
+    article { max-width: 720px; margin: 0 auto; padding: 140px 24px 100px; }
+
+    .post-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .post-meta::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+
+    h1 { font-family: var(--serif); font-size: 52px; font-weight: 300; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.5px; }
+
+    .post-subtitle { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--gray-soft); margin-bottom: 48px; line-height: 1.4; font-style: italic; }
+
+    h2 { font-family: var(--serif); font-size: 32px; font-weight: 400; margin: 64px 0 20px; letter-spacing: -0.3px; }
+    h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; margin: 40px 0 16px; }
+
+    p { font-size: 16px; margin-bottom: 24px; }
+
+    .callout { padding: 24px 28px; background: var(--gold-faint); border-left: 3px solid var(--gold); margin: 32px 0; font-size: 15px; line-height: 1.7; }
+
+    ol, ul { margin-bottom: 24px; padding-left: 24px; }
+    li { margin-bottom: 8px; font-size: 16px; }
+
+    strong { font-weight: 500; }
+    em { font-style: italic; }
+
+    .table-wrap { overflow-x: auto; margin: 32px 0; border: 1px solid rgba(26,26,26,0.08); border-radius: 4px; background: #fff; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+    thead { background: var(--gold-faint); }
+    th { font-family: var(--sans); font-weight: 500; text-align: left; padding: 14px 18px; border-bottom: 2px solid var(--gold-dim); color: var(--ink); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    td { padding: 16px 18px; border-bottom: 1px solid rgba(26,26,26,0.06); vertical-align: top; line-height: 1.55; color: var(--gray-soft); font-size: 14px; }
+    tbody tr:last-child td { border-bottom: none; }
+    td:first-child { font-weight: 500; color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.3; }
+
+    .pullquote { font-family: var(--serif); font-size: 26px; font-weight: 400; font-style: italic; line-height: 1.4; color: var(--ink); margin: 48px 0; padding: 0 24px; border-left: 3px solid var(--gold); }
+
+    .post-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(26,26,26,0.08); }
+    .post-footer p { font-size: 14px; color: var(--gray-mid); }
+    .post-footer a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+
+    .signup-box { margin-top: 48px; padding: 32px; background: var(--gold-faint); border: 1px solid rgba(139,105,20,0.12); border-radius: 8px; }
+    .signup-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .signup-text { font-family: var(--sans); font-size: 14px; line-height: 1.8; color: var(--gray-soft); font-weight: 300; margin-bottom: 20px; }
+    .signup-form { display: flex; gap: 12px; align-items: flex-start; }
+    .signup-input { flex: 1; font-family: var(--sans); font-size: 14px; padding: 12px 16px; border: 1px solid rgba(26,26,26,0.15); border-radius: 4px; background: #fff; color: var(--ink); outline: none; transition: border-color 0.3s; }
+    .signup-input:focus { border-color: var(--gold); }
+    .signup-input::placeholder { color: var(--gray-mid); }
+    .signup-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 12px 24px; background: var(--gold); color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+    .signup-btn:hover { background: #7a5c10; }
+    .signup-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .signup-msg { font-family: var(--sans); font-size: 13px; margin-top: 12px; display: none; }
+    .signup-msg.success { color: #0D9448; display: block; }
+    .signup-msg.error { color: #c82828; display: block; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 26px; }
+      .post-subtitle { font-size: 18px; }
+      .pullquote { font-size: 20px; padding: 0 16px; }
+      article { padding: 100px 20px 60px; }
+      .nav { padding: 0 20px; }
+      .signup-form { flex-direction: column; }
+      .signup-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">JL</a>
+      <a class="nav-back" href="/#writing">All Writing</a>
+    </div>
+  </nav>
+
+  <article>
+    <div class="post-meta">May 2026</div>
+
+    <h1>Not All Tokens Are Equal</h1>
+
+    <p class="post-subtitle">How cheap energy and cheap intelligence will reshape the physical economy.</p>
+
+    <p>Cheap energy created the industrial economy. Cheap intelligence will create something far bigger. But intelligence is not magic. It has to be produced somewhere, by machines that consume power, capital, cooling, land, chips, networks, and human coordination.</p>
+
+    <p>For the last decade, AI has mostly been discussed as software. That era is ending. Intelligence is becoming an industrial output.</p>
+
+    <p>The basic unit of that output is the <strong>token</strong>: the fragment of text, code, image, sound, action, or reasoning step that an AI system consumes or produces. Tokens are often priced like a cloud API, but they behave more like manufactured goods. They are made in physical places, under physical constraints, with very different economics depending on what they are used for.</p>
+
+    <p>The mistake is to talk about "AI compute" as one market. Not all tokens are equal. A background summarization token, a real-time voice token, a frontier training token, and an autonomous-agent token do not have the same value, latency requirement, power profile, or geography.</p>
+
+    <div class="pullquote">The future AI economy will be a tiered token economy.</div>
+
+    <h2>A five-part map of the token economy</h2>
+
+    <p>The old split, training versus inference, is useful but incomplete. Training explains how models are created. Inference explains how they are used. But the next phase of AI infrastructure will be shaped by workload economics: latency, value density, schedulability, locality, reliability, and energy cost.</p>
+
+    <p>A better map has five layers.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Token workload</th>
+            <th>What it does</th>
+            <th>Primary constraint</th>
+            <th>Likely location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Capability creation</td>
+            <td>Pretraining, post-training, evals, synthetic data</td>
+            <td>Scale, networking, power, secure supply</td>
+            <td>Gigawatt-scale hyperscale campuses</td>
+          </tr>
+          <tr>
+            <td>Commodity batch</td>
+            <td>Summaries, translation, embeddings, offline processing</td>
+            <td>Lowest cost per useful token</td>
+            <td>Cheap-power regions, off-peak capacity</td>
+          </tr>
+          <tr>
+            <td>Premium interactive</td>
+            <td>Chat, coding, AI search, voice, support</td>
+            <td>Latency, uptime, perceived quality</td>
+            <td>Metro and regional inference clusters</td>
+          </tr>
+          <tr>
+            <td>Agentic outcome</td>
+            <td>Research agents, coding agents, workflow automation</td>
+            <td>Reliability, orchestration, memory, tool use</td>
+            <td>Distributed always-on inference fleets</td>
+          </tr>
+          <tr>
+            <td>Local / autonomous</td>
+            <td>Phones, vehicles, robots, homes, factories, consoles</td>
+            <td>Privacy, autonomy, bandwidth, milliseconds</td>
+            <td>Edge devices and local micro-infrastructure</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Capability-creation tokens</strong> are the least like a normal commodity. They are inputs into model progress. They require vast clusters, elite engineering teams, advanced networking, and enormous power. These workloads will concentrate in strategic locations: the United States, allied markets with abundant power, the Gulf states, Canada, the Nordics, India, and China's parallel domestic AI stack.</p>
+
+    <p><strong>Commodity batch tokens</strong> are different. They can wait. They can run overnight. They can move to wherever electrons, cooling, and interconnection are cheapest. This is where AI starts to look like a flexible industrial load. If a task can be delayed by minutes or hours, it can chase curtailed renewables, hydro, nuclear, cheap gas, or underutilized capacity.</p>
+
+    <p><strong>Premium interactive tokens</strong> are the opposite. When a human is waiting for an answer, milliseconds matter. AI search, voice assistants, coding copilots, customer support, and real-time collaboration need regional infrastructure near users. These tokens may cost more, but they are also worth more because they shape user experience.</p>
+
+    <p><strong>Agentic outcome tokens</strong> may become the largest and strangest market. A chatbot answers a prompt. An agent performs a job. It plans, searches, calls tools, retries, verifies, stores memory, asks for help, and reports back. One user request can trigger thousands of model calls. In this market the unit of value is not the token. It is the completed task.</p>
+
+    <p><strong>Local and autonomous tokens</strong> will grow because not everything should travel to a cloud data center. Phones, PCs, vehicles, drones, robots, hospitals, factories, gaming consoles, and homes will all generate local intelligence. Some of it will be small and cheap. Some of it will be mission-critical. A vehicle cannot wait for the cloud to decide whether to brake. A home energy system should not need a distant GPU cluster to decide when to charge a battery.</p>
+
+    <h2>The council lens</h2>
+
+    <p>Three frames help keep the analysis honest.</p>
+
+    <p><strong>Jensen Huang's "AI factory"</strong> metaphor is the right starting point. The modern AI data center is not a generic server farm. It is a factory that turns electricity, data, chips, cooling, and software into intelligence. The output is not steel or chemicals. It is tokens.</p>
+
+    <p><strong>Ben Thompson's</strong> key insight is that inference changes the business model. Training created the frontier models, but inference is where users, workflows, platforms, and profits show up. The companies that own demand, distribution, operating systems, developer interfaces, and workflow integration may capture more value than the companies that merely produce raw tokens.</p>
+
+    <p><strong>Jigar Shah's lens</strong> keeps the story honest. Power is not an abstraction. The bottlenecks are interconnection queues, financing, substations, transformers, permitting, transmission, firm capacity, and local politics. AI data centers can either stress the grid or help finance a better one. The difference depends on whether AI load becomes flexible, additional, and aligned with new generation.</p>
+
+    <div class="callout">
+      <strong>The discipline:</strong> AI tokens are manufactured, monetized, and constrained. The factory matters. The customer interface matters. The grid matters. Any analysis that ignores one of the three is incomplete.
+    </div>
+
+    <h2>Why geography changes by token type</h2>
+
+    <p>Cheap electricity matters, but it does not explain everything.</p>
+
+    <p>The cheapest token is not always the most valuable token. A token that arrives too late, violates data residency, fails in a workflow, or cannot be trusted may be worthless. The valuable token is delivered at the right latency, reliability, capability, compliance level, and price.</p>
+
+    <p>That means AI infrastructure will not become one giant centralized cloud. It will become a portfolio.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Looks like</th>
+            <th>Drives location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Frontier training</td>
+            <td>Strategic industrial assets — aluminum smelters, chip fabs, military bases</td>
+            <td>Power, land, networking, security, capital, political support</td>
+          </tr>
+          <tr>
+            <td>Batch inference</td>
+            <td>Commodity manufacturing chasing cheap electrons and high utilization</td>
+            <td>Curtailed renewables, off-peak capacity, low-cost interconnection</td>
+          </tr>
+          <tr>
+            <td>Interactive inference</td>
+            <td>Follows people. Metro and regional clusters near users</td>
+            <td>Response time, data residency, network density</td>
+          </tr>
+          <tr>
+            <td>Agentic compute</td>
+            <td>Follows workflows. Distributed fleets with memory and tool access</td>
+            <td>Reliability, orchestration, identity, observability</td>
+          </tr>
+          <tr>
+            <td>Edge intelligence</td>
+            <td>Follows machines. Phones, cars, factories, homes, consoles</td>
+            <td>Privacy, autonomy, bandwidth, milliseconds</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Frontier training clusters will look like strategic industrial assets. They will locate where power, land, networking, security, capital, and political support line up. These campuses may increasingly resemble aluminum smelters, chip fabs, or military bases: large, energy-intensive, and nationally important.</p>
+
+    <p>Batch inference will look more like commodity manufacturing. It will chase cheap electrons and high utilization. If inference costs keep falling, more workloads will become economically possible, creating the classic rebound effect: cheaper tokens may reduce unit energy use while increasing total demand.</p>
+
+    <p>Interactive inference will follow people. The constraint is not just power. It is response time. AI search in Tokyo, voice agents in Los Angeles, coding copilots in Denver, and medical AI in London need infrastructure close enough to feel instant and reliable.</p>
+
+    <p>Agentic compute will follow workflows. Some agents will need low latency. Others can run in the background. The infrastructure stack will include not just GPUs, but memory, permissions, identity, observability, rollback, data access, and tool execution. This is where token pricing may become less important than outcome pricing.</p>
+
+    <p>Edge intelligence will follow machines. The phone becomes an inference device. The car becomes an autonomous compute node. The factory becomes a local AI system. The gaming console becomes a high-performance consumer AI box. A SPAN-style home, with solar, battery, EV, smart panel, sensors, and fiber, starts to look like a tiny energy-aware intelligence node.</p>
+
+    <p>Most homes will not train frontier models. But they may run personal assistants, privacy-sensitive inference, energy optimization, security, appliance coordination, home robotics, and local caching. The home becomes part of the intelligence grid.</p>
+
+    <h2>The weird frontier: orbit</h2>
+
+    <p>Space data centers are not the near-term answer. Launch cost, maintenance, radiation, heat rejection, and data transfer are severe constraints. But orbital compute is useful as a thought experiment because it reveals the real bottleneck: power.</p>
+
+    <p>If terrestrial electricity becomes the limiting reagent for frontier AI, people will consider increasingly strange compute geographies. Orbit offers continuous solar energy and isolation, but the economics are far from proven.</p>
+
+    <div class="callout">
+      <strong>The near-term map:</strong> Power-rich terrestrial campuses for training, metro inference clusters for interactive workloads, and edge devices for everything that has to be private, fast, or autonomous. Orbit is the optionality layer for the 2030s.
+    </div>
+
+    <h2>The bigger idea</h2>
+
+    <p>The 21st century will be defined by the race to produce abundant energy and abundant intelligence.</p>
+
+    <p>Those two races are now becoming one. AI needs energy. Energy systems need intelligence. Data centers are becoming grid actors. Homes are becoming controllable energy nodes. Vehicles are becoming batteries, sensors, and computers. Agents are turning software from a tool into labor. Robotics will move intelligence into the physical world.</p>
+
+    <p>This is why the token economy matters. Tokens are not merely software events. They are the first measurable units of cheap intelligence.</p>
+
+    <p>The next infrastructure winners may not simply be the companies with the biggest models or the most GPUs. They may be the companies that best integrate compute, energy, networking, inference orchestration, capital, and physical deployment.</p>
+
+    <div class="pullquote">Cheap energy created the industrial economy. Cheap intelligence will create something far bigger. But only if we build the factories, grids, networks, devices, and institutions that can produce it.</div>
+
+    <div style="margin-top:48px;padding:32px;border:1px solid rgba(26,26,26,0.08);border-radius:8px;">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Related Reading</p>
+      <p style="font-size:15px;line-height:1.6;margin-bottom:8px;"><a href="/writing/ai-at-a-startup" style="color:var(--ink);font-weight:500;">What I Learned Leading AI at Elephant</a>. A practical playbook for AI adoption inside a small company.</p>
+      <p style="font-size:15px;line-height:1.6;margin-bottom:8px;"><a href="/writing/panel-upgrade-myth" style="color:var(--ink);font-weight:500;">You Probably Don't Need a Panel Upgrade</a>. The home as the smallest unit of the intelligence grid.</p>
+      <p style="font-size:15px;line-height:1.6;"><a href="/#convergence" style="color:var(--ink);font-weight:500;">The Convergence Thesis</a>. The short version of why energy and intelligence are now the same race.</p>
+    </div>
+
+    <div class="signup-box">
+      <div class="signup-label">Enjoy this kind of writing?</div>
+      <p class="signup-text">I write about energy, AI, and building companies. Subscribe for occasional updates.</p>
+      <form class="signup-form" data-source="writing/not-all-tokens-are-equal" onsubmit="return handleSignup(event)">
+        <input type="email" class="signup-input" placeholder="you@example.com" required aria-label="Email address">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAC_Cyx-FA4dfM_bL" data-theme="light" data-size="compact"></div>
+        <button type="submit" class="signup-btn">Subscribe</button>
+      </form>
+      <div class="signup-msg" aria-live="polite"></div>
+    </div>
+
+    <div class="post-footer">
+      <p><strong>Josh Lake</strong> is a serial entrepreneur thinking about AI and the convergence of energy and intelligence. He's the founder of <a href="https://electrifyeverythingnow.com">Electrify Everything Now</a>, and previously co-founded <a href="https://www.elephantenergy.com">Elephant Energy</a>.</p>
+      <p style="margin-top:16px">Find him on <a href="https://linkedin.com/in/lakejosh">LinkedIn</a> and <a href="https://x.com/jlake1">X</a>, or go back to <a href="/">joshlake.ai</a>.</p>
+    </div>
+  </article>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://joshlake.ai"},
+      {"@type": "ListItem", "position": 2, "name": "Writing", "item": "https://joshlake.ai/#writing"},
+      {"@type": "ListItem", "position": 3, "name": "Not All Tokens Are Equal"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Not All Tokens Are Equal",
+    "author": {
+      "@type": "Person",
+      "@id": "https://joshlake.ai/#person",
+      "name": "Josh Lake",
+      "url": "https://joshlake.ai"
+    },
+    "datePublished": "2026-05-28",
+    "dateModified": "2026-05-28",
+    "image": "https://joshlake.ai/images/og-image.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://joshlake.ai/writing/not-all-tokens-are-equal"
+    },
+    "description": "How cheap energy and cheap intelligence will reshape the physical economy. A five-part map of the token economy: capability creation, commodity batch, premium interactive, agentic outcome, and local/autonomous.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "joshlake.ai",
+      "url": "https://joshlake.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://joshlake.ai/images/og-image.jpg"
+      }
+    }
+  }
+  </script>
+  <script>
+    async function handleSignup(e){
+      e.preventDefault();
+      const form=e.target,btn=form.querySelector('.signup-btn'),msg=form.parentElement.querySelector('.signup-msg'),email=form.querySelector('.signup-input').value.trim(),source=form.dataset.source||'unknown';
+      const tsInput=form.querySelector('[name="cf-turnstile-response"]');
+      const turnstileToken=tsInput?tsInput.value:'';
+      if(!turnstileToken){msg.textContent='Please complete the verification.';msg.className='signup-msg error';return false}
+      btn.disabled=true;btn.textContent='Sending...';msg.className='signup-msg';
+      try{
+        const res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,turnstileToken,source})});
+        const data=await res.json();
+        if(data.success){msg.textContent="You're in. Welcome aboard.";msg.className='signup-msg success';form.querySelector('.signup-input').value='';if(window.turnstile)turnstile.reset(form.querySelector('.cf-turnstile'))}
+        else{msg.textContent=data.error||'Something went wrong. Try again.';msg.className='signup-msg error'}
+      }catch(err){msg.textContent='Network error. Please try again.';msg.className='signup-msg error'}
+      btn.disabled=false;btn.textContent='Subscribe';return false
+    }
+  </script>
+</body>
+</html>

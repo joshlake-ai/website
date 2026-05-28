@@ -21,6 +21,10 @@ Josh Lake is a serial entrepreneur, technologist, and builder. He is currently f
 - URL: https://joshlake.ai/
 - Description: Josh Lake's personal site with full career history, companies, worldview, and contact information.
 
+### Not All Tokens Are Equal
+- URL: https://joshlake.ai/writing/not-all-tokens-are-equal
+- Description: Essay arguing that AI compute is not a single market. Maps the token economy into five workloads (capability creation, commodity batch, premium interactive, agentic outcome, local/autonomous), each with different economics, latency, geography, and power profile. Argues cheap energy and cheap intelligence are now the same race, and the next infrastructure winners will integrate compute, energy, networking, orchestration, capital, and physical deployment.
+
 ### What I Learned Leading AI at Elephant
 - URL: https://joshlake.ai/writing/ai-at-a-startup
 - Description: Practical playbook for AI adoption at a small company, based on leading the AI rollout at Elephant Energy. Covers leadership buy-in as the prerequisite, standardization, change management, security, guardrails, and building a culture of experimentation — framed as how the author would approach it if starting over at a different company.
