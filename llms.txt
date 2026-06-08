@@ -21,6 +21,10 @@ Josh Lake is a serial entrepreneur, technologist, and builder. He is currently f
 - URL: https://joshlake.ai/
 - Description: Josh Lake's personal site with full career history, companies, worldview, and contact information.
 
+### A Neo-Electrification Company?
+- URL: https://joshlake.ai/writing/neo-electrification-company
+- Description: Essay asking what a homeowner-centric, AI-enabled, national "neo-electrification" company would look like — one that combines heat pumps, solar and storage, electrical work, financing, incentives, field execution, and a home energy operating system. Maps the players circling the opportunity (heat pump installers like Elephant Energy, Jetson, Zero Homes, QuitCarbon, Quilt, and Forge; solar and storage platforms like Sunrun and Base Power; OEMs like Mitsubishi, Daikin, LG, and Carrier; utilities and CCAs; and smart-panel companies like SPAN). Argues AI's real value is reducing soft costs across design, incentives, marketing, commissioning, service, forecasting, working capital, and margin, and looks at European models (Aira, 1KOMMA5°, Thermondo, Enpal, Octopus). Concludes the winner will be semi-vertical, AI-enabled, nationally repeatable but locally excellent, utility-aware, and obsessed with project-level economics.
+
 ### Not All Tokens Are Equal
 - URL: https://joshlake.ai/writing/not-all-tokens-are-equal
 - Description: Essay arguing that AI compute is not a single market. Maps the token economy into five workloads (capability creation, commodity batch, premium interactive, agentic outcome, local/autonomous), each with different economics, latency, geography, and power profile. Argues cheap energy and cheap intelligence are now the same race, and the next infrastructure winners will integrate compute, energy, networking, orchestration, capital, and physical deployment.

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Neo-Electrification Company? // Josh Lake</title>
+  <meta name="description" content="What would a homeowner-centric, AI-enabled, national neo-electrification company actually look like — part heat pump installer, part solar and storage platform, part home energy operator — and who is building it? A field map of the players circling the prize.">
+  <meta property="og:title" content="A Neo-Electrification Company?">
+  <meta property="og:description" content="Part heat pump installer, part solar and storage platform, part home energy operator. What the homeowner-centric, AI-enabled, national neo-electrification company looks like — and who is building it.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://joshlake.ai/writing/neo-electrification-company">
+  <meta property="og:image" content="https://joshlake.ai/images/neo-electrification-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@jlake1">
+  <meta name="twitter:title" content="A Neo-Electrification Company?">
+  <meta name="twitter:description" content="What the homeowner-centric, AI-enabled, national neo-electrification company looks like — and who is building it.">
+  <meta name="twitter:image" content="https://joshlake.ai/images/neo-electrification-hero.jpg">
+  <meta name="author" content="Josh Lake">
+  <link rel="canonical" href="https://joshlake.ai/writing/neo-electrification-company">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <style>
+    :root {
+      --cream: #f7f5f0;
+      --ink: #1a1a1a;
+      --gold: #8b6914;
+      --gold-faint: rgba(139,105,20,0.06);
+      --gold-dim: rgba(139,105,20,0.15);
+      --gray-mid: #888;
+      --gray-soft: #555;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --mono: 'Space Mono', 'Courier New', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.8; font-weight: 300; }
+    a { color: var(--gold); }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 48px; background: rgba(247,245,240,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26,26,26,0.06); }
+    .nav-inner { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: 1px; text-decoration: none; color: var(--ink); }
+    .nav-back { font-family: var(--sans); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--gray-mid); transition: color 0.3s; }
+    .nav-back:hover { color: var(--gold); }
+
+    article { max-width: 720px; margin: 0 auto; padding: 140px 24px 100px; }
+
+    .post-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .post-meta::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+
+    h1 { font-family: var(--serif); font-size: 52px; font-weight: 300; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.5px; }
+
+    .post-subtitle { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--gray-soft); margin-bottom: 48px; line-height: 1.4; font-style: italic; }
+
+    .hero-img { width: 100%; max-width: 720px; margin: 0 auto 48px; display: block; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+
+    h2 { font-family: var(--serif); font-size: 32px; font-weight: 400; margin: 64px 0 20px; letter-spacing: -0.3px; }
+    h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; margin: 40px 0 16px; }
+
+    p { font-size: 16px; margin-bottom: 24px; }
+
+    .callout { padding: 24px 28px; background: var(--gold-faint); border-left: 3px solid var(--gold); margin: 32px 0; font-size: 15px; line-height: 1.7; }
+
+    ol, ul { margin-bottom: 24px; padding-left: 24px; }
+    li { margin-bottom: 8px; font-size: 16px; }
+
+    strong { font-weight: 500; }
+    em { font-style: italic; }
+
+    .table-wrap { overflow-x: auto; margin: 32px 0; border: 1px solid rgba(26,26,26,0.08); border-radius: 4px; background: #fff; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+    thead { background: var(--gold-faint); }
+    th { font-family: var(--sans); font-weight: 500; text-align: left; padding: 14px 18px; border-bottom: 2px solid var(--gold-dim); color: var(--ink); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    td { padding: 16px 18px; border-bottom: 1px solid rgba(26,26,26,0.06); vertical-align: top; line-height: 1.55; color: var(--gray-soft); font-size: 14px; }
+    tbody tr:last-child td { border-bottom: none; }
+    td:first-child { font-weight: 500; color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.3; }
+
+    .pullquote { font-family: var(--serif); font-size: 26px; font-weight: 400; font-style: italic; line-height: 1.4; color: var(--ink); margin: 48px 0; padding: 0 24px; border-left: 3px solid var(--gold); }
+
+    .post-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(26,26,26,0.08); }
+    .post-footer p { font-size: 14px; color: var(--gray-mid); }
+    .post-footer a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+
+    .signup-box { margin-top: 48px; padding: 32px; background: var(--gold-faint); border: 1px solid rgba(139,105,20,0.12); border-radius: 8px; }
+    .signup-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .signup-text { font-family: var(--sans); font-size: 14px; line-height: 1.8; color: var(--gray-soft); font-weight: 300; margin-bottom: 20px; }
+    .signup-form { display: flex; gap: 12px; align-items: flex-start; }
+    .signup-input { flex: 1; font-family: var(--sans); font-size: 14px; padding: 12px 16px; border: 1px solid rgba(26,26,26,0.15); border-radius: 4px; background: #fff; color: var(--ink); outline: none; transition: border-color 0.3s; }
+    .signup-input:focus { border-color: var(--gold); }
+    .signup-input::placeholder { color: var(--gray-mid); }
+    .signup-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 12px 24px; background: var(--gold); color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+    .signup-btn:hover { background: #7a5c10; }
+    .signup-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .signup-msg { font-family: var(--sans); font-size: 13px; margin-top: 12px; display: none; }
+    .signup-msg.success { color: #0D9448; display: block; }
+    .signup-msg.error { color: #c82828; display: block; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 26px; }
+      .post-subtitle { font-size: 18px; }
+      .pullquote { font-size: 20px; padding: 0 16px; }
+      article { padding: 100px 20px 60px; }
+      .nav { padding: 0 20px; }
+      .signup-form { flex-direction: column; }
+      .signup-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">JL</a>
+      <a class="nav-back" href="/#writing">All Writing</a>
+    </div>
+  </nav>
+
+  <article>
+    <div class="post-meta">June 2026</div>
+
+    <h1>A Neo-Electrification Company?</h1>
+
+    <p class="post-subtitle">What would a homeowner-centric, AI-enabled, national neo-electrification company look like? And who is building it?</p>
+
+    <img src="/images/neo-electrification-hero.jpg" alt="Building the Neo-Electrification Company: a cutaway home with rooftop solar, heat pump, heat-pump water heater, battery, EV charging, and a smart panel — wrapped in the five layers of the company: homeowner trust, design and incentives, field execution, home energy operating system, and grid value and monetization." class="hero-img" width="1981" height="793">
+
+    <p>Those are the questions that I keep coming back to.</p>
+
+    <p>Not "who is installing the most Heat Pumps this year?" Not "who has the best Manual J replacement?" Not "who has the best rebate explainer?" Those are all important. But they feel like pieces of a much bigger company that does not quite exist yet.</p>
+
+    <p>The future company I am trying to describe is part Heat Pump company, part solar/storage platform, part HVAC operator, part electrical contractor, part utility partner, part financing layer, part home comfort brand, part AI operating system, part grid asset manager, part home energy operating system.</p>
+
+    <p>Ridiculous? Unfocused? Spread too thin? Maybe. But the home is already becoming all of those things at once.</p>
+
+    <p>The goal is simple and enormous: help homeowners convert as many gas, fuel oil, propane, and electric resistance appliances as possible to all-electric and/or Heat Pump versions, then power those appliances with clean electricity. Space heating. Water heating. Cooking. Clothes drying. Cars. Backup power. Flexible load. The whole enchilada.</p>
+
+    <div class="callout">
+      <strong>Disclosure:</strong> I co-founded Elephant Energy and remain a shareholder. I am not neutral. I am bullish on this space and biased toward builders trying to make the messy real-world version work.
+    </div>
+
+    <p>And yes, as a side note, I do not think this is winner-take-all. There are not strong network effects in crawling through attics, replacing oil boilers, upgrading panels, fixing ductwork, or convincing a homeowner that a cold-climate Heat Pump can work in winter. This is local, physical, trust-heavy work. There should be many winners. But there are also real economies of scale and real learning curves from each incremental project completed.</p>
+
+    <p>But the more interesting question is not whether there will be one winner or many. The interesting question is: who is building the neo-electrification company?</p>
+
+    <h2>The current players are circling the answer</h2>
+
+    <p>Heat Pump-centric electrification companies like Elephant Energy, Jetson, Zero Homes, QuitCarbon, Quilt, and Forge are attacking one side of the market. They are asking: can you make the Heat Pump buying experience dramatically better than the traditional HVAC replacement journey? Can you quote remotely? Can you manage rebates? Can you improve install quality? Can you make the customer feel like they are buying a better home, not managing a complex construction project? Can you build lasting relationships and be the first contact when the water heater, cooktop, etc. needs to be upgraded?</p>
+
+    <p>Solar and storage companies are attacking another side. Sunrun and other residential solar/storage platforms already have customer acquisition, financing muscle, field operations, batteries, EV charging expansion, and a relationship with the roof. Base Power is another interesting potential sneak entrant: starting with home batteries and power reliability, but potentially sitting very close to the future home energy operating layer. These companies may not start with comfort, but they understand distributed energy, project finance, and the trust required to sell a five-figure home upgrade.</p>
+
+    <p>The OEMs are circling too: Mitsubishi, Daikin, LG, Carrier, Bryant, Bosch, and others. They have the equipment, contractor channels, training, and balance sheets. Carrier pairing batteries with air conditioners to help the grid is a useful signal. The equipment companies know that HVAC load is not just HVAC load anymore. It is peak load, grid capacity, dispatchability, and maybe a new kind of distributed energy resource. And don't forget about the smart thermostat companies — Nest, Ecobee, etc. — who want to win over the top.</p>
+
+    <p>Utilities and CCAs are another huge piece. They have trust, rates, program dollars, grid constraints, and the ability to make or break customer economics. If the spark gap makes electric (Heat Pump) heating too expensive versus gas, even the climate warriors start consternating. If rates reward flexible electric load, the math gets much more interesting. Hello, Virtual Power Plants!</p>
+
+    <p>Then there are smart panel and controls companies like SPAN. A smart panel started as a way to manage loads, avoid some service upgrades, improve backup power, and make electrification easier. Now SPAN is pushing XFRA, a distributed data center concept using underutilized behind-the-meter power capacity in homes and small commercial spaces for AI inference. That may sound like sci-fi, but the underlying point is very real: the home is no longer passive load. It can be flexible infrastructure.</p>
+
+    <div class="pullquote">No one owns the full stack yet. Maybe no one ever does. But the prize is big enough that it is worth trying.</div>
+
+    <h2>What would the national neo-electrification company actually 'own' and control?</h2>
+
+    <p>This company would be built around five layers:</p>
+
+    <ol>
+      <li>Customer trust</li>
+      <li>Design and incentives</li>
+      <li>Field execution</li>
+      <li>Connected asset management / home energy operating system</li>
+      <li>Grid monetization opportunities</li>
+    </ol>
+
+    <p>That is the company I am looking for!</p>
+
+    <p>It does not need to own every layer in every market. In fact, it probably should not. National does not mean centrally planned from a spreadsheet in the Bay Area. National means repeatable, scalable, trusted, and locally excellent.</p>
+
+    <p>The company needs to know what to own, what to partner for, and what never to outsource blindly.</p>
+
+    <p>If you outsource the customer relationship, you are a channel. If you outsource design and install quality, you are begging for callbacks. If you outsource incentives, you may lose the customer economics. If you outsource commissioning, you may never know whether the install actually works. If you outsource asset management, you may never participate in the grid value created by the home.</p>
+
+    <p>The winners will make deliberate choices. Own trucks in dense markets? Maybe. Partner in less dense markets? Probably. Own HVAC but partner on electrical? Maybe. Build private-label hardware with great manufacturing partners? Maybe. Use OEM design tools, best-in-class incentive platforms, and local contractor networks where they actually work? Absolutely.</p>
+
+    <p>The right model may not be homogenous nationwide. It is control where control matters and tuned to local market conditions.</p>
+
+    <h2>AI-enabled does not mean a chatbot named Sparky</h2>
+
+    <p>AI-enabled does not mean a little chat bubble on the website saying, "Great news, your attic is under-insulated." It does not mean auto-generated blog posts about Heat Pump rebates. It does not mean sprinkling AI on a broken ops process and hoping margins appear. That is not strategy.</p>
+
+    <p>AI-enabled means systems, tools, processes, and roles are constructed with current and future capabilities in mind. Yes, that means agents.</p>
+
+    <p>Home electrification is a soft-cost swamp. Every home is different. Every utility is different. Every rebate program is different. Every panel is different. Every homeowner has different motivations. Every installer has different habits. Every proposal depends on messy inputs: photos, utility bills, square footage, insulation, ducts, panel capacity, historical fuel use, local weather, equipment availability, rates, rebates, financing, and comfort expectations.</p>
+
+    <p>That is where AI should matter and can shine!</p>
+
+    <p><strong>Design agents</strong> could turn photos, bills, permit history, parcel data, prior installs, equipment specs, and customer answers into a credible first design before the first truck roll. Not a final engineering package. A useful first answer: likely feasible, likely range, likely constraints, and what needs to be verified.</p>
+
+    <p><strong>Incentive agents</strong> could navigate rebates, tax credits, utility programs, CCA offers, financing rules, income qualifications, documentation, and filing deadlines. Incentives are not a nice bonus. In many markets, they are the difference between a project that pencils and a project that gets ghosted.</p>
+
+    <p><strong>Marketing agents</strong> could target the right homes with the right message. Some customers care about comfort. Some care about bills. Some care about asthma, smoke, resilience, EV readiness, or getting off fuel oil. Some only care because their 27-year-old furnace is clearly on borrowed time. The message should not be the same.</p>
+
+    <p><strong>Commissioning agents</strong> could ingest connected tool data, photos, airflow, refrigerant readings, equipment specs, and checklists to catch bad installs before they become callbacks. This is where tools like MeasureQuick are interesting. Connected diagnostics turn field work into data. AI at the unit is much more valuable than AI in a slogan.</p>
+
+    <p><strong>Service agents</strong> could diagnose problems from telemetry instead of vibes. Is the issue equipment, controls, airflow, sizing, envelope, thermostat settings, or customer expectations? The faster you know, the faster you can fix it, and the fewer trucks you roll.</p>
+
+    <p><strong>Sales forecasting agents</strong> could predict demand by neighborhood, season, channel, utility territory, rebate deadline, equipment availability, and weather.</p>
+
+    <p><strong>Working-capital agents</strong> could model inventory, deposits, financing approvals, rebate timing, crew capacity, and the terrifying cash gap between "installed" and "paid."</p>
+
+    <p><strong>Margin agents</strong> could track contribution margin by home type, crew, channel, utility, equipment package, and install complexity.</p>
+
+    <p>That last part is not as fun as saying "AI agents," but it may matter more. Growth that hides bad project or corporate-level economics is just a slightly more exciting way to lose money.</p>
+
+    <h2>The product is not just the Heat Pump</h2>
+
+    <p>The customer usually does not want electrification. The customer wants a warm house, lower bills, cleaner air, less noise, fewer surprises, maybe backup power, and someone competent to call when the thing breaks.</p>
+
+    <p>That is why the Heat Pump is both central and insufficient. If the product is home comfort, then you care about ducts, air sealing, insulation, humidity, filtration, ERVs, HRVs, zoning, controls, and maintenance. If the product is home energy management, then you care about solar, batteries, EV charging, time-of-use rates, community solar, smart panels, VPPs, demand response, and utility programs.</p>
+
+    <p>The market gets really interesting when those things converge. A Heat Pump is a comfort appliance. It is also a flexible load. A battery is a resilience product. It is also a grid asset. An EV is transportation. It is also a giant battery on wheels. A panel upgrade is an electrical project. It is also the brain for electrifying everything in a home.</p>
+
+    <p>This is why I like the phrase "home energy operator." The winning companies will not just install equipment. They will help operate the home. Not in a creepy way. Nobody wants to battle a robot overlord on thermostat settings. But in the background, the home should be getting smarter: preheating when power is cheap, charging the EV when renewables are abundant, drawing from a battery during peaks, participating in demand response when the customer opts in, and keeping the house comfortable without requiring a homeowner to become a part-time grid economist.</p>
+
+    <h2>Distribution is key</h2>
+
+    <p>The hardest part may not be the technology. It may be distribution.</p>
+
+    <p>Heat Pumps have education and CAC challenges. Most homeowners do not wake up excited to decarbonize. They wake up when the furnace dies, when the oil bill is horrifying, when the AC fails during a heat wave, when wildfire smoke makes indoor air quality feel real, when they buy an EV, when a room is freezing, or when a neighbor gets a slick new system and starts talking about it at the block party.</p>
+
+    <p>Paid search alone will not solve this. The interesting channels may be utilities, CCAs, HOAs, home warranty and maintenance plans, employers, Realtors, solar customer bases, EV owner journeys, municipal bulk buys, neighborhood campaigns, and new construction.</p>
+
+    <p>The recent Xcel Non-Wires Alternative program that Zero Homes partially won is a useful example of where this could go. If a utility can pay for distributed electrification and load flexibility instead of traditional grid infrastructure, the Heat Pump company is no longer just selling a box to a homeowner. It is helping solve a grid problem.</p>
+
+    <p>That is a different business. But it also creates a different operating challenge. Utilities can lower CAC, improve trust, and make rates work. They can also move slowly. The best companies will know how to partner with utilities and CCAs without becoming trapped inside their timelines.</p>
+
+    <h2>Europe shows what is possible</h2>
+
+    <p>The U.S. should not blindly copy Europe. Different housing stock, different gas prices, different retail energy markets, different contractor base, different policy environment. But Europe is showing the shape of the company.</p>
+
+    <p>Aira is talking about Heat Pumps, solar, batteries, AI optimization, financing, grant applications, trained technicians, and aftercare. 1KOMMA5° is pushing Heartbeat AI as a home energy management layer across solar, storage, loads, and dynamic tariffs. Thermondo has built a large heating installation operation in Germany with employed tradespeople, digitalized processes, financing, subsidies, installation, and maintenance. Enpal has moved from solar into PV, battery, wallbox, Heat Pump, financing, and energy management. Octopus combines retail energy, tariffs, software, Heat Pumps, EVs, solar, and batteries.</p>
+
+    <div class="pullquote">Different models. Same direction: the home is becoming an integrated energy system, and someone has to make it simple.</div>
+
+    <h2>So who is building it?</h2>
+
+    <p>I do not think there is one obvious answer.</p>
+
+    <p>Maybe a Heat Pump-centric company like Elephant Energy, Jetson, Zero Homes, QuitCarbon, Quilt, or Forge builds the best customer journey and expands outward into energy management. Maybe Sunrun or another solar/storage platform adds Heat Pumps and uses its financing and field muscle to move faster than people expect. Maybe Base Power uses batteries and reliability as the wedge into broader home energy operations. Maybe Tesla bundles EVs, batteries, solar, software, and eventually HVAC. Maybe SPAN owns the electrical control point. Maybe Octopus-style retailers bring tariffs and flexible load orchestration. Maybe Mitsubishi, Daikin, LG, Carrier, Bryant, or another OEM gets more aggressive. Maybe an HVAC roll-up with excellent local brands and AI-native tooling quietly becomes the practical winner in market after market.</p>
+
+    <p>Or maybe the company does not exist yet.</p>
+
+    <p>That is the answer I find most exciting.</p>
+
+    <p>The future company probably will not be pure software, pure HVAC, pure solar, pure hardware, or pure utility. It will be semi-vertical, AI-enabled, national but locally excellent, utility-aware, and obsessed with project-level economics.</p>
+
+    <p>It will not treat AI as the product. It will use AI to change the cost structure.</p>
+
+    <p>It will not treat trucks as a bug. It will use software to make trucks more productive.</p>
+
+    <p>It will not treat rebates as paperwork. It will treat incentives as core infrastructure.</p>
+
+    <p>It will not treat the Heat Pump as the whole product. It will treat it as the wedge into comfort, clean electricity, resilience, and flexible load.</p>
+
+    <p>And it will not make the homeowner feel like they are managing an infrastructure project. It will make the better home feel obvious.</p>
+
+    <p>That is the company I want to see built.</p>
+
+    <p>The homeowner-centric, AI-enabled, national neo-electrification company.</p>
+
+    <p>Not a slightly better HVAC company. Not a marketplace. Not a thin software wrapper around someone else's field operation. And definitely not another lead gen company.</p>
+
+    <p>A real operating company for the electrified home.</p>
+
+    <p><strong>Who is building it?</strong></p>
+
+    <div style="margin-top:48px;padding:32px;border:1px solid rgba(26,26,26,0.08);border-radius:8px;">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Links Worth Reading</p>
+      <p style="font-size:15px;line-height:1.6;margin-bottom:8px;"><a href="https://www.span.io/blog/span-announces-xfra-a-distributed-data-center-solution-to-close-the-speed-to-power-gap-for-ai-compute-demand" style="color:var(--ink);font-weight:500;">SPAN announces XFRA</a>. A distributed data center solution to close the speed-to-power gap for AI compute demand.</p>
+      <p style="font-size:15px;line-height:1.6;margin-bottom:8px;"><a href="https://www.xfra.ai/" style="color:var(--ink);font-weight:500;">XFRA</a>. Behind-the-meter capacity as distributed compute.</p>
+      <p style="font-size:15px;line-height:1.6;margin-bottom:8px;"><a href="https://ap.span.io/whitepaper" style="color:var(--ink);font-weight:500;">SPAN whitepaper</a>. The case for the home as flexible infrastructure.</p>
+      <p style="font-size:15px;line-height:1.6;"><a href="https://www.canarymedia.com/articles/batteries/carrier-air-conditioning-help-grid" style="color:var(--ink);font-weight:500;">Canary Media on Carrier pairing batteries with AC</a>. HVAC load becomes a grid asset.</p>
+    </div>
+
+    <div style="margin-top:24px;padding:32px;border:1px solid rgba(26,26,26,0.08);border-radius:8px;">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Related Reading</p>
+      <p style="font-size:15px;line-height:1.6;margin-bottom:8px;"><a href="/writing/not-all-tokens-are-equal" style="color:var(--ink);font-weight:500;">Not All Tokens Are Equal</a>. Why cheap energy and cheap intelligence are now the same race, and how the home becomes a node in the intelligence grid.</p>
+      <p style="font-size:15px;line-height:1.6;margin-bottom:8px;"><a href="/writing/electrification-sequencing" style="color:var(--ink);font-weight:500;">The Electrification Sequencing Problem</a>. What a homeowner should electrify first, and why the answer is messier than it looks.</p>
+      <p style="font-size:15px;line-height:1.6;"><a href="/writing/panel-upgrade-myth" style="color:var(--ink);font-weight:500;">You Probably Don't Need a Panel Upgrade</a>. The smart-panel and load-management layer that makes electrification cheaper.</p>
+    </div>
+
+    <div class="signup-box">
+      <div class="signup-label">Enjoy this kind of writing?</div>
+      <p class="signup-text">I write about energy, AI, and building companies. Subscribe for occasional updates.</p>
+      <form class="signup-form" data-source="writing/neo-electrification-company" onsubmit="return handleSignup(event)">
+        <input type="email" class="signup-input" placeholder="you@example.com" required aria-label="Email address">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAC_Cyx-FA4dfM_bL" data-theme="light" data-size="compact"></div>
+        <button type="submit" class="signup-btn">Subscribe</button>
+      </form>
+      <div class="signup-msg" aria-live="polite"></div>
+    </div>
+
+    <div class="post-footer">
+      <p><strong>Josh Lake</strong> is a serial entrepreneur thinking about AI and the convergence of energy and intelligence. He's the founder of <a href="https://electrifyeverythingnow.com">Electrify Everything Now</a>, and previously co-founded <a href="https://www.elephantenergy.com">Elephant Energy</a>.</p>
+      <p style="margin-top:16px">Find him on <a href="https://linkedin.com/in/lakejosh">LinkedIn</a> and <a href="https://x.com/jlake1">X</a>, or go back to <a href="/">joshlake.ai</a>.</p>
+      <p style="margin-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:1px;color:#bbb;">v1.0 // June 8, 2026. First published.</p>
+    </div>
+  </article>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://joshlake.ai"},
+      {"@type": "ListItem", "position": 2, "name": "Writing", "item": "https://joshlake.ai/#writing"},
+      {"@type": "ListItem", "position": 3, "name": "A Neo-Electrification Company?"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A Neo-Electrification Company?",
+    "author": {
+      "@type": "Person",
+      "@id": "https://joshlake.ai/#person",
+      "name": "Josh Lake",
+      "url": "https://joshlake.ai"
+    },
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "image": "https://joshlake.ai/images/neo-electrification-hero.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://joshlake.ai/writing/neo-electrification-company"
+    },
+    "description": "What would a homeowner-centric, AI-enabled, national neo-electrification company actually look like — part heat pump installer, part solar and storage platform, part home energy operator — and who is building it?",
+    "publisher": {
+      "@type": "Organization",
+      "name": "joshlake.ai",
+      "url": "https://joshlake.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://joshlake.ai/images/og-image.jpg"
+      }
+    }
+  }
+  </script>
+  <script>
+    async function handleSignup(e){
+      e.preventDefault();
+      const form=e.target,btn=form.querySelector('.signup-btn'),msg=form.parentElement.querySelector('.signup-msg'),email=form.querySelector('.signup-input').value.trim(),source=form.dataset.source||'unknown';
+      const tsInput=form.querySelector('[name="cf-turnstile-response"]');
+      const turnstileToken=tsInput?tsInput.value:'';
+      if(!turnstileToken){msg.textContent='Please complete the verification.';msg.className='signup-msg error';return false}
+      btn.disabled=true;btn.textContent='Sending...';msg.className='signup-msg';
+      try{
+        const res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,turnstileToken,source})});
+        const data=await res.json();
+        if(data.success){msg.textContent="You're in. Welcome aboard.";msg.className='signup-msg success';form.querySelector('.signup-input').value='';if(window.turnstile)turnstile.reset(form.querySelector('.cf-turnstile'))}
+        else{msg.textContent=data.error||'Something went wrong. Try again.';msg.className='signup-msg error'}
+      }catch(err){msg.textContent='Network error. Please try again.';msg.className='signup-msg error'}
+      btn.disabled=false;btn.textContent='Subscribe';return false
+    }
+  </script>
+</body>
+</html>
