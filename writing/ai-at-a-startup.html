@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What I Learned Leading AI at Elephant // Josh Lake</title>
-  <meta name="description" content="I led the AI rollout at Elephant Energy, a 40-person climate tech startup. Here's what I learned, and how I'd approach it if I started over at a different company today.">
-  <meta property="og:title" content="What I Learned Leading AI at Elephant">
-  <meta property="og:description" content="I led the AI rollout at a 40-person climate tech startup. Here's what I'd do differently next time.">
+  <title>This Is How I Would Implement AI at a 40-Person Startup // Josh Lake</title>
+  <meta name="description" content="How I'd implement AI at a 40-person startup today, based on leading the AI rollout at Elephant Energy. Real buy-in, the productivity-or-transformation choice, one LLM, guardrails, and structural change.">
+  <meta property="og:title" content="This Is How I Would Implement AI at a 40-Person Startup">
+  <meta property="og:description" content="How I'd implement AI at a 40-person startup today. The order I'd do it in, based on running a version of it at Elephant Energy.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://joshlake.ai/writing/ai-at-a-startup">
   <meta property="og:image" content="https://joshlake.ai/images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@jlake1">
-  <meta name="twitter:title" content="What I Learned Leading AI at Elephant">
-  <meta name="twitter:description" content="I led the AI rollout at a 40-person climate tech startup. Here's what I'd do differently next time.">
+  <meta name="twitter:title" content="This Is How I Would Implement AI at a 40-Person Startup">
+  <meta name="twitter:description" content="How I'd implement AI at a 40-person startup today. The order I'd do it in, based on running a version of it at Elephant Energy.">
   <meta name="twitter:image" content="https://joshlake.ai/images/og-image.jpg">
   <meta name="author" content="Josh Lake">
   <link rel="canonical" href="https://joshlake.ai/writing/ai-at-a-startup">
@@ -103,11 +103,11 @@
   </nav>
 
   <article>
-    <div class="post-meta">April 2026 · Updated April 23, 2026</div>
+    <div class="post-meta">April 2026 · Updated August 2026</div>
 
-    <h1>What I Learned Leading AI at Elephant</h1>
+    <h1>This Is How I Would Implement AI at a 40-Person Startup</h1>
 
-    <p class="post-subtitle">I led the charge on AI adoption at Elephant Energy, a 40-person climate tech startup. Most companies get this wrong — they buy tools, write policies nobody reads, and wonder why nothing sticks. Here's what I learned, and how I'd approach it if I walked into a different company tomorrow.</p>
+    <p class="post-subtitle">I led the AI rollout at Elephant Energy, a 40-person climate tech startup with heat pumps, real trucks, and real customers. Not a software company. Most companies get this wrong — they buy tools, write policies nobody reads, and wonder why nothing sticks. This is the playbook I'd run if I walked into another 40-person company tomorrow, in the order I'd run it in.</p>
 
     <p>Elephant was a home electrification company. Field technicians, sales advisors, designers, ops people, and a small engineering team. Forty people across three states installing heat pumps, induction stoves, and EV chargers. Not a software company. A real company, with real trucks and real customers.</p>
 
@@ -115,15 +115,13 @@
 
     <p>The technology was easy. The change management was brutally hard.</p>
 
-    <p>This is what I took away from that year. If I walked into a different company tomorrow as the person leading AI — whether as CTO, head of AI, or a founder starting fresh — this is how I'd run the playbook. It starts with something I didn't fully appreciate going in, and would now put ahead of everything else.</p>
+    <p>This is how I'd run it now — whether as CTO, head of AI, or a founder starting fresh — at a 40-person company that isn't a software shop. It starts with something I didn't fully appreciate going in, and would now put ahead of everything else.</p>
 
-    <h2>0. Get real buy-in from the top. Or don't start.</h2>
+    <h2>0. Get real buy-in from the top. This is a call to take risk.</h2>
 
-    <p>Before you pick tools, write a policy, or run a single pilot: secure genuine buy-in from leadership (co-founders or CEO on down) and support from your investors.</p>
+    <p>Before you pick tools, write a policy, or run a single pilot: secure genuine buy-in from leadership (co-founders or CEO on down) and support from your investors. And be honest with yourselves about what you're actually signing up for — this is a call to take risk.</p>
 
-    <p>If all you want is bolt-on AI for individual productivity — faster emails, cleaner meeting notes, better first drafts — you can get away with a bottom-up push. That's fine, and it will claw back some hours. But it's not transformative. You'll be the same company with slightly better output.</p>
-
-    <p>If you want AI to actually change how the company operates, you are going to change systems, tools, processes, people, and workflows. Sales motions will look different. Ops teams will shrink or reshape. Roles will blur. Decision rights will shift. Some of the org chart will not survive contact with the new reality. That is not a side effect of doing this well — it <em>is</em> doing it well.</p>
+    <p>If you want AI to actually change how the company operates, you are going to change systems, tools, processes, people, and workflows. You're going to change the way the leadership team thinks. Sales motions will look different. Ops teams will shrink or reshape. Roles will blur. Decision rights will shift. Some of the org chart will not survive contact with the new reality. That is not a side effect of doing this well — it <em>is</em> doing it well.</p>
 
     <p>The question you're really committing to is this: <em>"If we were starting from scratch, with agents as first-class participants, how would we design this?"</em> You run that question across sales, ops, finance, support, engineering. The answers are rarely what you already have. Marginal gains come from bolting AI onto current processes; compounding returns come from redesigning the process itself.</p>
 
@@ -139,39 +137,63 @@
 
     <p>If you don't have that alignment on day one, don't pretend you do. Spend your first weeks getting it — explicit, on the record, with the hard conversations out of the way. Then begin.</p>
 
-    <h2>1. Pick one LLM. Standardize ruthlessly.</h2>
+    <h2>1. Decide up front: productivity, or transformation.</h2>
+
+    <p>The first choice, and the one most companies never explicitly make, is what you're actually aiming for. Both answers are legitimate. Conflating them is where it falls apart.</p>
+
+    <p><strong>Productivity is bolt-on.</strong> Faster emails, cleaner meeting notes, better first drafts, quicker code reviews, smarter search. Ships fast. Low drama. Realistic upside is somewhere in the <strong>10–20%</strong> range across knowledge work. You are the same company, doing the same work, just faster. That's a fine outcome. Some companies should stop there.</p>
+
+    <p><strong>Transformation is a different animal.</strong> The shape of the work changes. Some jobs shrink, some jobs merge, some new jobs get invented. Your sales motion looks different. Your ops team looks different. Tools you were paying for get replaced. You commit to a period of instability — six to eighteen months of things being worse before they're better — in exchange for a company that operates on a different curve when it's done.</p>
+
+    <p>Pick one. Say it out loud. Tell the company which one you're running. The thing you cannot do is nod along to "transformation" in a board meeting and then quietly run a productivity playbook. Everyone will know, and the credibility cost is enormous.</p>
+
+    <div class="callout">
+      <strong>A useful test:</strong> If your leadership team can name three roles or workflows they expect to look meaningfully different in a year, you're doing transformation. If they can't, you're doing productivity. Neither is wrong. Only one of them is what most people mean when they say "AI strategy."
+    </div>
+
+    <h2>2. Pick one LLM. Standardize ruthlessly.</h2>
 
     <p>This is the decision most companies refuse to make, and it costs them everything.</p>
 
-    <p>When everyone uses different tools, you get chaos. One person uses ChatGPT, another uses Claude, a third uses some random free tool that trains on your data. Nobody builds shared prompts. Nobody shares what works. Institutional knowledge about how to use AI stays trapped in individual heads, which is the exact problem AI was supposed to solve.</p>
+    <p>When everyone uses different tools, you get chaos. One person uses ChatGPT, another uses Claude, a third uses Gemini, a fourth uses Grok, and a fifth ends up on some random free tool that trains on your data. Nobody builds shared prompts. Nobody shares what works. Institutional knowledge about how to use AI stays trapped in individual heads, which is the exact problem AI was supposed to solve.</p>
 
-    <p>We picked one primary LLM ecosystem and made it the standard. Everyone got a paid account through the company. We standardized the login, the security settings, the data policies. One platform, one set of credentials, one place to build.</p>
+    <p><strong>It mostly doesn't matter which one you pick.</strong> ChatGPT, Claude, Gemini, Grok — they are all extremely capable, and the ceiling of each one moves every quarter. What matters is that you pick one, standardize on it, buy enterprise seats for the whole company, and lock the login and data policies behind your SSO. One platform, one set of credentials, one place to build. Whichever one you pick will be "wrong" within a year, and you should switch when it is. You can't switch what you never chose.</p>
 
     <div class="callout">
       <strong>The principle:</strong> Standardize on one ecosystem, not one tool. Your primary LLM is the foundation. Embedded AI in your existing SaaS tools (CRM, email, project management) is the accelerant. Everything else requires approval.
     </div>
 
-    <p>This doesn't mean you can't experiment. We had a process for that: post in a shared channel, get a yes or an alternative within 24 hours. Default to yes, with guardrails. But the default stack was non-negotiable.</p>
+    <p>Alongside your primary LLM, there is a companion category of prototyping tools that has become genuinely important: <strong>Replit, Cursor, Claude Code, Claude Artifacts, and OpenAI Codex.</strong> These let anyone in the company build a working thing in an afternoon — a small internal tool, a scraper, a dashboard, a script that automates a painful piece of workflow. Sanction at least one of them so curious people know what's fair game and the security team isn't blindsided by shadow tools.</p>
 
-    <h2>2. "AI-empowered" is not the same as "AI-automated."</h2>
+    <p>This doesn't mean you can't experiment. Have a process for it: post in a shared channel, get a yes or an alternative within 24 hours. Default to yes, with guardrails. But the default stack is non-negotiable.</p>
 
-    <p>The framing matters more than you think.</p>
+    <div class="callout">
+      <strong>My biggest mistake:</strong> Not just getting started. I spent too long deliberating over which LLM, which agent framework, which vendor, which policy. The right move was to pick something reasonable, get everyone on it, and iterate. You can trade one platform for another later. You cannot recover the year you spent not starting. Just go. Go, go, go.
+    </div>
 
-    <p>When you tell a team of 40 people that you're "implementing AI," half of them hear "you're replacing me." That's a trust problem that no amount of tooling can fix.</p>
+    <h2>3. AI-empowered, AI-first, and AI-native are not the same thing.</h2>
 
-    <p>We were deliberate about the language. We weren't building an AI-automated company. We were building an <strong>AI-empowered</strong> company. Every team member paired with intelligent tools that handle the monotonous work, surface insights, and support faster decisions. The humans stay accountable. The humans make the calls. The AI handles the grind.</p>
+    <p>The framing matters more than you think, and the words that get thrown around — <em>AI-native</em>, <em>AI-first</em>, <em>AI-empowered</em> — get used interchangeably in a way that hides the fact that they describe fundamentally different companies.</p>
 
-    <p>This isn't just corporate messaging. It's an architectural decision. When you build for empowerment, you design tools that keep humans in the loop. When you build for automation, you design tools that remove them. Those are fundamentally different systems, and the first one is the only one that works when your business requires trust, judgment, and customer relationships.</p>
+    <ul>
+      <li><strong>AI-native.</strong> Built from scratch with AI as the foundation. The product, the workflows, and often the org chart are shaped around what LLMs and agents can do. These are usually new companies. Retrofitting an existing business to AI-native is possible but expensive.</li>
+      <li><strong>AI-first.</strong> An existing company retooling so AI is the default way work happens. Every process is reviewed with "how would we do this if we assumed AI in the loop?" as the first question. This is the aggressive rebuild — you keep the business but rewire how it runs.</li>
+      <li><strong>AI-empowered.</strong> Every human paired with intelligent tools that handle the monotonous work, surface insights, and support faster decisions. Humans stay accountable. Humans make the calls. The AI handles the grind. The pragmatic path for most 40-person real-world companies, especially when trust, judgment, and customer relationships are central.</li>
+    </ul>
 
-    <h2>3. The guardrails are the product.</h2>
+    <p>When you tell a team of 40 people that you're "implementing AI," half of them hear "you're replacing me." That's a trust problem no amount of tooling can fix. When you build for empowerment, you design tools that keep humans in the loop. When you build for automation, you design tools that remove them. Those are fundamentally different systems, and the first one is the only one that works when your business runs on trust, judgment, and customer relationships.</p>
 
-    <p>Most AI policies read like legal documents written by people who've never used AI. Ours fit on one page, and the core of it was this:</p>
+    <p>Pick the frame that actually matches your ambition. If you said "transformation" out loud in section 1, you probably owe your company an AI-first plan, not just an AI-empowered one. Be honest about which one you're building, and use the word that matches.</p>
+
+    <h2>4. The guardrails are the product.</h2>
+
+    <p>Most AI policies read like legal documents written by people who've never used AI. I'd try to fit mine onto one page, and the core of it would be this:</p>
 
     <p><strong>If you wouldn't email it to a stranger, don't paste it into an AI tool.</strong></p>
 
-    <p>That one line did more for our security posture than a 20-page policy would have. People understood it immediately. It was memorable, actionable, and didn't require a training session to internalize.</p>
+    <p>That one line does more for your security posture than a 20-page policy would. People understand it immediately. It's memorable, actionable, and doesn't require a training session to internalize.</p>
 
-    <p>Beyond that, we kept it simple:</p>
+    <p>Beyond that, keep it simple:</p>
 
     <ul>
       <li><strong>Allowed:</strong> Generalized scenarios, anonymized summaries, draft rewriting, structuring thoughts, research.</li>
@@ -179,21 +201,25 @@
       <li><strong>Ask first:</strong> Connecting new tools, uploading large datasets, automating customer-facing communications.</li>
     </ul>
 
-    <p>The "ask first" category is the key insight. Most companies default to "no" on anything ambiguous. We defaulted to "yes, with a conversation." That one shift turned AI adoption from a compliance exercise into a culture of experimentation.</p>
+    <p>The "ask first" category is the key insight. Most companies default to "no" on anything ambiguous. Default to "yes, with a conversation." That one shift turns AI adoption from a compliance exercise into a culture of experimentation.</p>
 
-    <h2>4. Start with the AI that's already in your tools.</h2>
+    <p>Make the secure path the easy path. Company-managed accounts on your standardized LLM, embedded AI on the tools people already use, prototyping tools approved through official channels. When people have a fast, sanctioned way to use AI, they don't reach for the sketchy free version.</p>
+
+    <p>The other honest thing to admit: <strong>this is extremely hard to police.</strong> It's the same problem as trying to police what people say in internal meetings, in Slack, in email, or in text messages — you can't, not really. You can log tool usage. You can audit your corporate accounts. You cannot see the free chatbot open in someone's personal browser tab. The only real defense is to hire people you trust, tell them clearly what actually matters, and expect them to use their best judgment. A short, memorable rule that people believe in beats a 20-page policy nobody reads.</p>
+
+    <h2>5. Start with the AI that's already in your tools.</h2>
 
     <p>Every company I talk to wants to build custom AI agents. Almost none of them have turned on the AI features already embedded in the software they're paying for.</p>
 
     <p>Your CRM has AI. Your email has AI. Your project management tool has AI. Your call recording software has AI. Your workflow automation tool has AI. Most of these features are included in your existing subscription.</p>
 
-    <p>We got more leverage from turning on embedded AI features across our existing stack than from any custom tool we built. The reason is simple: embedded AI operates inside the workflow. There's no context switching. There's no "open a new tab and paste this in." It just works where people already work.</p>
+    <p>You'll get more leverage from turning on embedded AI features across your existing stack than from any custom tool you build in year one. The reason is simple: embedded AI operates inside the workflow. There's no context switching. There's no "open a new tab and paste this in." It just works where people already work.</p>
 
     <div class="callout">
-      <strong>The sequence that worked:</strong> First, activate embedded AI in existing tools. Second, train people on the standard LLM. Third, build custom agents for specific, well-defined problems. Most companies start at step three and skip one and two entirely.
+      <strong>The sequence that works:</strong> First, activate embedded AI in existing tools. Second, train people on the standard LLM. Third, build custom agents for specific, well-defined problems. Most companies start at step three and skip one and two entirely.
     </div>
 
-    <h2>5. Solve for context before capability.</h2>
+    <h2>6. Solve for context before capability.</h2>
 
     <p>The models are already good enough. The real bottleneck is almost never the LLM — it's that the knowledge your agent needs lives in people's heads, in meeting audio nobody transcribed, in chat threads nobody searches, and in systems that don't talk to each other.</p>
 
@@ -210,22 +236,24 @@
 
     <p>Most companies skip this step because it's boring. They want to plug in a fancy agent and watch it sing. What they get instead is a confident hallucination machine, because the agent doesn't know who the customer is, what you promised them last month, or what the technician already tried on site.</p>
 
-    <h2>6. Crawl, walk, run, sprint.</h2>
+    <h2>7. Crawl, walk, run, sprint.</h2>
 
-    <p>We built a design assistant bot that helped our sales advisors make HVAC system recommendations. The roadmap for that one tool looked like this:</p>
+    <p>We built a design assistant that helped our sales advisors make HVAC system recommendations. The roadmap for that one tool looked like this:</p>
 
     <ol>
-      <li><strong>Crawl:</strong> Knowledge retrieval. Feed it our internal playbooks and design guidelines. It answers questions with links to existing documentation.</li>
-      <li><strong>Walk:</strong> Structured Q&A. Train it on real question-and-answer pairs from our internal channels. It starts giving recommendations in a consistent format with confidence scores.</li>
-      <li><strong>Run:</strong> Connected systems. It reads from our proposal tool and CRM, pulling real customer data into its recommendations.</li>
+      <li><strong>Crawl:</strong> Knowledge retrieval. Feed it internal playbooks and design guidelines. It answers questions with links to existing documentation.</li>
+      <li><strong>Walk:</strong> Structured Q&amp;A. Train it on real question-and-answer pairs from internal channels. It starts giving recommendations in a consistent format with confidence scores.</li>
+      <li><strong>Run:</strong> Connected systems. It reads from your proposal tool and CRM, pulling real customer data into its recommendations.</li>
       <li><strong>Sprint:</strong> Autonomous actions. It updates records, triggers workflows, and handles routine design decisions without human intervention.</li>
     </ol>
 
     <p>Most companies try to jump straight to sprint. They want the autonomous agent that does everything. The result is a brittle system that nobody trusts, built on data that hasn't been validated, making decisions that haven't been tested.</p>
 
+    <p>This is also where <strong>agents, custom tools, gems, and skills</strong> come in — the higher rungs of the ladder, not the entry point. A custom agent built on top of a team that hasn't mastered prompting is a very expensive way to look busy. Get your people fluent with the basics first — the standard LLM, embedded AI in existing tools, a shared prompt library, a few prototyping wins. When the basics are in place, agents and skills are genuinely transformative. Before that, they're a demo.</p>
+
     <p>The crawl phase isn't glamorous, but it's where you learn what data you actually have, what's missing, and what format it needs to be in. Skip it and you'll pay for it later.</p>
 
-    <h2>7. Treat agents like employees.</h2>
+    <h2>8. Treat agents like employees.</h2>
 
     <p>Once you have more than a couple of agents in production, start treating them the way you treat people.</p>
 
@@ -241,41 +269,76 @@
 
     <p>Permissions should be designed for the agent, not inherited from the person who spawned it. Sometimes an agent legitimately needs broader access than any one human — it has to see across teams to be useful. Sometimes it needs far less. Both require explicit decisions, not accidents of IAM configuration. When agents are doing 100x or 1,000x the volume of any individual, "we'll clean up access later" isn't a plan; it's a breach.</p>
 
-    <h2>8. Security is a feature, not a blocker.</h2>
+    <h2>9. Be willing to change roles, titles, and workflows. Or don't bother.</h2>
 
-    <p>AI makes it trivially easy to leak data you didn't mean to share. Customer names pasted into a free chatbot. Internal documents uploaded to a tool that trains on user inputs. API keys dropped into a prompt.</p>
+    <p>This is the section where most transformation programs quietly die. Companies say they want AI transformation, and then refuse to change anyone's role, title, workflow, or reporting line. You can't have it both ways.</p>
 
-    <p>We took PII and data security seriously not because lawyers told us to, but because our customers trusted us with their home addresses, electrical panels, and financial information. That trust was sacred.</p>
+    <p>If you decided in section 1 that you're doing transformation, you have to be willing to restructure. Some roles will merge. Some will shrink. Some new ones — an AI product owner, a workflow engineer, someone who owns the internal tool platform, someone who runs the agent fleet — will need to be invented. Titles will change. Workflows will get rebuilt. Systems and tools you were paying for will get retired. Processes that were sacred cows will get slaughtered.</p>
 
-    <p>The fix wasn't locking things down. It was making the secure path the easy path. Company-managed accounts with enterprise privacy protections. Approved tools connected through official channels. Clear rules about what data never leaves the building. When people have a fast, approved way to use AI, they don't reach for the sketchy free version.</p>
+    <p>You cannot bolt AI on top of an org chart designed for a pre-AI company and expect it to work. It's the equivalent of stapling a jet engine to a horse-drawn carriage and being disappointed when the horse still sets the pace. You're screwed if you try.</p>
 
-    <h2>9. Celebrate builds, failures, and weirdness. In public.</h2>
+    <div class="callout">
+      <strong>The mistake:</strong> Buying tools, running trainings, celebrating pilots, and then leaving every role, title, and workflow exactly as it was. That's how you end up with a company that spent a fortune on AI and moved 5% faster. Protecting the shape of the org from any real change is the same as choosing productivity — just with a bigger bill.
+    </div>
 
-    <p>We ran regular sessions where anyone in the company could demo something they'd built or discovered with AI. A sales advisor who automated her follow-up emails. An ops manager who built a scheduling optimizer. A field tech who used AI to troubleshoot a tricky installation.</p>
+    <p>This part is unpopular because it's the part that touches people. Some team members will thrive in the new shape. Some will not. Your job is to be honest about that early, invest in the people who want to grow into the new roles, and make clean, humane exits for the ones who don't. Pretending the org can stay static while the work is being rebuilt is the fastest way to burn trust with everyone.</p>
+
+    <h2>10. Do it together. Celebrate builds, failures, and weirdness. In public.</h2>
+
+    <p>Run regular sessions where anyone in the company can demo something they've built or discovered with AI. A sales advisor who automated her follow-up emails. An ops manager who built a scheduling optimizer. A field tech who used AI to troubleshoot a tricky installation.</p>
 
     <p>The key word is "anyone." Not just the engineering team. Not just the people who were "good at tech." Anyone.</p>
 
-    <p>We celebrated the failures too. The bot that hallucinated a product model that doesn't exist. The automation that sent the wrong email. The prompt that returned something hilariously wrong. Failures meant someone was trying. Not trying was the only real failure.</p>
+    <p>Celebrate the failures too. The bot that hallucinated a product model that doesn't exist. The automation that sent the wrong email. The prompt that returned something hilariously wrong. Failures mean someone was trying. Not trying is the only real failure.</p>
 
-    <p>This has to be fun or it won't stick. AI adoption driven by mandates and compliance training dies on contact with reality. AI adoption driven by curiosity, play, and showing off to your teammates compounds. Nobody needed to be told to use AI. They wanted to because their coworker just demoed something awesome and they wanted to build something better.</p>
+    <p>This has to be done <strong>together, top to bottom, as a company</strong>, or it doesn't stick. It cannot be a founder-and-a-couple-champions thing. It cannot be an engineering-department thing. It has to be everyone — the CEO demoing something clunky, the field tech demoing something brilliant, the ops lead sharing a prompt that saved her a full afternoon. If any layer of the company opts out, the rest will notice and quietly follow.</p>
+
+    <p>It also has to be fun, or it won't compound. AI adoption driven by mandates and compliance training dies on contact with reality. AI adoption driven by curiosity, play, and showing off to your teammates snowballs. Nobody needed to be told to use AI at Elephant. They wanted to, because their coworker just demoed something awesome and they wanted to build something better.</p>
 
     <div class="callout">
-      <strong>The culture shift:</strong> Never punish someone for experimenting within the guardrails. Never punish an AI output that went wrong if the person caught it and reported it. The only thing to punish is not trying, and hiding mistakes.
+      <strong>The culture shift:</strong> Never punish someone for experimenting within the guardrails. Never punish an AI output that went wrong if the person caught it and reported it. The only things worth punishing are not trying, and hiding mistakes.
     </div>
 
-    <h2>10. Learn together or don't bother.</h2>
+    <h3>How to know it's working</h3>
+
+    <p>Business metrics (revenue per employee, cycle time, cost per unit of output) lag by many months. Lean on leading indicators:</p>
+
+    <ul>
+      <li><strong>Percentage of people actively using the standardized tools.</strong> If it isn't climbing toward 100%, you have an adoption problem, not a tooling problem.</li>
+      <li><strong>Happiness and perceived productivity.</strong> A short quarterly pulse — "do you feel less bogged down than a quarter ago?", "do you feel more productive?" — surfaces the felt experience faster than any dashboard.</li>
+      <li><strong>Token-maxing.</strong> Raw token usage across the org is a rough but useful proxy for how much people are actually experimenting. It's a decent early signal that people are trying things instead of avoiding them.</li>
+    </ul>
+
+    <p>Be honest about what tokens are and aren't. They are <em>not</em> the outcome. The outcome is smarter decisions and better-informed people. Tokens are a signal that people are engaging with the tools — a good start, not a finish line. Watch the movement more than the absolute numbers. A team whose usage doubles quarter over quarter is on a very different trajectory from one whose usage is flat, even if the flat one started higher.</p>
+
+    <h2>11. Learn together, or don't bother.</h2>
 
     <p>Individual AI adoption is a dead end. One person gets really good at prompting and builds amazing tools that nobody else understands, can maintain, or even knows exist. When that person leaves, all the knowledge walks out the door.</p>
 
-    <p>We made AI literacy a team sport. Shared prompt libraries. Internal channels where people posted what worked and what didn't. Office hours with the AI team where anyone could bring a problem and we'd build a solution together in real time.</p>
+    <p>Make AI literacy a team sport. Shared prompt libraries. Internal channels where people post what worked and what didn't. Office hours where anyone can bring a problem and you build a solution together in real time.</p>
 
-    <p>The people who became our best AI users weren't the most technical. They were the most curious, and the most willing to share what they learned. Create the conditions for that and get out of the way.</p>
+    <p>Your best AI users won't be the most technical. They'll be the most curious, and the most willing to share what they learn. Create the conditions for that and get out of the way.</p>
 
     <h2>The bottom line</h2>
 
-    <p>Implementing AI at a startup isn't a technology problem. It's a change management problem. The scared people need safety. The excited people need guardrails. Everyone needs to feel like they're learning together, not being left behind. The technology is the easy part.</p>
+    <p>Implementing AI at a 40-person company isn't a technology problem. It's a change management problem, and it's a leadership problem. The scared people need safety. The excited people need guardrails. Everyone needs to feel like they're learning together, not being left behind. The technology is the easy part.</p>
 
-    <p>If I were walking into a different company today to lead this work, the order would be clear. Get real buy-in from the top before you do anything else. Standardize your tools. Frame it as empowerment, not replacement. Write guardrails that humans can actually remember. Make the secure path the easy path. Start with the AI you're already paying for. Fix your context problem before you chase capability. Build incrementally. Name your agents and give them real roles. Celebrate everything in public. Learn together. Have fun.</p>
+    <p>If I were walking into a different 40-person company today to lead this work, the order would be clear:</p>
+
+    <ol>
+      <li>Get real, on-the-record buy-in from the top. This is a call to take risk.</li>
+      <li>Decide out loud whether you're doing productivity or transformation.</li>
+      <li>Standardize on one LLM and one prototyping tool. Just start.</li>
+      <li>Frame it honestly — AI-empowered, AI-first, or AI-native. Pick the word that matches your ambition.</li>
+      <li>Write guardrails your people can actually remember. Accept that you can't fully police it.</li>
+      <li>Start with the AI you're already paying for.</li>
+      <li>Fix your context problem before you chase capability.</li>
+      <li>Build incrementally. Crawl before you sprint. Agents, tools, gems, and skills come last, not first.</li>
+      <li>Name your agents. Give them scoped roles and clean permissions.</li>
+      <li>Be willing to restructure — roles, titles, workflows, systems, tools, processes. Or admit you're doing bolt-on.</li>
+      <li>Do it together. Celebrate in public. Measure adoption, happiness, and token usage as leading indicators.</li>
+      <li>Learn together. Have fun.</li>
+    </ol>
 
     <p>And start now. The compounding advantage goes to the people who begin today and stay with it. You don't need the perfect architecture or the next model release — you need to start iterating while everyone else is still writing strategy decks. Cloud took 15 years to grow 1,000x after the tech world agreed it was inevitable. Agents are on a similar curve. The companies that wait for the dust to settle will be the dust.</p>
 
@@ -316,7 +379,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://joshlake.ai"},
       {"@type": "ListItem", "position": 2, "name": "Writing", "item": "https://joshlake.ai/#writing"},
-      {"@type": "ListItem", "position": 3, "name": "What I Learned Leading AI at Elephant"}
+      {"@type": "ListItem", "position": 3, "name": "This Is How I Would Implement AI at a 40-Person Startup"}
     ]
   }
   </script>
@@ -324,7 +387,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "What I Learned Leading AI at Elephant",
+    "headline": "This Is How I Would Implement AI at a 40-Person Startup",
     "author": {
       "@type": "Person",
       "@id": "https://joshlake.ai/#person",
@@ -332,13 +395,13 @@
       "url": "https://joshlake.ai"
     },
     "datePublished": "2026-04-11",
-    "dateModified": "2026-04-23",
+    "dateModified": "2026-08-19",
     "image": "https://joshlake.ai/images/og-image.jpg",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://joshlake.ai/writing/ai-at-a-startup"
     },
-    "description": "I led the AI rollout at Elephant Energy, a 40-person climate tech startup. Here's what I learned, and how I'd approach it if I started over at a different company today.",
+    "description": "How I'd implement AI at a 40-person startup today, based on leading the AI rollout at Elephant Energy. Real buy-in, the productivity-or-transformation choice, one LLM, guardrails, and structural change.",
     "publisher": {
       "@type": "Organization",
       "name": "joshlake.ai",

@@ -34,9 +34,9 @@ Josh Lake is a serial entrepreneur, technologist, and builder. He is currently f
 - URL: https://joshlake.ai/writing/not-all-tokens-are-equal
 - Description: Essay arguing that AI compute is not a single market. Maps the token economy into five workloads (capability creation, commodity batch, premium interactive, agentic outcome, local/autonomous), each with different economics, latency, geography, and power profile. Argues cheap energy and cheap intelligence are now the same race, and the next infrastructure winners will integrate compute, energy, networking, orchestration, capital, and physical deployment.
 
-### What I Learned Leading AI at Elephant
+### This Is How I Would Implement AI at a 40-Person Startup
 - URL: https://joshlake.ai/writing/ai-at-a-startup
-- Description: Practical playbook for AI adoption at a small company, based on leading the AI rollout at Elephant Energy. Covers leadership buy-in as the prerequisite, standardization, change management, security, guardrails, and building a culture of experimentation — framed as how the author would approach it if starting over at a different company.
+- Description: Practical playbook for implementing AI at a small (~40-person) company. Covers real leadership buy-in as prerequisite; the productivity-vs-transformation choice; standardizing on one LLM and one prototyping tool; distinguishing AI-empowered, AI-first, and AI-native; pragmatic guardrails and admitting policing is hard; solving for context before capability; crawl-walk-run maturity (agents, gems, and skills come last); treating agents like employees; restructuring roles, titles, and workflows; and building a shared culture of experimentation with leading indicators (adoption, happiness, token-maxing). Based on leading the AI rollout at Elephant Energy.
 
 ### The Electrification Sequencing Problem
 - URL: https://joshlake.ai/writing/electrification-sequencing
