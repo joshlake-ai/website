@@ -9,6 +9,11 @@ Josh Lake is a serial entrepreneur, technologist, and builder. He is currently f
 ## Expertise
 
 - AI and the convergence of energy and intelligence
+- Speed to power: large load interconnection, queue reform, time-to-energized for data centers
+- Grid capacity and risk: interconnection risk, curtailment risk, flexible load, behind-the-meter generation
+- AI data center infrastructure and energy demand growth
+- AI-native services businesses: delivering professional-services scope with agent-run workflows
+- Agents for operations: multi-agent systems, agentic operating systems for companies
 - Home electrification: heat pumps, induction stoves, EV chargers, electrical panels, smart load management
 - AI implementation in small and mid-size companies
 - Climate technology and clean energy
