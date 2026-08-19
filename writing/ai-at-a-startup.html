@@ -103,7 +103,7 @@
   </nav>
 
   <article>
-    <div class="post-meta">April 2026</div>
+    <div class="post-meta">April 2026 · Updated April 23, 2026</div>
 
     <h1>What I Learned Leading AI at Elephant</h1>
 
@@ -125,6 +125,8 @@
 
     <p>If you want AI to actually change how the company operates, you are going to change systems, tools, processes, people, and workflows. Sales motions will look different. Ops teams will shrink or reshape. Roles will blur. Decision rights will shift. Some of the org chart will not survive contact with the new reality. That is not a side effect of doing this well — it <em>is</em> doing it well.</p>
 
+    <p>The question you're really committing to is this: <em>"If we were starting from scratch, with agents as first-class participants, how would we design this?"</em> You run that question across sales, ops, finance, support, engineering. The answers are rarely what you already have. Marginal gains come from bolting AI onto current processes; compounding returns come from redesigning the process itself.</p>
+
     <p>You cannot drive that from the middle. You need the CEO publicly committed, the co-founders aligned, and the investors supportive of the disruption that comes with real change. If your investors treat AI as a line item for the next board deck, they'll run out of patience the first time a team's productivity temporarily dips during a migration. And it will dip. That's the cost of rebuilding the plane while flying it.</p>
 
     <div class="callout">
@@ -132,6 +134,8 @@
     </div>
 
     <p>AI change management dies fastest when one key leader quietly resists, shields their team, or treats it as someone else's initiative. A single skeptical VP will stall the whole org. You'll spend more energy managing around them than moving the work forward, and the rest of your leadership team will notice.</p>
+
+    <p>The same rule applies one level down. Hire AI-first builders — people who already ship with AI and can show you the work. Proof over opinions, demos over resumes. Promote internal champions who reimagine workflows instead of defending the old ones. Don't let anyone talk their way into an AI role; look at what they've actually built.</p>
 
     <p>If you don't have that alignment on day one, don't pretend you do. Spend your first weeks getting it — explicit, on the record, with the hard conversations out of the way. Then begin.</p>
 
@@ -189,7 +193,24 @@
       <strong>The sequence that worked:</strong> First, activate embedded AI in existing tools. Second, train people on the standard LLM. Third, build custom agents for specific, well-defined problems. Most companies start at step three and skip one and two entirely.
     </div>
 
-    <h2>5. Crawl, walk, run, sprint.</h2>
+    <h2>5. Solve for context before capability.</h2>
+
+    <p>The models are already good enough. The real bottleneck is almost never the LLM — it's that the knowledge your agent needs lives in people's heads, in meeting audio nobody transcribed, in chat threads nobody searches, and in systems that don't talk to each other.</p>
+
+    <p>An agent is only as good as the context you can put in front of it. If your operating knowledge is locked in tribal memory and hallway conversations, no model will save you. The unglamorous work is the work:</p>
+
+    <ul>
+      <li>Record and transcribe calls. Tag them so they're retrievable, not just stored.</li>
+      <li>Write down the processes that currently live in one person's head. If they leave, so does your agent's competence.</li>
+      <li>Move operational data out of spreadsheets and legacy on-prem systems into places agents can reach programmatically.</li>
+      <li>Treat unstructured knowledge — customer context, domain expertise, decision rationales, "why we do it this way" — as a first-class asset worth digitizing.</li>
+    </ul>
+
+    <p>A useful frame: if it isn't captured, an agent can't use it. If it has full context, almost anything can be automated. Context engineering is a core competency, not an afterthought, and the quality of what you feed an agent determines the quality of what it produces.</p>
+
+    <p>Most companies skip this step because it's boring. They want to plug in a fancy agent and watch it sing. What they get instead is a confident hallucination machine, because the agent doesn't know who the customer is, what you promised them last month, or what the technician already tried on site.</p>
+
+    <h2>6. Crawl, walk, run, sprint.</h2>
 
     <p>We built a design assistant bot that helped our sales advisors make HVAC system recommendations. The roadmap for that one tool looked like this:</p>
 
@@ -204,7 +225,23 @@
 
     <p>The crawl phase isn't glamorous, but it's where you learn what data you actually have, what's missing, and what format it needs to be in. Skip it and you'll pay for it later.</p>
 
-    <h2>6. Security is a feature, not a blocker.</h2>
+    <h2>7. Treat agents like employees.</h2>
+
+    <p>Once you have more than a couple of agents in production, start treating them the way you treat people.</p>
+
+    <p>Give them names. Give them scoped roles. Write a short onboarding doc for each one that explains what it knows, what it can touch, and what it's explicitly not allowed to do. Drop them into the same Slack or Teams channels as the humans they work with, so interactions are visible and reviewable.</p>
+
+    <p>This isn't whimsy. It solves three real problems:</p>
+
+    <ul>
+      <li><strong>Capabilities become discoverable.</strong> People won't use a mystery box. They will @-mention "Nora the proposal drafter" in a channel where they've seen her work.</li>
+      <li><strong>Accountability becomes legible.</strong> "Nora shipped a wrong spec" is a much cleaner incident than "the AI messed up." The team can investigate a named agent the way they'd investigate a named hire.</li>
+      <li><strong>It forces you to define the role.</strong> If you can't write a one-paragraph job description for an agent, you're not ready to deploy it.</li>
+    </ul>
+
+    <p>Permissions should be designed for the agent, not inherited from the person who spawned it. Sometimes an agent legitimately needs broader access than any one human — it has to see across teams to be useful. Sometimes it needs far less. Both require explicit decisions, not accidents of IAM configuration. When agents are doing 100x or 1,000x the volume of any individual, "we'll clean up access later" isn't a plan; it's a breach.</p>
+
+    <h2>8. Security is a feature, not a blocker.</h2>
 
     <p>AI makes it trivially easy to leak data you didn't mean to share. Customer names pasted into a free chatbot. Internal documents uploaded to a tool that trains on user inputs. API keys dropped into a prompt.</p>
 
@@ -212,7 +249,7 @@
 
     <p>The fix wasn't locking things down. It was making the secure path the easy path. Company-managed accounts with enterprise privacy protections. Approved tools connected through official channels. Clear rules about what data never leaves the building. When people have a fast, approved way to use AI, they don't reach for the sketchy free version.</p>
 
-    <h2>7. Celebrate builds, failures, and weirdness. In public.</h2>
+    <h2>9. Celebrate builds, failures, and weirdness. In public.</h2>
 
     <p>We ran regular sessions where anyone in the company could demo something they'd built or discovered with AI. A sales advisor who automated her follow-up emails. An ops manager who built a scheduling optimizer. A field tech who used AI to troubleshoot a tricky installation.</p>
 
@@ -226,7 +263,7 @@
       <strong>The culture shift:</strong> Never punish someone for experimenting within the guardrails. Never punish an AI output that went wrong if the person caught it and reported it. The only thing to punish is not trying, and hiding mistakes.
     </div>
 
-    <h2>8. Learn together or don't bother.</h2>
+    <h2>10. Learn together or don't bother.</h2>
 
     <p>Individual AI adoption is a dead end. One person gets really good at prompting and builds amazing tools that nobody else understands, can maintain, or even knows exist. When that person leaves, all the knowledge walks out the door.</p>
 
@@ -238,7 +275,9 @@
 
     <p>Implementing AI at a startup isn't a technology problem. It's a change management problem. The scared people need safety. The excited people need guardrails. Everyone needs to feel like they're learning together, not being left behind. The technology is the easy part.</p>
 
-    <p>If I were walking into a different company today to lead this work, the order would be clear. Get real buy-in from the top before you do anything else. Standardize your tools. Frame it as empowerment, not replacement. Write guardrails that humans can actually remember. Make the secure path the easy path. Start with the AI you're already paying for. Build incrementally. Celebrate everything in public. Learn together. Have fun.</p>
+    <p>If I were walking into a different company today to lead this work, the order would be clear. Get real buy-in from the top before you do anything else. Standardize your tools. Frame it as empowerment, not replacement. Write guardrails that humans can actually remember. Make the secure path the easy path. Start with the AI you're already paying for. Fix your context problem before you chase capability. Build incrementally. Name your agents and give them real roles. Celebrate everything in public. Learn together. Have fun.</p>
+
+    <p>And start now. The compounding advantage goes to the people who begin today and stay with it. You don't need the perfect architecture or the next model release — you need to start iterating while everyone else is still writing strategy decks. Cloud took 15 years to grow 1,000x after the tech world agreed it was inevitable. Agents are on a similar curve. The companies that wait for the dust to settle will be the dust.</p>
 
     <p>Everything else is noise.</p>
 
