@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy &rarr; Tokens &rarr; Intelligence &rarr; Invention &rarr; Abundance // Josh Lake</title>
+  <meta name="description" content="Energy makes tokens. Tokens make intelligence. Intelligence unlocks invention, and invention unlocks abundance. Nine observations from a few months of building with agents: invention over automation, agents delivering automation at last, intelligence as a stack of multipliers, the product overhang from today’s models, 1,000x disposable software, outcomes over output, vibe-living, agent and model routers, and voice that finally works.">
+  <meta property="og:title" content="Energy → Tokens → Intelligence → Invention → Abundance">
+  <meta property="og:description" content="Energy makes tokens. Tokens make intelligence. Intelligence unlocks invention, and invention unlocks abundance. Nine observations from a few months of building with agents.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://joshlake.ai/writing/energy-to-abundance">
+  <meta property="og:image" content="https://joshlake.ai/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@jlake1">
+  <meta name="twitter:title" content="Energy → Tokens → Intelligence → Invention → Abundance">
+  <meta name="twitter:description" content="Energy makes tokens. Tokens make intelligence. Intelligence unlocks invention, and invention unlocks abundance. Nine observations from a few months of building with agents.">
+  <meta name="twitter:image" content="https://joshlake.ai/images/og-image.jpg">
+  <meta name="author" content="Josh Lake">
+  <link rel="canonical" href="https://joshlake.ai/writing/energy-to-abundance">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <style>
+    :root {
+      --cream: #f7f5f0;
+      --ink: #1a1a1a;
+      --gold: #8b6914;
+      --gold-faint: rgba(139,105,20,0.06);
+      --gold-dim: rgba(139,105,20,0.15);
+      --gray-mid: #888;
+      --gray-soft: #555;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --mono: 'Space Mono', 'Courier New', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.8; font-weight: 300; }
+    a { color: var(--gold); }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 48px; background: rgba(247,245,240,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26,26,26,0.06); }
+    .nav-inner { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: 1px; text-decoration: none; color: var(--ink); }
+    .nav-back { font-family: var(--sans); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: var(--gray-mid); transition: color 0.3s; }
+    .nav-back:hover { color: var(--gold); }
+
+    article { max-width: 720px; margin: 0 auto; padding: 140px 24px 100px; }
+
+    .post-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .post-meta::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+
+    h1 { font-family: var(--serif); font-size: 52px; font-weight: 300; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.5px; }
+
+    .post-subtitle { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--gray-soft); margin-bottom: 48px; line-height: 1.4; font-style: italic; }
+
+    h2 { font-family: var(--serif); font-size: 32px; font-weight: 400; margin: 64px 0 20px; letter-spacing: -0.3px; }
+    h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; margin: 40px 0 16px; }
+
+    p { font-size: 16px; margin-bottom: 24px; }
+
+    .callout { padding: 24px 28px; background: var(--gold-faint); border-left: 3px solid var(--gold); margin: 32px 0; font-size: 15px; line-height: 1.7; }
+
+    ol, ul { margin-bottom: 24px; padding-left: 24px; }
+    li { margin-bottom: 8px; font-size: 16px; }
+
+    strong { font-weight: 500; }
+    em { font-style: italic; }
+
+    .table-wrap { overflow-x: auto; margin: 32px 0; border: 1px solid rgba(26,26,26,0.08); border-radius: 4px; background: #fff; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+    thead { background: var(--gold-faint); }
+    th { font-family: var(--sans); font-weight: 500; text-align: left; padding: 14px 18px; border-bottom: 2px solid var(--gold-dim); color: var(--ink); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    td { padding: 16px 18px; border-bottom: 1px solid rgba(26,26,26,0.06); vertical-align: top; line-height: 1.55; color: var(--gray-soft); font-size: 14px; }
+    tbody tr:last-child td { border-bottom: none; }
+    td:first-child { font-weight: 500; color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.3; }
+
+    .pullquote { font-family: var(--serif); font-size: 26px; font-weight: 400; font-style: italic; line-height: 1.4; color: var(--ink); margin: 48px 0; padding: 0 24px; border-left: 3px solid var(--gold); }
+
+    .post-footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(26,26,26,0.08); }
+    .post-footer p { font-size: 14px; color: var(--gray-mid); }
+    .post-footer a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+
+    .signup-box { margin-top: 48px; padding: 32px; background: var(--gold-faint); border: 1px solid rgba(139,105,20,0.12); border-radius: 8px; }
+    .signup-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .signup-text { font-family: var(--sans); font-size: 14px; line-height: 1.8; color: var(--gray-soft); font-weight: 300; margin-bottom: 20px; }
+    .signup-form { display: flex; gap: 12px; align-items: flex-start; }
+    .signup-input { flex: 1; font-family: var(--sans); font-size: 14px; padding: 12px 16px; border: 1px solid rgba(26,26,26,0.15); border-radius: 4px; background: #fff; color: var(--ink); outline: none; transition: border-color 0.3s; }
+    .signup-input:focus { border-color: var(--gold); }
+    .signup-input::placeholder { color: var(--gray-mid); }
+    .signup-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 12px 24px; background: var(--gold); color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+    .signup-btn:hover { background: #7a5c10; }
+    .signup-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .signup-msg { font-family: var(--sans); font-size: 13px; margin-top: 12px; display: none; }
+    .signup-msg.success { color: #0D9448; display: block; }
+    .signup-msg.error { color: #c82828; display: block; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 26px; }
+      .post-subtitle { font-size: 18px; }
+      .pullquote { font-size: 20px; padding: 0 16px; }
+      article { padding: 100px 20px 60px; }
+      .nav { padding: 0 20px; }
+      .signup-form { flex-direction: column; }
+      .signup-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">JL</a>
+      <a class="nav-back" href="/#writing">All Writing</a>
+    </div>
+  </nav>
+
+  <article>
+    <div class="post-meta">August 2026</div>
+
+    <h1>Energy &rarr; Tokens &rarr; Intelligence &rarr; Invention &rarr; Abundance</h1>
+
+    <p class="post-subtitle">Nine observations from a few months of building with agents.</p>
+
+    <div class="callout"><strong>The short version.</strong> Energy makes tokens. Tokens make intelligence. Intelligence unlocks invention. Invention unlocks abundance. That chain is how I have come to think about the last few months of building, and it is the through line for everything below.</div>
+
+    <p>These are my observations and learnings. Almost none of it is original to me. I am synthesizing what I have picked up from people doing the work and writing about it, then testing it against what I have actually built. Where I am wrong, I would like to know.</p>
+
+    <p>Most of this got sharpened over one weekend. I spent it playing with Grok Bot and catching up on podcasts. David Senra on Sam Altman, a stack of Moonshots episodes, and a lot of other people working through the same set of questions. AI and data centers. Agents and the future of work. Autonomous companies. AI research itself. China and the US. Different shows, same handful of problems, and the through line kept showing up.</p>
+
+    <div class="pullquote">Intelligence unlocks invention. Invention unlocks abundance.</div>
+
+    <h2>1. Invention &gt; Automation.</h2>
+
+    <p>Automation makes what we already have cheaper. Invention makes things exist that did not exist before. Both matter. The second one is much bigger.</p>
+
+    <p>Most of the new stuff will be combinatorial, which is exactly what these models are already good at. Drugs. Materials. Recipes. Movies. Products. Take the pieces that already exist, search the space of ways to put them together, and test the results faster than any human team could.</p>
+
+    <p>The question I keep coming back to is whether you can automate the invention process itself. Materials, projects, products. Run the loop, generate candidates, test them, keep what works, and go again.</p>
+
+    <p>Mark Zuckerberg made a version of this argument in <a href="https://www.meta.com/thefutureisforeveryone/">The Future Is For Everyone</a>. His frame is that personal superintelligence should go to individuals rather than getting concentrated in a few institutions, and that the point of the technology is to help people create and achieve more of what they want. I read it as the same claim from the other direction. The payoff is what gets made that would not otherwise exist.</p>
+
+    <h2>2. Agents mean automation, finally.</h2>
+
+    <p>Loops, graphs, and a goal. We got promised automation for thirty years and kept getting workflow tools. Agents actually do the work.</p>
+
+    <p>I run Claude Code every day and I spent last weekend inside Grok Bot. OpenClaw and Hermes Agent are pushing on the same thing from different directions. There will be online stores of agents for every task and you will piece them together with LLMs, MCPs, and APIs. It starts to look a lot like manufacturing engineering. You spend less time writing software and more time specifying a line.</p>
+
+    <p>Efficiency and productivity are necessary and they are great. That is how you drive costs down. Driving costs down is what frees everybody up to go invent.</p>
+
+    <h2>3. Intelligence is a stack of multipliers.</h2>
+
+    <p>Model efficiency. Falling token cost. Parallel agents. Better memory and context. Better algorithms.</p>
+
+    <p>Each one is worth some multiple on its own. Stack all five and 1,000x is the conservative read. Stack them again and a million becomes a word you can say out loud without embarrassing yourself.</p>
+
+    <p>Everybody watches one line on one benchmark and misses that these compound. They are also largely independent. Progress on any one of them does not wait on the other four.</p>
+
+    <h2>4. The product overhang from today&rsquo;s models is enormous.</h2>
+
+    <p>Go look at Artificial Analysis. Hundreds of models across dozens of labs. Gemini, Claude, OpenAI, Qwen, xAI, and the whole run of Chinese models. Open and closed. Small and cheap, large and expensive.</p>
+
+    <p>All of them highly capable already. Almost nothing has been built on top of them.</p>
+
+    <p>If every lab stopped training tomorrow we would still have a decade of products to go build. The gap between what the models can already do and what anyone has shipped is the largest opportunity on the board right now.</p>
+
+    <h2>5. We are going to build 1,000x more software.</h2>
+
+    <p>One user. Perfectly customized. Used once and thrown away. Run locally, spun up instantly, never reviewed, never shared.</p>
+
+    <p>Minimal bells and whistles. Not meant for production. Not meant to persist. All the complexity and the calcs abstracted away so the person using it never sees them.</p>
+
+    <p>Software exists to solve a problem. When the marginal cost goes to zero you build the solution and then you delete it. That is a different thing from a product, and most of what gets built next will look like this.</p>
+
+    <p>The same shift happens to content. A 1:1 tutor for any subject, taught live, customized on the fly, for one person.</p>
+
+    <h2>6. Outcomes &gt; Output. Pay for performance is back.</h2>
+
+    <p>People will pay for performance. Results matter more than effort. The underlying software stops mattering.</p>
+
+    <p>Inside companies this shows up as speed to innovate beating cost savings. That is a different budget, a different buyer, and a different conversation than the one most software gets sold into today.</p>
+
+    <h2>7. Vibe-living.</h2>
+
+    <p>You request an outcome and you name the spend. I will put in $X for Y result. Then things get done, built, designed, and fixed.</p>
+
+    <p>Underneath, that is an auto-combo. Software, robots, and capital assembled on the fly against a verifiable outcome, then taken apart once the outcome is met. A temporary assembly that existed to produce one result.</p>
+
+    <p>Vibe coding was the small version of this. The big version is that you stop specifying how any of it happens. Verification is what makes it work. Define done, prove done, and you can put money against it and let the system work out the rest.</p>
+
+    <h2>8. Agent routers and model routers will be huge.</h2>
+
+    <p>OpenRouter is the early shape of it.</p>
+
+    <p>Every request gets routed on capability, task complexity, cost, quality and reliability, data privacy, security, scalability, and repeatability. General model or industry-specific model. Cheap and fast for the easy 80 percent, expensive and slow for the rest.</p>
+
+    <p>Nobody is going to hand-pick a model per task for long. Whoever owns that layer owns a lot.</p>
+
+    <h2>9. Voice finally works.</h2>
+
+    <p>It is fast, it is accurate, and the old bugs are gone. No more fighting the transcript or cleaning up every third word.</p>
+
+    <p>I talked most of this piece into Claude Code. That matters more than it sounds like it does. The input method was the bottleneck on how much thinking actually made it out of my head, and that bottleneck is gone.</p>
+
+    <div class="pullquote">Output is nearly free now. Outcomes are the only thing left worth managing.</div>
+
+    <h2>The bottleneck is energy</h2>
+
+    <p>Every link in that chain runs on electrons. Energy and electrification are the long-form bottlenecks to abundance, and it is not close. Abundance requires very low prices on raw inputs, and the rawest input is power. High price electricity is the single biggest blocker to all of it.</p>
+
+    <p>So cheap electricity is the only path forward. Solar and storage, nuclear, geothermal, wind, SMRs, ten different storage ideas, balcony solar, all of it, and far more of it than anyone is currently planning for. Building more is also how you prove the economics.</p>
+
+    <p>The grid has more buffer in it than people assume, which means the near-term answer is less about steel in the ground than about flexibility, orchestration, and getting out of our own way. Energized megawatts are the binding constraint on the next decade, ahead of chips, capital, and talent. That is the argument I made in <a href="/writing/not-all-tokens-are-equal">Not All Tokens Are Equal</a>.</p>
+
+    <h2>What happens to work</h2>
+
+    <p>The honest part first. There will be real displacement, and it starts where the work is most repeatable and least physical. Customer support is the obvious one. A lot of outsourced knowledge work sits in the same bucket. Saying otherwise is avoidance dressed up as optimism.</p>
+
+    <p>But the shape of what comes after is genuinely good, and I do not think most people have worked it through.</p>
+
+    <p>When intelligence goes to zero, the bottleneck moves. Selection, direction, taste, and deployment become the scarce things. Trust becomes the currency. The valuable human roles move upstream and downstream at the same time: deciding what should exist, and then making it real, trusted, and adopted. Taste turns out to be the distinguishing skill, which is a strange and hopeful thing to write down.</p>
+
+    <p>Then there is what I have been calling labor as an experience. If human capacity is freed up and coordination gets cheap, you do not do less. You do more, better, for each person. Five people on one haircut because it is faster and nicer. The best doctor in the world giving you a full hour. Classrooms of four. Service that is faster, better, and more of it. The experience becomes the product.</p>
+
+    <p>That is the switch from an efficiency mindset to an abundance mindset, and it is the whole ballgame.</p>
+
+    <p>The doom version of this story is that agents do the work and then there is no work. I do not buy it. Every time the cost of making something collapsed, we did not make the same amount of stuff with fewer people. We made vastly more stuff, and invented jobs nobody could have described in advance.</p>
+
+    <p>The cost of turning an idea into a real thing is falling off a cliff right now. That expands who gets to build anything, further than anything I have seen in my lifetime. More companies, smaller and stranger and faster. More things that exist because one person could finally make them.</p>
+
+    <p>Most people aren&rsquo;t ambitious enough about what that means. An abundant future does not arrive on its own. It needs to get built.</p>
+
+    <p>The future is for everyone. Mostly it is for the people who start building now.</p>
+
+    <div class="signup-box">
+      <div class="signup-label">Enjoy this kind of writing?</div>
+      <p class="signup-text">I write about energy, AI, and building companies. Subscribe for occasional updates.</p>
+      <form class="signup-form" data-source="writing/energy-to-abundance" onsubmit="return handleSignup(event)">
+        <input type="email" class="signup-input" placeholder="you@example.com" required aria-label="Email address">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAC_Cyx-FA4dfM_bL" data-theme="light" data-size="compact"></div>
+        <button type="submit" class="signup-btn">Subscribe</button>
+      </form>
+      <div class="signup-msg" aria-live="polite"></div>
+    </div>
+
+    <div class="post-footer">
+      <p><strong>Josh Lake</strong> is a serial entrepreneur thinking about AI and the convergence of energy and intelligence. He&rsquo;s the founder of <a href="https://electrifyeverythingnow.com">Electrify Everything Now</a>.</p>
+      <p style="margin-top:16px">Find him on <a href="https://linkedin.com/in/lakejosh">LinkedIn</a> and <a href="https://x.com/jlake1">X</a>, or go back to <a href="/">joshlake.ai</a>.</p>
+    </div>
+  </article>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://joshlake.ai"},
+      {"@type": "ListItem", "position": 2, "name": "Writing", "item": "https://joshlake.ai/#writing"},
+      {"@type": "ListItem", "position": 3, "name": "Energy → Tokens → Intelligence → Invention → Abundance"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Energy → Tokens → Intelligence → Invention → Abundance",
+    "author": {
+      "@type": "Person",
+      "@id": "https://joshlake.ai/#person",
+      "name": "Josh Lake",
+      "url": "https://joshlake.ai"
+    },
+    "datePublished": "2026-08-20",
+    "dateModified": "2026-08-24",
+    "image": "https://joshlake.ai/images/og-image.jpg",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://joshlake.ai/writing/energy-to-abundance"
+    },
+    "description": "Energy makes tokens. Tokens make intelligence. Intelligence unlocks invention, and invention unlocks abundance. Nine observations from a few months of building with agents: invention over automation, agents delivering automation at last, intelligence as a stack of multipliers, the product overhang from today’s models, 1,000x disposable software, outcomes over output, vibe-living, agent and model routers, and voice that finally works.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "joshlake.ai",
+      "url": "https://joshlake.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://joshlake.ai/images/og-image.jpg"
+      }
+    }
+  }
+  </script>
+  <script>
+    async function handleSignup(e){
+      e.preventDefault();
+      const form=e.target,btn=form.querySelector('.signup-btn'),msg=form.parentElement.querySelector('.signup-msg'),email=form.querySelector('.signup-input').value.trim(),source=form.dataset.source||'unknown';
+      const tsInput=form.querySelector('[name="cf-turnstile-response"]');
+      const turnstileToken=tsInput?tsInput.value:'';
+      if(!turnstileToken){msg.textContent='Please complete the verification.';msg.className='signup-msg error';return false}
+      btn.disabled=true;btn.textContent='Sending...';msg.className='signup-msg';
+      try{
+        const res=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,turnstileToken,source})});
+        const data=await res.json();
+        if(data.success){msg.textContent="You're in. Welcome aboard.";msg.className='signup-msg success';form.querySelector('.signup-input').value='';if(window.turnstile)turnstile.reset(form.querySelector('.cf-turnstile'))}
+        else{msg.textContent=data.error||'Something went wrong. Try again.';msg.className='signup-msg error'}
+      }catch(err){msg.textContent='Network error. Please try again.';msg.className='signup-msg error'}
+      btn.disabled=false;btn.textContent='Subscribe';return false
+    }
+  </script>
+</body>
+</html>
